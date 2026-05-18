@@ -597,6 +597,96 @@ def fetch_history(symbol: str):
 def clamp(v, lo, hi):
     return max(lo, min(hi, v))
 
+
+def build_tplus_plan(symbol, c, ma20, ma50, rsi14, macd_line, macd_sig, vol_ratio, close_pos, distance_ma20, ret20, setupType, breakout, pullback, retest, accumulation, trend, momentum, money, risk_score, value_traded):
+    checklist = []
+
+    cond_market_proxy = trend >= 12
+    checklist.append({"label": "VN-Index/xu hướng không quá yếu", "ok": bool(cond_market_proxy)})
+
+    cond_ma = bool(ma20 and ma50 and c >= ma20 and c >= ma50)
+    checklist.append({"label": "Giá nằm trên MA20 và MA50", "ok": cond_ma})
+
+    cond_macd = bool(macd_line is not None and macd_sig is not None and macd_line >= macd_sig)
+    checklist.append({"label": "MACD cắt lên/đang trên Signal", "ok": cond_macd})
+
+    cond_rsi_best = bool(rsi14 is not None and 52 <= rsi14 <= 65)
+    cond_rsi_ok = bool(rsi14 is not None and 48 <= rsi14 <= 70)
+    checklist.append({"label": "RSI nằm vùng đẹp 52–65", "ok": cond_rsi_best})
+
+    cond_volume = bool(vol_ratio >= 1.2)
+    checklist.append({"label": "Volume cao hơn trung bình 20 phiên", "ok": cond_volume})
+
+    cond_setup = bool(breakout or pullback or retest or accumulation)
+    checklist.append({"label": "Có điểm mua: breakout/pullback/retest/tích lũy", "ok": cond_setup})
+
+    cond_not_chase = bool((distance_ma20 is None or distance_ma20 <= 10) and ret20 <= 20)
+    checklist.append({"label": "Không mua đuổi: giá không cách MA20 quá xa", "ok": cond_not_chase})
+
+    cond_liquidity = bool(value_traded >= 5_000_000_000)
+    checklist.append({"label": "Thanh khoản đủ để đánh T+", "ok": cond_liquidity})
+
+    if ma20:
+        stop_price = min(c * 0.965, ma20 * 0.985)
+    else:
+        stop_price = c * 0.965
+
+    risk_pct = max(1.0, round((c / stop_price - 1) * 100, 2))
+    target_pct = 7.0 if breakout else 6.0 if (pullback or retest) else 5.5
+    rr = round(target_pct / risk_pct, 2) if risk_pct else 0
+    cond_rr = rr >= 1.5 and risk_pct <= 5.0
+    checklist.append({"label": "Risk/Reward >= 1.5 và stop dưới 5%", "ok": cond_rr})
+
+    yes_count = sum(1 for x in checklist if x["ok"])
+    checklist_score = round(yes_count / len(checklist) * 100, 1)
+
+    tplus_ok = (
+        yes_count >= 7
+        and cond_ma
+        and cond_macd
+        and cond_rsi_ok
+        and cond_volume
+        and cond_setup
+        and cond_not_chase
+        and cond_rr
+        and risk_score >= 8
+        and money >= 13
+        and momentum >= 8
+    )
+
+    if breakout:
+        strategy = "Breakout T+ có volume xác nhận"
+        entry = "Mua khi giữ trên vùng breakout, close gần cao nhất phiên và volume >= 1.3 lần trung bình"
+    elif pullback:
+        strategy = "Pullback MA20 trong xu hướng tăng"
+        entry = "Mua khi giá bật lại quanh MA20/MA10, volume tăng trở lại sau nhịp giảm volume thấp"
+    elif retest:
+        strategy = "Retest nền/MA20 thành công"
+        entry = "Mua khi retest không thủng nền, nến đóng trên hỗ trợ và lực bán yếu"
+    elif accumulation:
+        strategy = "Tích lũy biên hẹp chờ nổ volume"
+        entry = "Chỉ mua khi vượt biên trên nền tích lũy kèm volume xác nhận"
+    else:
+        strategy = "Chưa đủ setup T+ xác suất cao"
+        entry = "Chờ thêm tín hiệu MACD/volume/setup, không mua vì thấy xanh mạnh"
+
+    plan = {
+        "score": checklist_score,
+        "yesCount": yes_count,
+        "totalChecks": len(checklist),
+        "strategy": strategy,
+        "entry": entry,
+        "quickStop": f"Cắt nhanh quanh {int(stop_price):,} hoặc khi mất MA20/vùng breakout; risk khoảng {risk_pct}%".replace(",", "."),
+        "quickTakeProfit": f"TP1 +{round(target_pct*0.65,1)}% đến +{target_pct}%; đạt TP1 chốt 30–50%, phần còn lại kéo stop lên giá vốn/MA10",
+        "riskReward": f"{rr}:1, risk ~{risk_pct}%, target ~{target_pct}%",
+        "positionSizing": "Lệnh thăm dò 20–30%, lệnh xác nhận 50–70%, lệnh rất đẹp tối đa 100% vị thế dự kiến" if tplus_ok else "Chỉ theo dõi hoặc thăm dò rất nhỏ; chưa đủ điều kiện T+ xác suất cao",
+        "holdingPeriod": "T+3 đến T+10; sau 2–3 phiên không chạy thì giảm tỷ trọng",
+        "invalidCondition": "MACD quay đầu xấu, RSI > 70 khi chưa có nền, volume cao nhưng râu trên dài, giá thủng MA20/MA50, hoặc VN-Index gãy hỗ trợ",
+        "checklist": checklist,
+    }
+    return tplus_ok, checklist_score, plan
+
+
 def score_stock(symbol: str, df: pd.DataFrame, src: str, market_ret20: float | None, market_ret60: float | None, sector_ret20: float | None) -> dict[str, Any]:
     close = df["close"]
     volume = df["volume"]
@@ -725,22 +815,14 @@ def score_stock(symbol: str, df: pd.DataFrame, src: str, market_ret20: float | N
 
     total = clamp(round(trend + momentum + money + setup + risk_score + rs, 1), 0, 95)
 
+    tplus_ok, tplus_score, tplus_plan = build_tplus_plan(
+        symbol, c, ma20, ma50, rsi14, macd_line, macd_sig, vol_ratio, close_pos, distance_ma20, ret20,
+        setupType, breakout, pullback, retest, accumulation, trend, momentum, money, risk_score, value_traded
+    )
+
     filters = {
         "topOpportunity": total >= 78 and trend >= 14 and money >= 12 and risk_score >= 9,
-        "tplus": (
-            total >= 72
-            and money >= 13
-            and momentum >= 9
-            and risk_score >= 8
-            and ma20
-            and ma50
-            and c > ma20
-            and c > ma50
-            and vol_ratio >= 1.15
-            and (rsi14 is None or 48 <= rsi14 <= 72)
-            and not (distance_ma20 and distance_ma20 > 12)
-            and not (ret20 > 22)
-        ),
+        "tplus": tplus_ok,
         "breakout": breakout,
         "pullbackMA20": pullback,
         "moneyFlow": money >= 14,
@@ -768,9 +850,9 @@ def score_stock(symbol: str, df: pd.DataFrame, src: str, market_ret20: float | N
     if pullback: signals.append("Có setup pullback MA20 trong xu hướng tăng")
     if accumulation: signals.append("Biên độ 20 phiên thu hẹp, có dấu hiệu tích lũy")
     if filters.get("tplus"):
-        signals.append("Phù hợp lướt sóng T+ theo tiêu chí: trend ngắn hạn, dòng tiền, setup và rủi ro đạt ngưỡng")
+        signals.append(f"Đạt bộ lọc T+ Pro: {tplus_plan.get('yesCount',0)}/{tplus_plan.get('totalChecks',0)} tiêu chí")
     elif total >= 72 and money >= 13:
-        warnings.append("Có dòng tiền nhưng chưa đủ điều kiện T+ xác suất cao")
+        warnings.append(f"Có dòng tiền nhưng chưa đủ T+ Pro: {tplus_plan.get('yesCount',0)}/{tplus_plan.get('totalChecks',0)} tiêu chí")
 
     if rsi14 and rsi14 > 70: warnings.append("RSI cao, hạn chế mua đuổi")
     if distance_ma20 and distance_ma20 > 12: warnings.append(f"Giá cách MA20 {distance_ma20}%, nên chờ điều chỉnh")
@@ -800,25 +882,14 @@ def score_stock(symbol: str, df: pd.DataFrame, src: str, market_ret20: float | N
         "volumeRatio": vol_ratio, "ma20": ma20, "ma50": ma50, "ma100": safe_float(last.get("ma100"),0), "ma200": ma200,
         "macd": macd_line, "macd_signal": macd_sig, "atr14": atr14,
         "distanceToMA20": distance_ma20, "distanceToMA50": distance_ma50,
-        "signals": signals, "warnings": warnings, "filters": filters,
+        "signals": signals, "warnings": warnings, "filters": filters, "tplusScore": tplus_score,
         "reason": expertSummary,
         "expertSummary": expertSummary,
         "buyZone": buyZone,
         "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
         "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
         "allocation": allocation,
-        "tplusPlan": {
-            "strategy": "Lướt T+ theo breakout/pullback có xác nhận dòng tiền" if filters.get("tplus") else "Chưa đủ điều kiện T+ xác suất cao",
-            "entry": (
-                "Ưu tiên mua khi giá giữ trên MA20, không cách MA20 quá 8-10%, hoặc breakout/retest thành công kèm volume"
-                if filters.get("tplus") else
-                "Chờ thêm xác nhận dòng tiền, setup hoặc điểm mua sát hỗ trợ"
-            ),
-            "quickStop": "Cắt nhanh nếu thủng MA20, mất vùng breakout/retest, hoặc giảm 3-5% từ điểm vào",
-            "quickTakeProfit": "Chốt 1 phần khi đạt +5% đến +8%; phần còn lại trailing theo MA20 hoặc đáy phiên trước",
-            "holdingPeriod": "T+3 đến T+10, không biến lệnh T+ thành đầu tư dài hạn nếu tín hiệu sai",
-            "invalidCondition": "RSI > 75, giá cách MA20 > 12%, volume cao nhưng giá không tăng, hoặc VN-Index suy yếu mạnh"
-        },
+        "tplusPlan": tplus_plan,
         "catalysts": ["Vnstock API", "Tín hiệu kỹ thuật", SECTORS.get(symbol, "Dòng tiền ngành")],
         "cautions": warnings or ["Không mua đuổi; cần tuân thủ cắt lỗ"],
     }
