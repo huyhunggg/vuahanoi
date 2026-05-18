@@ -82,3 +82,26 @@ Bản này thêm tab `Chu kỳ tăng mới`, dùng để tìm mô hình kiểu V
 - Ichimoku proxy: thoát/test Kijun thành công.
 - Không tăng nóng, thanh khoản đủ.
 - Có ghi chú cần bổ sung dữ liệu cơ bản/catalyst.
+
+
+## Expanded Universe
+
+Bản này mở rộng universe lên 320 mã, giữ nguyên:
+- Top cơ hội
+- Chu kỳ tăng mới
+- T+ Pro
+- Breakout
+- Pullback MA20
+- Dòng tiền mạnh
+- Tích lũy đẹp
+- An toàn
+- Tất cả mã
+
+Workflow đã được đặt chạy 5 lần/ngày giao dịch:
+- 08:30 VN
+- 10:30 VN
+- 11:30 VN
+- 14:30 VN
+- 15:30 VN
+
+Lưu ý: universe lớn hơn sẽ làm GitHub Actions chạy lâu hơn. Nếu workflow vượt thời gian, nên giảm còn 250 mã hoặc tối ưu fetch chỉ 1 nguồn.
