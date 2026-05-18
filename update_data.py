@@ -598,6 +598,164 @@ def clamp(v, lo, hi):
     return max(lo, min(hi, v))
 
 
+
+def build_cycle_plan(
+    symbol: str,
+    c: float,
+    ma20: float | None,
+    ma50: float | None,
+    ma100: float | None,
+    ma200: float | None,
+    rsi14: float | None,
+    macd_line: float | None,
+    macd_sig: float | None,
+    vol_ratio: float,
+    distance_ma20: float | None,
+    ret20: float,
+    ret60: float,
+    high20: float,
+    low20: float,
+    range20: float | None,
+    close_pos: float,
+    trend: float,
+    momentum: float,
+    money: float,
+    risk_score: float,
+    value_traded: float,
+    df: pd.DataFrame,
+):
+    """Lọc mô hình chu kỳ tăng mới kiểu VIC: giảm/tích lũy dài, tạo đáy, vượt MA, MACD/RSI phục hồi, dòng tiền quay lại."""
+    checklist = []
+
+    # 1. Giảm sâu hoặc tích lũy kéo dài 3-6 tháng
+    lookback_120 = df.tail(120).copy()
+    lookback_180 = df.tail(180).copy()
+    high_120 = float(lookback_120["close"].max()) if len(lookback_120) else c
+    low_120 = float(lookback_120["close"].min()) if len(lookback_120) else c
+    drawdown_120 = round((c / high_120 - 1) * 100, 2) if high_120 else 0
+    recovery_from_low_120 = round((c / low_120 - 1) * 100, 2) if low_120 else 0
+    range_120 = round((high_120 / low_120 - 1) * 100, 2) if low_120 else 0
+
+    long_base = bool((range_120 <= 35 and len(lookback_120) >= 90) or drawdown_120 <= -25 or (recovery_from_low_120 >= 10 and drawdown_120 <= -10))
+    checklist.append({"label": "Đã giảm sâu hoặc tích lũy 3–6 tháng", "ok": long_base})
+
+    # 2. Đáy sau cao hơn đáy trước, đỉnh sau cao hơn đỉnh trước
+    lows = df["close"].rolling(10).min()
+    highs = df["close"].rolling(10).max()
+    higher_low = bool(len(lows.dropna()) > 40 and lows.iloc[-1] > lows.iloc[-25])
+    higher_high = bool(len(highs.dropna()) > 40 and highs.iloc[-1] >= highs.iloc[-25])
+    structure_up = higher_low and higher_high
+    checklist.append({"label": "Cấu trúc đáy sau/đỉnh sau cải thiện", "ok": structure_up})
+
+    # 3. Vượt lại MA20/50, tiến tới MA100/200
+    reclaim_ma = bool(ma20 and ma50 and c > ma20 and c > ma50)
+    near_long_ma = bool((ma100 and c > ma100 * 0.97) or (ma200 and c > ma200 * 0.94))
+    checklist.append({"label": "Giá vượt MA20/MA50 và tiếp cận MA100/MA200", "ok": reclaim_ma and near_long_ma})
+
+    # 4. MA20 cong lên/cắt lên MA50
+    ma20_series = df["ma20"] if "ma20" in df.columns else df["close"].rolling(20).mean()
+    ma50_series = df["ma50"] if "ma50" in df.columns else df["close"].rolling(50).mean()
+    ma20_up = bool(len(ma20_series.dropna()) > 10 and ma20_series.iloc[-1] > ma20_series.iloc[-5])
+    ma20_crossing = bool(ma20 and ma50 and (ma20 >= ma50 * 0.98))
+    checklist.append({"label": "MA20 bắt đầu cong lên/gần cắt MA50", "ok": ma20_up and ma20_crossing})
+
+    # 5-6. MACD cắt lên/Histogram từ âm sang dương
+    macd_positive = bool(macd_line is not None and macd_sig is not None and macd_line >= macd_sig)
+    macd_from_weak = bool(macd_line is not None and macd_sig is not None and macd_line < 0 and macd_line >= macd_sig)
+    checklist.append({"label": "MACD cải thiện từ vùng yếu hoặc cắt lên Signal", "ok": macd_positive or macd_from_weak})
+
+    # 7. RSI phục hồi > 50, lý tưởng 50-65
+    rsi_recover = bool(rsi14 is not None and 50 <= rsi14 <= 65)
+    rsi_ok = bool(rsi14 is not None and 48 <= rsi14 <= 70)
+    checklist.append({"label": "RSI phục hồi trên 50, lý tưởng 50–65", "ok": rsi_recover})
+
+    # 8-9. Volume breakout tăng, pullback volume thấp
+    vol_breakout = bool(vol_ratio >= 1.3 and c >= high20 * 0.97)
+    recent = df.tail(20).copy()
+    recent["chg"] = recent["close"].pct_change()
+    down_low_vol = False
+    if "volume" in recent.columns:
+        avg_vol = float(recent["volume"].mean()) if len(recent) else 0
+        down_days = recent[recent["chg"] < 0]
+        if len(down_days) > 0 and avg_vol > 0:
+            down_low_vol = bool(down_days["volume"].median() <= avg_vol * 1.05)
+    checklist.append({"label": "Volume tăng khi breakout, điều chỉnh volume thấp", "ok": vol_breakout or down_low_vol})
+
+    # 10. Ichimoku proxy: giá trên vùng trung bình 26/52 hoặc test lại thành công
+    tenkan = (df["high"].rolling(9).max() + df["low"].rolling(9).min()) / 2
+    kijun = (df["high"].rolling(26).max() + df["low"].rolling(26).min()) / 2
+    senkou_b = (df["high"].rolling(52).max() + df["low"].rolling(52).min()) / 2
+    ichi_ok = False
+    try:
+        ichi_ok = bool(c > float(kijun.iloc[-1]) and c > min(float(kijun.iloc[-1]), float(senkou_b.iloc[-1])) and close_pos >= 0.45)
+    except Exception:
+        ichi_ok = bool(c > ma50) if ma50 else False
+    checklist.append({"label": "Thoát vùng Ichimoku proxy hoặc test Kijun thành công", "ok": ichi_ok})
+
+    # 11-12. Fundamental/catalyst proxy: không có dữ liệu cơ bản sâu -> chỉ dùng thanh khoản/ngành và flag cần bổ sung
+    liquidity_ok = bool(value_traded >= 10_000_000_000)
+    not_hot = bool(ret20 <= 20 and (distance_ma20 is None or distance_ma20 <= 15) and (rsi14 is None or rsi14 <= 70))
+    checklist.append({"label": "Không tăng nóng, thanh khoản đủ để theo chu kỳ", "ok": liquidity_ok and not_hot})
+
+    yes_count = sum(1 for x in checklist if x["ok"])
+    cycle_score = round(yes_count / len(checklist) * 100, 1)
+
+    early_stage = bool(
+        yes_count >= 7
+        and reclaim_ma
+        and (macd_positive or macd_from_weak)
+        and rsi_ok
+        and liquidity_ok
+        and not_hot
+        and (long_base or structure_up)
+    )
+
+    if early_stage and c > ma50 and (not ma200 or c < ma200 * 1.15):
+        stage = "Giai đoạn đầu xu hướng tăng mới"
+    elif long_base and reclaim_ma:
+        stage = "Đang xác nhận đảo chiều sau tích lũy"
+    elif long_base:
+        stage = "Đang tích lũy, chưa xác nhận"
+    elif not_hot and trend >= 13:
+        stage = "Xu hướng tăng nhưng cần kiểm tra đã qua giai đoạn đầu chưa"
+    else:
+        stage = "Chưa đạt mẫu chu kỳ tăng mới"
+
+    probe = f"Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ {int(ma20):,}".replace(",", ".") if ma20 else "Chỉ thăm dò khi hình thành hỗ trợ rõ"
+    retest_buy = "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh"
+    breakout_buy = f"Mua xác nhận khi vượt vùng {int(high20):,} kèm volume >= 1.3–1.5 lần trung bình".replace(",", ".")
+    protection = "Cắt lỗ nếu thủng MA50/nền tích lũy hoặc MACD quay đầu xấu; bảo vệ lợi nhuận bằng MA20 khi đã có lãi"
+
+    # Target ước lượng theo biên độ nền/range
+    base_height_pct = min(40, max(12, range_120 * 0.5 if range_120 else 15))
+    targets = f"Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +{round(base_height_pct + 35,0)}% hoặc trailing theo MA20/MA50"
+
+    thesis = (
+        "Mã có dấu hiệu thoát khỏi giai đoạn giảm/tích lũy, cấu trúc giá cải thiện và dòng tiền bắt đầu quay lại."
+        if early_stage else
+        "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn."
+    )
+
+    plan = {
+        "score": cycle_score,
+        "yesCount": yes_count,
+        "totalChecks": len(checklist),
+        "stage": stage,
+        "thesis": thesis,
+        "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
+        "probeBuy": probe,
+        "retestBuy": retest_buy,
+        "breakoutBuy": breakout_buy,
+        "targets": targets,
+        "protection": protection,
+        "capitalPlan": "Mua thăm dò 20–30%, gia tăng 30–40% khi retest thành công, phần còn lại khi breakout xác nhận; không mua đuổi nếu cách MA20 > 12–15%",
+        "fundamentalNote": "Cần bổ sung dữ liệu cơ bản/catalyst: doanh thu, lợi nhuận, ROE/ROA, nợ vay, dòng tiền kinh doanh, P/E, P/B, câu chuyện ngành/tái cấu trúc/dự án mới.",
+        "checklist": checklist,
+    }
+
+    return early_stage, cycle_score, plan
+
+
 def build_tplus_plan(symbol, c, ma20, ma50, rsi14, macd_line, macd_sig, vol_ratio, close_pos, distance_ma20, ret20, setupType, breakout, pullback, retest, accumulation, trend, momentum, money, risk_score, value_traded):
     checklist = []
 
@@ -820,8 +978,35 @@ def score_stock(symbol: str, df: pd.DataFrame, src: str, market_ret20: float | N
         setupType, breakout, pullback, retest, accumulation, trend, momentum, money, risk_score, value_traded
     )
 
+    cycle_ok, cycle_score, cycle_plan = build_cycle_plan(
+        symbol=symbol,
+        c=c,
+        ma20=ma20,
+        ma50=ma50,
+        ma100=safe_float(last.get("ma100"),0),
+        ma200=ma200,
+        rsi14=rsi14,
+        macd_line=macd_line,
+        macd_sig=macd_sig,
+        vol_ratio=vol_ratio,
+        distance_ma20=distance_ma20,
+        ret20=ret20,
+        ret60=ret60,
+        high20=high20,
+        low20=low20,
+        range20=range20,
+        close_pos=close_pos,
+        trend=trend,
+        momentum=momentum,
+        money=money,
+        risk_score=risk_score,
+        value_traded=value_traded,
+        df=df,
+    )
+
     filters = {
         "topOpportunity": total >= 78 and trend >= 14 and money >= 12 and risk_score >= 9,
+        "cycleTurnaround": cycle_ok,
         "tplus": tplus_ok,
         "breakout": breakout,
         "pullbackMA20": pullback,
@@ -849,6 +1034,10 @@ def score_stock(symbol: str, df: pd.DataFrame, src: str, market_ret20: float | N
     if breakout: signals.append("Có tín hiệu breakout vùng 20 phiên")
     if pullback: signals.append("Có setup pullback MA20 trong xu hướng tăng")
     if accumulation: signals.append("Biên độ 20 phiên thu hẹp, có dấu hiệu tích lũy")
+    if filters.get("cycleTurnaround"):
+        signals.append(f"Đạt bộ lọc Chu kỳ tăng mới: {cycle_plan.get('yesCount',0)}/{cycle_plan.get('totalChecks',0)} tiêu chí")
+    elif cycle_plan.get("yesCount",0) >= 6:
+        warnings.append(f"Gần đạt mẫu Chu kỳ tăng mới: {cycle_plan.get('yesCount',0)}/{cycle_plan.get('totalChecks',0)} tiêu chí, cần thêm xác nhận")
     if filters.get("tplus"):
         signals.append(f"Đạt bộ lọc T+ Pro: {tplus_plan.get('yesCount',0)}/{tplus_plan.get('totalChecks',0)} tiêu chí")
     elif total >= 72 and money >= 13:
@@ -882,7 +1071,7 @@ def score_stock(symbol: str, df: pd.DataFrame, src: str, market_ret20: float | N
         "volumeRatio": vol_ratio, "ma20": ma20, "ma50": ma50, "ma100": safe_float(last.get("ma100"),0), "ma200": ma200,
         "macd": macd_line, "macd_signal": macd_sig, "atr14": atr14,
         "distanceToMA20": distance_ma20, "distanceToMA50": distance_ma50,
-        "signals": signals, "warnings": warnings, "filters": filters, "tplusScore": tplus_score,
+        "signals": signals, "warnings": warnings, "filters": filters, "tplusScore": tplus_score, "cycleScore": cycle_score,
         "reason": expertSummary,
         "expertSummary": expertSummary,
         "buyZone": buyZone,
@@ -890,6 +1079,7 @@ def score_stock(symbol: str, df: pd.DataFrame, src: str, market_ret20: float | N
         "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
         "allocation": allocation,
         "tplusPlan": tplus_plan,
+        "cyclePlan": cycle_plan,
         "catalysts": ["Vnstock API", "Tín hiệu kỹ thuật", SECTORS.get(symbol, "Dòng tiền ngành")],
         "cautions": warnings or ["Không mua đuổi; cần tuân thủ cắt lỗ"],
     }

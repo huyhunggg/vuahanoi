@@ -68,3 +68,17 @@ Bản này đã nâng bộ lọc T+ theo checklist:
 - Risk/Reward tối thiểu 1.5:1, tốt hơn 2:1.
 - Stop nhanh 3–5%; sau 2–3 phiên không chạy thì giảm tỷ trọng.
 - Đạt TP1 chốt 30–50%, phần còn lại kéo stop lên giá vốn/MA10.
+
+## Chu kỳ tăng mới
+
+Bản này thêm tab `Chu kỳ tăng mới`, dùng để tìm mô hình kiểu VIC giai đoạn đầu:
+- Giảm/tích lũy 3–6 tháng.
+- Cấu trúc đáy sau cao hơn đáy trước.
+- Vượt MA20/MA50, tiếp cận MA100/MA200.
+- MA20 cong lên/gần cắt MA50.
+- MACD cải thiện/cắt lên từ vùng yếu.
+- RSI phục hồi trên 50, lý tưởng 50–65.
+- Volume breakout 1.3–1.5 lần, pullback volume thấp.
+- Ichimoku proxy: thoát/test Kijun thành công.
+- Không tăng nóng, thanh khoản đủ.
+- Có ghi chú cần bổ sung dữ liệu cơ bản/catalyst.
