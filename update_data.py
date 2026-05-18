@@ -727,6 +727,20 @@ def score_stock(symbol: str, df: pd.DataFrame, src: str, market_ret20: float | N
 
     filters = {
         "topOpportunity": total >= 78 and trend >= 14 and money >= 12 and risk_score >= 9,
+        "tplus": (
+            total >= 72
+            and money >= 13
+            and momentum >= 9
+            and risk_score >= 8
+            and ma20
+            and ma50
+            and c > ma20
+            and c > ma50
+            and vol_ratio >= 1.15
+            and (rsi14 is None or 48 <= rsi14 <= 72)
+            and not (distance_ma20 and distance_ma20 > 12)
+            and not (ret20 > 22)
+        ),
         "breakout": breakout,
         "pullbackMA20": pullback,
         "moneyFlow": money >= 14,
@@ -753,6 +767,10 @@ def score_stock(symbol: str, df: pd.DataFrame, src: str, market_ret20: float | N
     if breakout: signals.append("Có tín hiệu breakout vùng 20 phiên")
     if pullback: signals.append("Có setup pullback MA20 trong xu hướng tăng")
     if accumulation: signals.append("Biên độ 20 phiên thu hẹp, có dấu hiệu tích lũy")
+    if filters.get("tplus"):
+        signals.append("Phù hợp lướt sóng T+ theo tiêu chí: trend ngắn hạn, dòng tiền, setup và rủi ro đạt ngưỡng")
+    elif total >= 72 and money >= 13:
+        warnings.append("Có dòng tiền nhưng chưa đủ điều kiện T+ xác suất cao")
 
     if rsi14 and rsi14 > 70: warnings.append("RSI cao, hạn chế mua đuổi")
     if distance_ma20 and distance_ma20 > 12: warnings.append(f"Giá cách MA20 {distance_ma20}%, nên chờ điều chỉnh")
@@ -789,6 +807,18 @@ def score_stock(symbol: str, df: pd.DataFrame, src: str, market_ret20: float | N
         "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
         "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
         "allocation": allocation,
+        "tplusPlan": {
+            "strategy": "Lướt T+ theo breakout/pullback có xác nhận dòng tiền" if filters.get("tplus") else "Chưa đủ điều kiện T+ xác suất cao",
+            "entry": (
+                "Ưu tiên mua khi giá giữ trên MA20, không cách MA20 quá 8-10%, hoặc breakout/retest thành công kèm volume"
+                if filters.get("tplus") else
+                "Chờ thêm xác nhận dòng tiền, setup hoặc điểm mua sát hỗ trợ"
+            ),
+            "quickStop": "Cắt nhanh nếu thủng MA20, mất vùng breakout/retest, hoặc giảm 3-5% từ điểm vào",
+            "quickTakeProfit": "Chốt 1 phần khi đạt +5% đến +8%; phần còn lại trailing theo MA20 hoặc đáy phiên trước",
+            "holdingPeriod": "T+3 đến T+10, không biến lệnh T+ thành đầu tư dài hạn nếu tín hiệu sai",
+            "invalidCondition": "RSI > 75, giá cách MA20 > 12%, volume cao nhưng giá không tăng, hoặc VN-Index suy yếu mạnh"
+        },
         "catalysts": ["Vnstock API", "Tín hiệu kỹ thuật", SECTORS.get(symbol, "Dòng tiền ngành")],
         "cautions": warnings or ["Không mua đuổi; cần tuân thủ cắt lỗ"],
     }
