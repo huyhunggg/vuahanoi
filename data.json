@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-05-21 15:18:09 VN",
+    "updated_at": "2026-05-21 18:02:18 VN",
     "source": "Vnstock API pro signals",
     "has_api_key": true,
     "success": 319,
@@ -12,7 +12,7 @@
       "register_user success with api_key"
     ],
     "errors": {
-      "PME": "vnstock.Quote/KBS: RetryError: RetryError[<Future at 0x7fb30cd7ff10 state=finished raised ValueError>] | vnstock.Quote/VCI: RetryError: RetryError[<Future at 0x7fb30cd22590 state=finished raised ValueError>] | vnstock.Quote/TCBS: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/VND: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/kbs: RetryError: RetryError[<Future at 0x7fb30cd99ad0 state=finished raised ValueError>] | vnstock.Quote/vci: RetryError: RetryError[<Future at 0x7fb30cbd7410 state=finished raised ValueError>] | vnstock.Quote/tcbs: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/vnd: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket."
+      "PME": "vnstock.Quote/KBS: RetryError: RetryError[<Future at 0x7f4a8ccc1410 state=finished raised ValueError>] | vnstock.Quote/VCI: RetryError: RetryError[<Future at 0x7f4a8cc4c8d0 state=finished raised ValueError>] | vnstock.Quote/TCBS: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/VND: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/kbs: RetryError: RetryError[<Future at 0x7f4a8cae0110 state=finished raised ValueError>] | vnstock.Quote/vci: RetryError: RetryError[<Future at 0x7f4a8caf35d0 state=finished raised ValueError>] | vnstock.Quote/tcbs: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/vnd: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket."
     }
   },
   "stocks": [
@@ -3632,20 +3632,20 @@
       "action": "CHỜ THÊM",
       "risk": "Trung bình",
       "close": 74500.0,
-      "rsi14": 55.41,
+      "rsi14": 55.82,
       "ret20": 3.6,
       "ret60": -3.93,
       "volume_status": "Trung bình",
-      "volumeRatio": 0.49,
-      "ma20": 75686.0,
-      "ma50": 74081.0,
-      "ma100": 70500.0,
-      "ma200": 66670.0,
-      "macd": 714.84,
-      "macd_signal": 1107.61,
-      "atr14": 2057.86,
-      "distanceToMA20": -1.57,
-      "distanceToMA50": 0.57,
+      "volumeRatio": 0.48,
+      "ma20": 75711.0,
+      "ma50": 74091.0,
+      "ma100": 70505.0,
+      "ma200": 66673.0,
+      "macd": 745.64,
+      "macd_signal": 1120.15,
+      "atr14": 2065.0,
+      "distanceToMA20": -1.6,
+      "distanceToMA50": 0.55,
       "signals": [
         "Xu hướng tích cực, giá duy trì trên các đường MA quan trọng",
         "MA20 nằm trên MA50, cấu trúc ngắn hạn tốt",
@@ -3666,7 +3666,7 @@
       "cycleScore": 55.6,
       "reason": "GMD đạt 64/100 điểm, setup Pullback MA20. Xu hướng tích cực, dòng tiền 6/20, rủi ro 15/15. Hành động phù hợp: chờ thêm.",
       "expertSummary": "GMD đạt 64/100 điểm, setup Pullback MA20. Xu hướng tích cực, dòng tiền 6/20, rủi ro 15/15. Hành động phù hợp: chờ thêm.",
-      "buyZone": "Canh quanh MA20 ~ 75.686 hoặc nền tích lũy gần nhất.",
+      "buyZone": "Canh quanh MA20 ~ 75.711 hoặc nền tích lũy gần nhất.",
       "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
       "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
       "allocation": "0% - 5%",
@@ -3728,7 +3728,7 @@
         "stage": "Xu hướng tăng nhưng cần kiểm tra đã qua giai đoạn đầu chưa",
         "thesis": "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn.",
         "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
-        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 75.686",
+        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 75.711",
         "retestBuy": "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh",
         "breakoutBuy": "Mua xác nhận khi vượt vùng 79.300 kèm volume >= 1.3–1.5 lần trung bình",
         "targets": "Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +59.0% hoặc trailing theo MA20/MA50",
@@ -29085,7 +29085,7 @@
       "ret20": -3.13,
       "ret60": -20.49,
       "volume_status": "Trung bình",
-      "volumeRatio": 0.87,
+      "volumeRatio": 0.86,
       "ma20": 23632.0,
       "ma50": 23921.0,
       "ma100": 26509.0,
