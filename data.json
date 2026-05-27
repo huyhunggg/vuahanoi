@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-05-27 18:13:04 VN",
+    "updated_at": "2026-05-27 19:00:49 VN",
     "source": "Vnstock API pro signals",
     "has_api_key": true,
     "success": 319,
@@ -12,7 +12,7 @@
       "register_user success with api_key"
     ],
     "errors": {
-      "PME": "vnstock.Quote/KBS: RetryError: RetryError[<Future at 0x7f53641173d0 state=finished raised ValueError>] | vnstock.Quote/VCI: RetryError: RetryError[<Future at 0x7f53641015d0 state=finished raised ValueError>] | vnstock.Quote/TCBS: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/VND: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/kbs: RetryError: RetryError[<Future at 0x7f5357f10890 state=finished raised ValueError>] | vnstock.Quote/vci: RetryError: RetryError[<Future at 0x7f5365684210 state=finished raised ValueError>] | vnstock.Quote/tcbs: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/vnd: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket."
+      "PME": "vnstock.Quote/KBS: RetryError: RetryError[<Future at 0x7fb1f1f13010 state=finished raised ValueError>] | vnstock.Quote/VCI: RetryError: RetryError[<Future at 0x7fb1f1fba550 state=finished raised ValueError>] | vnstock.Quote/TCBS: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/VND: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/kbs: RetryError: RetryError[<Future at 0x7fb1f1f2a890 state=finished raised ValueError>] | vnstock.Quote/vci: RetryError: RetryError[<Future at 0x7fb1f1fe1f90 state=finished raised ValueError>] | vnstock.Quote/tcbs: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/vnd: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket."
     }
   },
   "stocks": [
