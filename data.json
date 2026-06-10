@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-06-10 15:02:31 VN",
+    "updated_at": "2026-06-10 15:42:12 VN",
     "source": "Vnstock API pro signals",
     "has_api_key": true,
     "success": 319,
@@ -12,7 +12,7 @@
       "register_user success with api_key"
     ],
     "errors": {
-      "PME": "vnstock.Quote/KBS: RetryError: RetryError[<Future at 0x7f6a73ff4390 state=finished raised ValueError>] | vnstock.Quote/VCI: RetryError: RetryError[<Future at 0x7f6a72d00fd0 state=finished raised ValueError>] | vnstock.Quote/TCBS: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/VND: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/kbs: RetryError: RetryError[<Future at 0x7f6a72dcb690 state=finished raised ValueError>] | vnstock.Quote/vci: RetryError: RetryError[<Future at 0x7f6a73eaa490 state=finished raised ValueError>] | vnstock.Quote/tcbs: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/vnd: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket."
+      "PME": "vnstock.Quote/KBS: RetryError: RetryError[<Future at 0x7f4bf6f862d0 state=finished raised ValueError>] | vnstock.Quote/VCI: RetryError: RetryError[<Future at 0x7f4c043e7490 state=finished raised ValueError>] | vnstock.Quote/TCBS: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/VND: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/kbs: RetryError: RetryError[<Future at 0x7f4bf6fb1390 state=finished raised ValueError>] | vnstock.Quote/vci: RetryError: RetryError[<Future at 0x7f4bf6f48690 state=finished raised ValueError>] | vnstock.Quote/tcbs: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket. | vnstock.Quote/vnd: ValueError: Lớp Quote chỉ nhận giá trị tham số source là kbs, vci, msn, dnse, binance, fmp, fmarket."
     }
   },
   "stocks": [
@@ -1747,180 +1747,6 @@
       ]
     },
     {
-      "ticker": "ABB",
-      "name": "ABB",
-      "sector": "Ngân hàng",
-      "score": 68,
-      "subscores": {
-        "trend": 20,
-        "momentum": 1,
-        "moneyFlow": 20,
-        "setup": 5,
-        "risk": 7,
-        "relativeStrength": 15
-      },
-      "setupType": "Chưa có setup rõ",
-      "marketState": "Uptrend mạnh",
-      "action": "THEO DÕI MUA",
-      "risk": "Trung bình",
-      "close": 16700.0,
-      "rsi14": 88.89,
-      "ret20": 9.87,
-      "ret60": 23.7,
-      "volume_status": "Rất cao",
-      "volumeRatio": 2.81,
-      "ma20": 15625.0,
-      "ma50": 15146.0,
-      "ma100": 14560.0,
-      "ma200": 13538.0,
-      "macd": 334.6,
-      "macd_signal": 265.9,
-      "atr14": 314.29,
-      "distanceToMA20": 6.88,
-      "distanceToMA50": 10.26,
-      "signals": [
-        "Xu hướng tích cực, giá duy trì trên các đường MA quan trọng",
-        "MA20 nằm trên MA50, cấu trúc ngắn hạn tốt",
-        "MACD đang trên đường tín hiệu",
-        "Dòng tiền cải thiện so với trung bình"
-      ],
-      "warnings": [
-        "Gần đạt mẫu Chu kỳ tăng mới: 7/9 tiêu chí, cần thêm xác nhận",
-        "RSI cao, hạn chế mua đuổi"
-      ],
-      "filters": {
-        "topOpportunity": false,
-        "cycleTurnaround": false,
-        "tplus": false,
-        "breakout": false,
-        "pullbackMA20": false,
-        "moneyFlow": true,
-        "accumulation": false,
-        "safe": false
-      },
-      "tplusScore": 66.7,
-      "cycleScore": 77.8,
-      "reason": "ABB đạt 68/100 điểm, setup Chưa có setup rõ. Xu hướng uptrend mạnh, dòng tiền 20/20, rủi ro 7/15. Hành động phù hợp: theo dõi mua.",
-      "expertSummary": "ABB đạt 68/100 điểm, setup Chưa có setup rõ. Xu hướng uptrend mạnh, dòng tiền 20/20, rủi ro 7/15. Hành động phù hợp: theo dõi mua.",
-      "buyZone": "Canh quanh MA20 ~ 15.625 hoặc nền tích lũy gần nhất.",
-      "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
-      "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
-      "allocation": "3% - 10%",
-      "tplusPlan": {
-        "score": 66.7,
-        "yesCount": 6,
-        "totalChecks": 9,
-        "strategy": "Chưa đủ setup T+ xác suất cao",
-        "entry": "Chờ thêm tín hiệu MACD/volume/setup, không mua vì thấy xanh mạnh",
-        "quickStop": "Cắt nhanh quanh 15.390 hoặc khi mất MA20/vùng breakout; risk khoảng 8.51%",
-        "quickTakeProfit": "TP1 +3.6% đến +5.5%; đạt TP1 chốt 30–50%, phần còn lại kéo stop lên giá vốn/MA10",
-        "riskReward": "0.65:1, risk ~8.51%, target ~5.5%",
-        "positionSizing": "Chỉ theo dõi hoặc thăm dò rất nhỏ; chưa đủ điều kiện T+ xác suất cao",
-        "holdingPeriod": "T+3 đến T+10; sau 2–3 phiên không chạy thì giảm tỷ trọng",
-        "invalidCondition": "MACD quay đầu xấu, RSI > 70 khi chưa có nền, volume cao nhưng râu trên dài, giá thủng MA20/MA50, hoặc VN-Index gãy hỗ trợ",
-        "checklist": [
-          {
-            "label": "VN-Index/xu hướng không quá yếu",
-            "ok": true
-          },
-          {
-            "label": "Giá nằm trên MA20 và MA50",
-            "ok": true
-          },
-          {
-            "label": "MACD cắt lên/đang trên Signal",
-            "ok": true
-          },
-          {
-            "label": "RSI nằm vùng đẹp 52–65",
-            "ok": false
-          },
-          {
-            "label": "Volume cao hơn trung bình 20 phiên",
-            "ok": true
-          },
-          {
-            "label": "Có điểm mua: breakout/pullback/retest/tích lũy",
-            "ok": false
-          },
-          {
-            "label": "Không mua đuổi: giá không cách MA20 quá xa",
-            "ok": true
-          },
-          {
-            "label": "Thanh khoản đủ để đánh T+",
-            "ok": true
-          },
-          {
-            "label": "Risk/Reward >= 1.5 và stop dưới 5%",
-            "ok": false
-          }
-        ]
-      },
-      "cyclePlan": {
-        "score": 77.8,
-        "yesCount": 7,
-        "totalChecks": 9,
-        "stage": "Đang xác nhận đảo chiều sau tích lũy",
-        "thesis": "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn.",
-        "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
-        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 15.625",
-        "retestBuy": "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh",
-        "breakoutBuy": "Mua xác nhận khi vượt vùng 16.700 kèm volume >= 1.3–1.5 lần trung bình",
-        "targets": "Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +49.0% hoặc trailing theo MA20/MA50",
-        "protection": "Cắt lỗ nếu thủng MA50/nền tích lũy hoặc MACD quay đầu xấu; bảo vệ lợi nhuận bằng MA20 khi đã có lãi",
-        "capitalPlan": "Mua thăm dò 20–30%, gia tăng 30–40% khi retest thành công, phần còn lại khi breakout xác nhận; không mua đuổi nếu cách MA20 > 12–15%",
-        "fundamentalNote": "Cần bổ sung dữ liệu cơ bản/catalyst: doanh thu, lợi nhuận, ROE/ROA, nợ vay, dòng tiền kinh doanh, P/E, P/B, câu chuyện ngành/tái cấu trúc/dự án mới.",
-        "checklist": [
-          {
-            "label": "Đã giảm sâu hoặc tích lũy 3–6 tháng",
-            "ok": true
-          },
-          {
-            "label": "Cấu trúc đáy sau/đỉnh sau cải thiện",
-            "ok": true
-          },
-          {
-            "label": "Giá vượt MA20/MA50 và tiếp cận MA100/MA200",
-            "ok": true
-          },
-          {
-            "label": "MA20 bắt đầu cong lên/gần cắt MA50",
-            "ok": true
-          },
-          {
-            "label": "MACD cải thiện từ vùng yếu hoặc cắt lên Signal",
-            "ok": true
-          },
-          {
-            "label": "RSI phục hồi trên 50, lý tưởng 50–65",
-            "ok": false
-          },
-          {
-            "label": "Volume tăng khi breakout, điều chỉnh volume thấp",
-            "ok": true
-          },
-          {
-            "label": "Thoát vùng Ichimoku proxy hoặc test Kijun thành công",
-            "ok": true
-          },
-          {
-            "label": "Không tăng nóng, thanh khoản đủ để theo chu kỳ",
-            "ok": false
-          }
-        ]
-      },
-      "catalysts": [
-        "Vnstock API",
-        "Tín hiệu kỹ thuật",
-        "Ngân hàng"
-      ],
-      "cautions": [
-        "Gần đạt mẫu Chu kỳ tăng mới: 7/9 tiêu chí, cần thêm xác nhận",
-        "RSI cao, hạn chế mua đuổi"
-      ]
-    },
-    {
       "ticker": "HPT",
       "name": "HPT",
       "sector": "Công nghệ / Viễn thông",
@@ -3131,6 +2957,180 @@
       "cautions": [
         "Gần đạt mẫu Chu kỳ tăng mới: 6/9 tiêu chí, cần thêm xác nhận",
         "Thanh khoản thấp, cần hạn chế tỷ trọng"
+      ]
+    },
+    {
+      "ticker": "ABB",
+      "name": "ABB",
+      "sector": "Ngân hàng",
+      "score": 65,
+      "subscores": {
+        "trend": 20,
+        "momentum": 1,
+        "moneyFlow": 20,
+        "setup": 5,
+        "risk": 4,
+        "relativeStrength": 15
+      },
+      "setupType": "Chưa có setup rõ",
+      "marketState": "Uptrend mạnh",
+      "action": "THEO DÕI MUA",
+      "risk": "Trung bình",
+      "close": 16900.0,
+      "rsi14": 90.0,
+      "ret20": 11.18,
+      "ret60": 25.19,
+      "volume_status": "Rất cao",
+      "volumeRatio": 2.88,
+      "ma20": 15635.0,
+      "ma50": 15150.0,
+      "ma100": 14562.0,
+      "ma200": 13539.0,
+      "macd": 350.56,
+      "macd_signal": 269.1,
+      "atr14": 314.29,
+      "distanceToMA20": 8.09,
+      "distanceToMA50": 11.55,
+      "signals": [
+        "Xu hướng tích cực, giá duy trì trên các đường MA quan trọng",
+        "MA20 nằm trên MA50, cấu trúc ngắn hạn tốt",
+        "MACD đang trên đường tín hiệu",
+        "Dòng tiền cải thiện so với trung bình"
+      ],
+      "warnings": [
+        "Gần đạt mẫu Chu kỳ tăng mới: 7/9 tiêu chí, cần thêm xác nhận",
+        "RSI cao, hạn chế mua đuổi"
+      ],
+      "filters": {
+        "topOpportunity": false,
+        "cycleTurnaround": false,
+        "tplus": false,
+        "breakout": false,
+        "pullbackMA20": false,
+        "moneyFlow": true,
+        "accumulation": false,
+        "safe": false
+      },
+      "tplusScore": 66.7,
+      "cycleScore": 77.8,
+      "reason": "ABB đạt 65/100 điểm, setup Chưa có setup rõ. Xu hướng uptrend mạnh, dòng tiền 20/20, rủi ro 4/15. Hành động phù hợp: theo dõi mua.",
+      "expertSummary": "ABB đạt 65/100 điểm, setup Chưa có setup rõ. Xu hướng uptrend mạnh, dòng tiền 20/20, rủi ro 4/15. Hành động phù hợp: theo dõi mua.",
+      "buyZone": "Canh quanh MA20 ~ 15.635 hoặc nền tích lũy gần nhất.",
+      "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
+      "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
+      "allocation": "3% - 10%",
+      "tplusPlan": {
+        "score": 66.7,
+        "yesCount": 6,
+        "totalChecks": 9,
+        "strategy": "Chưa đủ setup T+ xác suất cao",
+        "entry": "Chờ thêm tín hiệu MACD/volume/setup, không mua vì thấy xanh mạnh",
+        "quickStop": "Cắt nhanh quanh 15.400 hoặc khi mất MA20/vùng breakout; risk khoảng 9.74%",
+        "quickTakeProfit": "TP1 +3.6% đến +5.5%; đạt TP1 chốt 30–50%, phần còn lại kéo stop lên giá vốn/MA10",
+        "riskReward": "0.56:1, risk ~9.74%, target ~5.5%",
+        "positionSizing": "Chỉ theo dõi hoặc thăm dò rất nhỏ; chưa đủ điều kiện T+ xác suất cao",
+        "holdingPeriod": "T+3 đến T+10; sau 2–3 phiên không chạy thì giảm tỷ trọng",
+        "invalidCondition": "MACD quay đầu xấu, RSI > 70 khi chưa có nền, volume cao nhưng râu trên dài, giá thủng MA20/MA50, hoặc VN-Index gãy hỗ trợ",
+        "checklist": [
+          {
+            "label": "VN-Index/xu hướng không quá yếu",
+            "ok": true
+          },
+          {
+            "label": "Giá nằm trên MA20 và MA50",
+            "ok": true
+          },
+          {
+            "label": "MACD cắt lên/đang trên Signal",
+            "ok": true
+          },
+          {
+            "label": "RSI nằm vùng đẹp 52–65",
+            "ok": false
+          },
+          {
+            "label": "Volume cao hơn trung bình 20 phiên",
+            "ok": true
+          },
+          {
+            "label": "Có điểm mua: breakout/pullback/retest/tích lũy",
+            "ok": false
+          },
+          {
+            "label": "Không mua đuổi: giá không cách MA20 quá xa",
+            "ok": true
+          },
+          {
+            "label": "Thanh khoản đủ để đánh T+",
+            "ok": true
+          },
+          {
+            "label": "Risk/Reward >= 1.5 và stop dưới 5%",
+            "ok": false
+          }
+        ]
+      },
+      "cyclePlan": {
+        "score": 77.8,
+        "yesCount": 7,
+        "totalChecks": 9,
+        "stage": "Đang xác nhận đảo chiều sau tích lũy",
+        "thesis": "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn.",
+        "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
+        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 15.635",
+        "retestBuy": "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh",
+        "breakoutBuy": "Mua xác nhận khi vượt vùng 16.900 kèm volume >= 1.3–1.5 lần trung bình",
+        "targets": "Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +50.0% hoặc trailing theo MA20/MA50",
+        "protection": "Cắt lỗ nếu thủng MA50/nền tích lũy hoặc MACD quay đầu xấu; bảo vệ lợi nhuận bằng MA20 khi đã có lãi",
+        "capitalPlan": "Mua thăm dò 20–30%, gia tăng 30–40% khi retest thành công, phần còn lại khi breakout xác nhận; không mua đuổi nếu cách MA20 > 12–15%",
+        "fundamentalNote": "Cần bổ sung dữ liệu cơ bản/catalyst: doanh thu, lợi nhuận, ROE/ROA, nợ vay, dòng tiền kinh doanh, P/E, P/B, câu chuyện ngành/tái cấu trúc/dự án mới.",
+        "checklist": [
+          {
+            "label": "Đã giảm sâu hoặc tích lũy 3–6 tháng",
+            "ok": true
+          },
+          {
+            "label": "Cấu trúc đáy sau/đỉnh sau cải thiện",
+            "ok": true
+          },
+          {
+            "label": "Giá vượt MA20/MA50 và tiếp cận MA100/MA200",
+            "ok": true
+          },
+          {
+            "label": "MA20 bắt đầu cong lên/gần cắt MA50",
+            "ok": true
+          },
+          {
+            "label": "MACD cải thiện từ vùng yếu hoặc cắt lên Signal",
+            "ok": true
+          },
+          {
+            "label": "RSI phục hồi trên 50, lý tưởng 50–65",
+            "ok": false
+          },
+          {
+            "label": "Volume tăng khi breakout, điều chỉnh volume thấp",
+            "ok": true
+          },
+          {
+            "label": "Thoát vùng Ichimoku proxy hoặc test Kijun thành công",
+            "ok": true
+          },
+          {
+            "label": "Không tăng nóng, thanh khoản đủ để theo chu kỳ",
+            "ok": false
+          }
+        ]
+      },
+      "catalysts": [
+        "Vnstock API",
+        "Tín hiệu kỹ thuật",
+        "Ngân hàng"
+      ],
+      "cautions": [
+        "Gần đạt mẫu Chu kỳ tăng mới: 7/9 tiêu chí, cần thêm xác nhận",
+        "RSI cao, hạn chế mua đuổi"
       ]
     },
     {
@@ -7068,178 +7068,6 @@
       ]
     },
     {
-      "ticker": "TVN",
-      "name": "TVN",
-      "sector": "Thép / Vật liệu xây dựng",
-      "score": 55,
-      "subscores": {
-        "trend": 20,
-        "momentum": 0,
-        "moneyFlow": 7,
-        "setup": 5,
-        "risk": 8,
-        "relativeStrength": 15
-      },
-      "setupType": "Chưa có setup rõ",
-      "marketState": "Uptrend mạnh",
-      "action": "CHỜ THÊM",
-      "risk": "Trung bình",
-      "close": 11300.0,
-      "rsi14": 70.83,
-      "ret20": 24.18,
-      "ret60": 32.94,
-      "volume_status": "Trung bình",
-      "volumeRatio": 0.8,
-      "ma20": 10680.0,
-      "ma50": 9390.0,
-      "ma100": 9092.0,
-      "ma200": 8532.0,
-      "macd": 548.24,
-      "macd_signal": 604.45,
-      "atr14": 821.43,
-      "distanceToMA20": 5.81,
-      "distanceToMA50": 20.34,
-      "signals": [
-        "Xu hướng tích cực, giá duy trì trên các đường MA quan trọng",
-        "MA20 nằm trên MA50, cấu trúc ngắn hạn tốt"
-      ],
-      "warnings": [
-        "RSI cao, hạn chế mua đuổi",
-        "Giá đã tăng 24.18% trong 20 phiên, rủi ro hưng phấn"
-      ],
-      "filters": {
-        "topOpportunity": false,
-        "cycleTurnaround": false,
-        "tplus": false,
-        "breakout": false,
-        "pullbackMA20": false,
-        "moneyFlow": false,
-        "accumulation": false,
-        "safe": false
-      },
-      "tplusScore": 33.3,
-      "cycleScore": 55.6,
-      "reason": "TVN đạt 55/100 điểm, setup Chưa có setup rõ. Xu hướng uptrend mạnh, dòng tiền 7/20, rủi ro 8/15. Hành động phù hợp: chờ thêm.",
-      "expertSummary": "TVN đạt 55/100 điểm, setup Chưa có setup rõ. Xu hướng uptrend mạnh, dòng tiền 7/20, rủi ro 8/15. Hành động phù hợp: chờ thêm.",
-      "buyZone": "Canh quanh MA20 ~ 10.680 hoặc nền tích lũy gần nhất.",
-      "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
-      "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
-      "allocation": "0% - 5%",
-      "tplusPlan": {
-        "score": 33.3,
-        "yesCount": 3,
-        "totalChecks": 9,
-        "strategy": "Chưa đủ setup T+ xác suất cao",
-        "entry": "Chờ thêm tín hiệu MACD/volume/setup, không mua vì thấy xanh mạnh",
-        "quickStop": "Cắt nhanh quanh 10.519 hoặc khi mất MA20/vùng breakout; risk khoảng 7.42%",
-        "quickTakeProfit": "TP1 +3.6% đến +5.5%; đạt TP1 chốt 30–50%, phần còn lại kéo stop lên giá vốn/MA10",
-        "riskReward": "0.74:1, risk ~7.42%, target ~5.5%",
-        "positionSizing": "Chỉ theo dõi hoặc thăm dò rất nhỏ; chưa đủ điều kiện T+ xác suất cao",
-        "holdingPeriod": "T+3 đến T+10; sau 2–3 phiên không chạy thì giảm tỷ trọng",
-        "invalidCondition": "MACD quay đầu xấu, RSI > 70 khi chưa có nền, volume cao nhưng râu trên dài, giá thủng MA20/MA50, hoặc VN-Index gãy hỗ trợ",
-        "checklist": [
-          {
-            "label": "VN-Index/xu hướng không quá yếu",
-            "ok": true
-          },
-          {
-            "label": "Giá nằm trên MA20 và MA50",
-            "ok": true
-          },
-          {
-            "label": "MACD cắt lên/đang trên Signal",
-            "ok": false
-          },
-          {
-            "label": "RSI nằm vùng đẹp 52–65",
-            "ok": false
-          },
-          {
-            "label": "Volume cao hơn trung bình 20 phiên",
-            "ok": false
-          },
-          {
-            "label": "Có điểm mua: breakout/pullback/retest/tích lũy",
-            "ok": false
-          },
-          {
-            "label": "Không mua đuổi: giá không cách MA20 quá xa",
-            "ok": false
-          },
-          {
-            "label": "Thanh khoản đủ để đánh T+",
-            "ok": true
-          },
-          {
-            "label": "Risk/Reward >= 1.5 và stop dưới 5%",
-            "ok": false
-          }
-        ]
-      },
-      "cyclePlan": {
-        "score": 55.6,
-        "yesCount": 5,
-        "totalChecks": 9,
-        "stage": "Chưa đạt mẫu chu kỳ tăng mới",
-        "thesis": "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn.",
-        "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
-        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 10.680",
-        "retestBuy": "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh",
-        "breakoutBuy": "Mua xác nhận khi vượt vùng 11.900 kèm volume >= 1.3–1.5 lần trung bình",
-        "targets": "Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +67.0% hoặc trailing theo MA20/MA50",
-        "protection": "Cắt lỗ nếu thủng MA50/nền tích lũy hoặc MACD quay đầu xấu; bảo vệ lợi nhuận bằng MA20 khi đã có lãi",
-        "capitalPlan": "Mua thăm dò 20–30%, gia tăng 30–40% khi retest thành công, phần còn lại khi breakout xác nhận; không mua đuổi nếu cách MA20 > 12–15%",
-        "fundamentalNote": "Cần bổ sung dữ liệu cơ bản/catalyst: doanh thu, lợi nhuận, ROE/ROA, nợ vay, dòng tiền kinh doanh, P/E, P/B, câu chuyện ngành/tái cấu trúc/dự án mới.",
-        "checklist": [
-          {
-            "label": "Đã giảm sâu hoặc tích lũy 3–6 tháng",
-            "ok": false
-          },
-          {
-            "label": "Cấu trúc đáy sau/đỉnh sau cải thiện",
-            "ok": true
-          },
-          {
-            "label": "Giá vượt MA20/MA50 và tiếp cận MA100/MA200",
-            "ok": true
-          },
-          {
-            "label": "MA20 bắt đầu cong lên/gần cắt MA50",
-            "ok": true
-          },
-          {
-            "label": "MACD cải thiện từ vùng yếu hoặc cắt lên Signal",
-            "ok": false
-          },
-          {
-            "label": "RSI phục hồi trên 50, lý tưởng 50–65",
-            "ok": false
-          },
-          {
-            "label": "Volume tăng khi breakout, điều chỉnh volume thấp",
-            "ok": true
-          },
-          {
-            "label": "Thoát vùng Ichimoku proxy hoặc test Kijun thành công",
-            "ok": true
-          },
-          {
-            "label": "Không tăng nóng, thanh khoản đủ để theo chu kỳ",
-            "ok": false
-          }
-        ]
-      },
-      "catalysts": [
-        "Vnstock API",
-        "Tín hiệu kỹ thuật",
-        "Thép / Vật liệu xây dựng"
-      ],
-      "cautions": [
-        "RSI cao, hạn chế mua đuổi",
-        "Giá đã tăng 24.18% trong 20 phiên, rủi ro hưng phấn"
-      ]
-    },
-    {
       "ticker": "SAS",
       "name": "SAS",
       "sector": "Hàng không / Dịch vụ sân bay",
@@ -7753,6 +7581,178 @@
       ],
       "cautions": [
         "Gần đạt mẫu Chu kỳ tăng mới: 6/9 tiêu chí, cần thêm xác nhận"
+      ]
+    },
+    {
+      "ticker": "TVN",
+      "name": "TVN",
+      "sector": "Thép / Vật liệu xây dựng",
+      "score": 52,
+      "subscores": {
+        "trend": 20,
+        "momentum": 0,
+        "moneyFlow": 4,
+        "setup": 5,
+        "risk": 8,
+        "relativeStrength": 15
+      },
+      "setupType": "Chưa có setup rõ",
+      "marketState": "Uptrend mạnh",
+      "action": "TRÁNH MUA MỚI",
+      "risk": "Trung bình",
+      "close": 11200.0,
+      "rsi14": 70.21,
+      "ret20": 23.08,
+      "ret60": 31.76,
+      "volume_status": "Trung bình",
+      "volumeRatio": 0.81,
+      "ma20": 10675.0,
+      "ma50": 9388.0,
+      "ma100": 9091.0,
+      "ma200": 8531.0,
+      "macd": 540.27,
+      "macd_signal": 602.85,
+      "atr14": 821.43,
+      "distanceToMA20": 4.92,
+      "distanceToMA50": 19.3,
+      "signals": [
+        "Xu hướng tích cực, giá duy trì trên các đường MA quan trọng",
+        "MA20 nằm trên MA50, cấu trúc ngắn hạn tốt"
+      ],
+      "warnings": [
+        "RSI cao, hạn chế mua đuổi",
+        "Giá đã tăng 23.08% trong 20 phiên, rủi ro hưng phấn"
+      ],
+      "filters": {
+        "topOpportunity": false,
+        "cycleTurnaround": false,
+        "tplus": false,
+        "breakout": false,
+        "pullbackMA20": false,
+        "moneyFlow": false,
+        "accumulation": false,
+        "safe": false
+      },
+      "tplusScore": 33.3,
+      "cycleScore": 55.6,
+      "reason": "TVN đạt 52/100 điểm, setup Chưa có setup rõ. Xu hướng uptrend mạnh, dòng tiền 4/20, rủi ro 8/15. Hành động phù hợp: tránh mua mới.",
+      "expertSummary": "TVN đạt 52/100 điểm, setup Chưa có setup rõ. Xu hướng uptrend mạnh, dòng tiền 4/20, rủi ro 8/15. Hành động phù hợp: tránh mua mới.",
+      "buyZone": "Canh quanh MA20 ~ 10.675 hoặc nền tích lũy gần nhất.",
+      "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
+      "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
+      "allocation": "0%",
+      "tplusPlan": {
+        "score": 33.3,
+        "yesCount": 3,
+        "totalChecks": 9,
+        "strategy": "Chưa đủ setup T+ xác suất cao",
+        "entry": "Chờ thêm tín hiệu MACD/volume/setup, không mua vì thấy xanh mạnh",
+        "quickStop": "Cắt nhanh quanh 10.514 hoặc khi mất MA20/vùng breakout; risk khoảng 6.52%",
+        "quickTakeProfit": "TP1 +3.6% đến +5.5%; đạt TP1 chốt 30–50%, phần còn lại kéo stop lên giá vốn/MA10",
+        "riskReward": "0.84:1, risk ~6.52%, target ~5.5%",
+        "positionSizing": "Chỉ theo dõi hoặc thăm dò rất nhỏ; chưa đủ điều kiện T+ xác suất cao",
+        "holdingPeriod": "T+3 đến T+10; sau 2–3 phiên không chạy thì giảm tỷ trọng",
+        "invalidCondition": "MACD quay đầu xấu, RSI > 70 khi chưa có nền, volume cao nhưng râu trên dài, giá thủng MA20/MA50, hoặc VN-Index gãy hỗ trợ",
+        "checklist": [
+          {
+            "label": "VN-Index/xu hướng không quá yếu",
+            "ok": true
+          },
+          {
+            "label": "Giá nằm trên MA20 và MA50",
+            "ok": true
+          },
+          {
+            "label": "MACD cắt lên/đang trên Signal",
+            "ok": false
+          },
+          {
+            "label": "RSI nằm vùng đẹp 52–65",
+            "ok": false
+          },
+          {
+            "label": "Volume cao hơn trung bình 20 phiên",
+            "ok": false
+          },
+          {
+            "label": "Có điểm mua: breakout/pullback/retest/tích lũy",
+            "ok": false
+          },
+          {
+            "label": "Không mua đuổi: giá không cách MA20 quá xa",
+            "ok": false
+          },
+          {
+            "label": "Thanh khoản đủ để đánh T+",
+            "ok": true
+          },
+          {
+            "label": "Risk/Reward >= 1.5 và stop dưới 5%",
+            "ok": false
+          }
+        ]
+      },
+      "cyclePlan": {
+        "score": 55.6,
+        "yesCount": 5,
+        "totalChecks": 9,
+        "stage": "Chưa đạt mẫu chu kỳ tăng mới",
+        "thesis": "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn.",
+        "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
+        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 10.675",
+        "retestBuy": "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh",
+        "breakoutBuy": "Mua xác nhận khi vượt vùng 11.900 kèm volume >= 1.3–1.5 lần trung bình",
+        "targets": "Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +67.0% hoặc trailing theo MA20/MA50",
+        "protection": "Cắt lỗ nếu thủng MA50/nền tích lũy hoặc MACD quay đầu xấu; bảo vệ lợi nhuận bằng MA20 khi đã có lãi",
+        "capitalPlan": "Mua thăm dò 20–30%, gia tăng 30–40% khi retest thành công, phần còn lại khi breakout xác nhận; không mua đuổi nếu cách MA20 > 12–15%",
+        "fundamentalNote": "Cần bổ sung dữ liệu cơ bản/catalyst: doanh thu, lợi nhuận, ROE/ROA, nợ vay, dòng tiền kinh doanh, P/E, P/B, câu chuyện ngành/tái cấu trúc/dự án mới.",
+        "checklist": [
+          {
+            "label": "Đã giảm sâu hoặc tích lũy 3–6 tháng",
+            "ok": false
+          },
+          {
+            "label": "Cấu trúc đáy sau/đỉnh sau cải thiện",
+            "ok": true
+          },
+          {
+            "label": "Giá vượt MA20/MA50 và tiếp cận MA100/MA200",
+            "ok": true
+          },
+          {
+            "label": "MA20 bắt đầu cong lên/gần cắt MA50",
+            "ok": true
+          },
+          {
+            "label": "MACD cải thiện từ vùng yếu hoặc cắt lên Signal",
+            "ok": false
+          },
+          {
+            "label": "RSI phục hồi trên 50, lý tưởng 50–65",
+            "ok": false
+          },
+          {
+            "label": "Volume tăng khi breakout, điều chỉnh volume thấp",
+            "ok": true
+          },
+          {
+            "label": "Thoát vùng Ichimoku proxy hoặc test Kijun thành công",
+            "ok": true
+          },
+          {
+            "label": "Không tăng nóng, thanh khoản đủ để theo chu kỳ",
+            "ok": false
+          }
+        ]
+      },
+      "catalysts": [
+        "Vnstock API",
+        "Tín hiệu kỹ thuật",
+        "Thép / Vật liệu xây dựng"
+      ],
+      "cautions": [
+        "RSI cao, hạn chế mua đuổi",
+        "Giá đã tăng 23.08% trong 20 phiên, rủi ro hưng phấn"
       ]
     },
     {
@@ -8294,7 +8294,7 @@
       "ret20": -0.64,
       "ret60": 6.22,
       "volume_status": "Trung bình",
-      "volumeRatio": 1.06,
+      "volumeRatio": 1.03,
       "ma20": 49786.0,
       "ma50": 48708.0,
       "ma100": 49599.0,
@@ -16280,6 +16280,177 @@
       ]
     },
     {
+      "ticker": "AAS",
+      "name": "AAS",
+      "sector": "Chứng khoán",
+      "score": 30,
+      "subscores": {
+        "trend": 4,
+        "momentum": 9,
+        "moneyFlow": 7,
+        "setup": 2,
+        "risk": 0,
+        "relativeStrength": 8
+      },
+      "setupType": "Chưa có setup rõ",
+      "marketState": "Yếu",
+      "action": "TRÁNH MUA MỚI",
+      "risk": "Cao",
+      "close": 8400.0,
+      "rsi14": 53.85,
+      "ret20": 0.0,
+      "ret60": -1.18,
+      "volume_status": "Trung bình",
+      "volumeRatio": 0.34,
+      "ma20": 8390.0,
+      "ma50": 8452.0,
+      "ma100": 9031.0,
+      "ma200": 10062.0,
+      "macd": -29.91,
+      "macd_signal": -32.49,
+      "atr14": 200.0,
+      "distanceToMA20": 0.12,
+      "distanceToMA50": -0.62,
+      "signals": [
+        "MACD đang trên đường tín hiệu"
+      ],
+      "warnings": [
+        "Giá dưới MA50, chưa đủ điều kiện mua mới",
+        "Thanh khoản thấp, cần hạn chế tỷ trọng"
+      ],
+      "filters": {
+        "topOpportunity": false,
+        "cycleTurnaround": false,
+        "tplus": false,
+        "breakout": false,
+        "pullbackMA20": false,
+        "moneyFlow": false,
+        "accumulation": false,
+        "safe": false
+      },
+      "tplusScore": 44.4,
+      "cycleScore": 44.4,
+      "reason": "AAS đạt 30/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 7/20, rủi ro 0/15. Hành động phù hợp: tránh mua mới.",
+      "expertSummary": "AAS đạt 30/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 7/20, rủi ro 0/15. Hành động phù hợp: tránh mua mới.",
+      "buyZone": "Canh quanh MA20 ~ 8.390 hoặc nền tích lũy gần nhất.",
+      "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
+      "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
+      "allocation": "0%",
+      "tplusPlan": {
+        "score": 44.4,
+        "yesCount": 4,
+        "totalChecks": 9,
+        "strategy": "Chưa đủ setup T+ xác suất cao",
+        "entry": "Chờ thêm tín hiệu MACD/volume/setup, không mua vì thấy xanh mạnh",
+        "quickStop": "Cắt nhanh quanh 8.106 hoặc khi mất MA20/vùng breakout; risk khoảng 3.63%",
+        "quickTakeProfit": "TP1 +3.6% đến +5.5%; đạt TP1 chốt 30–50%, phần còn lại kéo stop lên giá vốn/MA10",
+        "riskReward": "1.52:1, risk ~3.63%, target ~5.5%",
+        "positionSizing": "Chỉ theo dõi hoặc thăm dò rất nhỏ; chưa đủ điều kiện T+ xác suất cao",
+        "holdingPeriod": "T+3 đến T+10; sau 2–3 phiên không chạy thì giảm tỷ trọng",
+        "invalidCondition": "MACD quay đầu xấu, RSI > 70 khi chưa có nền, volume cao nhưng râu trên dài, giá thủng MA20/MA50, hoặc VN-Index gãy hỗ trợ",
+        "checklist": [
+          {
+            "label": "VN-Index/xu hướng không quá yếu",
+            "ok": false
+          },
+          {
+            "label": "Giá nằm trên MA20 và MA50",
+            "ok": false
+          },
+          {
+            "label": "MACD cắt lên/đang trên Signal",
+            "ok": true
+          },
+          {
+            "label": "RSI nằm vùng đẹp 52–65",
+            "ok": true
+          },
+          {
+            "label": "Volume cao hơn trung bình 20 phiên",
+            "ok": false
+          },
+          {
+            "label": "Có điểm mua: breakout/pullback/retest/tích lũy",
+            "ok": false
+          },
+          {
+            "label": "Không mua đuổi: giá không cách MA20 quá xa",
+            "ok": true
+          },
+          {
+            "label": "Thanh khoản đủ để đánh T+",
+            "ok": false
+          },
+          {
+            "label": "Risk/Reward >= 1.5 và stop dưới 5%",
+            "ok": true
+          }
+        ]
+      },
+      "cyclePlan": {
+        "score": 44.4,
+        "yesCount": 4,
+        "totalChecks": 9,
+        "stage": "Đang tích lũy, chưa xác nhận",
+        "thesis": "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn.",
+        "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
+        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 8.390",
+        "retestBuy": "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh",
+        "breakoutBuy": "Mua xác nhận khi vượt vùng 8.600 kèm volume >= 1.3–1.5 lần trung bình",
+        "targets": "Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +56.0% hoặc trailing theo MA20/MA50",
+        "protection": "Cắt lỗ nếu thủng MA50/nền tích lũy hoặc MACD quay đầu xấu; bảo vệ lợi nhuận bằng MA20 khi đã có lãi",
+        "capitalPlan": "Mua thăm dò 20–30%, gia tăng 30–40% khi retest thành công, phần còn lại khi breakout xác nhận; không mua đuổi nếu cách MA20 > 12–15%",
+        "fundamentalNote": "Cần bổ sung dữ liệu cơ bản/catalyst: doanh thu, lợi nhuận, ROE/ROA, nợ vay, dòng tiền kinh doanh, P/E, P/B, câu chuyện ngành/tái cấu trúc/dự án mới.",
+        "checklist": [
+          {
+            "label": "Đã giảm sâu hoặc tích lũy 3–6 tháng",
+            "ok": true
+          },
+          {
+            "label": "Cấu trúc đáy sau/đỉnh sau cải thiện",
+            "ok": false
+          },
+          {
+            "label": "Giá vượt MA20/MA50 và tiếp cận MA100/MA200",
+            "ok": false
+          },
+          {
+            "label": "MA20 bắt đầu cong lên/gần cắt MA50",
+            "ok": false
+          },
+          {
+            "label": "MACD cải thiện từ vùng yếu hoặc cắt lên Signal",
+            "ok": true
+          },
+          {
+            "label": "RSI phục hồi trên 50, lý tưởng 50–65",
+            "ok": true
+          },
+          {
+            "label": "Volume tăng khi breakout, điều chỉnh volume thấp",
+            "ok": true
+          },
+          {
+            "label": "Thoát vùng Ichimoku proxy hoặc test Kijun thành công",
+            "ok": false
+          },
+          {
+            "label": "Không tăng nóng, thanh khoản đủ để theo chu kỳ",
+            "ok": false
+          }
+        ]
+      },
+      "catalysts": [
+        "Vnstock API",
+        "Tín hiệu kỹ thuật",
+        "Chứng khoán"
+      ],
+      "cautions": [
+        "Giá dưới MA50, chưa đủ điều kiện mua mới",
+        "Thanh khoản thấp, cần hạn chế tỷ trọng"
+      ]
+    },
+    {
       "ticker": "HDC",
       "name": "HDC",
       "sector": "Bất động sản / KCN",
@@ -18841,21 +19012,21 @@
       "marketState": "Trung tính",
       "action": "TRÁNH MUA MỚI",
       "risk": "Trung bình",
-      "close": 91100.0,
-      "rsi14": 37.04,
-      "ret20": 0.44,
-      "ret60": 10.56,
+      "close": 90800.0,
+      "rsi14": 36.46,
+      "ret20": 0.11,
+      "ret60": 10.19,
       "volume_status": "Trung bình",
-      "volumeRatio": 0.22,
-      "ma20": 94025.0,
-      "ma50": 92288.0,
-      "ma100": 99742.0,
-      "ma200": 86093.0,
-      "macd": -0.63,
-      "macd_signal": 421.44,
+      "volumeRatio": 0.23,
+      "ma20": 94010.0,
+      "ma50": 92282.0,
+      "ma100": 99739.0,
+      "ma200": 86092.0,
+      "macd": -24.57,
+      "macd_signal": 416.66,
       "atr14": 3064.29,
-      "distanceToMA20": -3.11,
-      "distanceToMA50": -1.29,
+      "distanceToMA20": -3.41,
+      "distanceToMA50": -1.61,
       "signals": [
         "MA20 nằm trên MA50, cấu trúc ngắn hạn tốt"
       ],
@@ -18876,7 +19047,7 @@
       "cycleScore": 55.6,
       "reason": "VGI đạt 26/100 điểm, setup Chưa có setup rõ. Xu hướng trung tính, dòng tiền 0/20, rủi ro 7/15. Hành động phù hợp: tránh mua mới.",
       "expertSummary": "VGI đạt 26/100 điểm, setup Chưa có setup rõ. Xu hướng trung tính, dòng tiền 0/20, rủi ro 7/15. Hành động phù hợp: tránh mua mới.",
-      "buyZone": "Canh quanh MA20 ~ 94.025 hoặc nền tích lũy gần nhất.",
+      "buyZone": "Canh quanh MA20 ~ 94.010 hoặc nền tích lũy gần nhất.",
       "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
       "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
       "allocation": "0%",
@@ -18886,7 +19057,7 @@
         "totalChecks": 9,
         "strategy": "Chưa đủ setup T+ xác suất cao",
         "entry": "Chờ thêm tín hiệu MACD/volume/setup, không mua vì thấy xanh mạnh",
-        "quickStop": "Cắt nhanh quanh 87.911 hoặc khi mất MA20/vùng breakout; risk khoảng 3.63%",
+        "quickStop": "Cắt nhanh quanh 87.622 hoặc khi mất MA20/vùng breakout; risk khoảng 3.63%",
         "quickTakeProfit": "TP1 +3.6% đến +5.5%; đạt TP1 chốt 30–50%, phần còn lại kéo stop lên giá vốn/MA10",
         "riskReward": "1.52:1, risk ~3.63%, target ~5.5%",
         "positionSizing": "Chỉ theo dõi hoặc thăm dò rất nhỏ; chưa đủ điều kiện T+ xác suất cao",
@@ -18938,7 +19109,7 @@
         "stage": "Đang tích lũy, chưa xác nhận",
         "thesis": "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn.",
         "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
-        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 94.025",
+        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 94.010",
         "retestBuy": "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh",
         "breakoutBuy": "Mua xác nhận khi vượt vùng 101.500 kèm volume >= 1.3–1.5 lần trung bình",
         "targets": "Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +75% hoặc trailing theo MA20/MA50",
@@ -20715,7 +20886,7 @@
       "ret20": -0.83,
       "ret60": -11.76,
       "volume_status": "Trung bình",
-      "volumeRatio": 0.22,
+      "volumeRatio": 0.23,
       "ma20": 12075.0,
       "ma50": 12478.0,
       "ma100": 12649.0,
@@ -21233,7 +21404,7 @@
       "ma200": 6550.0,
       "macd": -7.73,
       "macd_signal": -9.2,
-      "atr14": 142.14,
+      "atr14": 149.29,
       "distanceToMA20": -1.03,
       "distanceToMA50": -2.26,
       "signals": [
@@ -21568,7 +21739,7 @@
       "ret20": -5.46,
       "ret60": 8.58,
       "volume_status": "Trung bình",
-      "volumeRatio": 0.22,
+      "volumeRatio": 0.23,
       "ma20": 82150.0,
       "ma50": 81996.0,
       "ma100": 81977.0,
@@ -23094,21 +23265,21 @@
       "marketState": "Trung tính",
       "action": "TRÁNH MUA MỚI",
       "risk": "Cao",
-      "close": 14300.0,
-      "rsi14": 32.43,
-      "ret20": -6.54,
-      "ret60": -25.52,
+      "close": 14400.0,
+      "rsi14": 33.33,
+      "ret20": -5.88,
+      "ret60": -25.0,
       "volume_status": "Trung bình",
       "volumeRatio": 0.5,
-      "ma20": 15130.0,
-      "ma50": 14884.0,
-      "ma100": 15937.0,
-      "ma200": 13512.0,
-      "macd": -156.53,
-      "macd_signal": -89.02,
+      "ma20": 15135.0,
+      "ma50": 14886.0,
+      "ma100": 15938.0,
+      "ma200": 13513.0,
+      "macd": -148.55,
+      "macd_signal": -87.43,
       "atr14": 764.29,
-      "distanceToMA20": -5.49,
-      "distanceToMA50": -3.92,
+      "distanceToMA20": -4.86,
+      "distanceToMA50": -3.26,
       "signals": [
         "MA20 nằm trên MA50, cấu trúc ngắn hạn tốt"
       ],
@@ -23129,7 +23300,7 @@
       "cycleScore": 55.6,
       "reason": "OIL đạt 22/100 điểm, setup Chưa có setup rõ. Xu hướng trung tính, dòng tiền 5/20, rủi ro 6/15. Hành động phù hợp: tránh mua mới.",
       "expertSummary": "OIL đạt 22/100 điểm, setup Chưa có setup rõ. Xu hướng trung tính, dòng tiền 5/20, rủi ro 6/15. Hành động phù hợp: tránh mua mới.",
-      "buyZone": "Canh quanh MA20 ~ 15.130 hoặc nền tích lũy gần nhất.",
+      "buyZone": "Canh quanh MA20 ~ 15.135 hoặc nền tích lũy gần nhất.",
       "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
       "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
       "allocation": "0%",
@@ -23139,7 +23310,7 @@
         "totalChecks": 9,
         "strategy": "Chưa đủ setup T+ xác suất cao",
         "entry": "Chờ thêm tín hiệu MACD/volume/setup, không mua vì thấy xanh mạnh",
-        "quickStop": "Cắt nhanh quanh 13.799 hoặc khi mất MA20/vùng breakout; risk khoảng 3.63%",
+        "quickStop": "Cắt nhanh quanh 13.896 hoặc khi mất MA20/vùng breakout; risk khoảng 3.63%",
         "quickTakeProfit": "TP1 +3.6% đến +5.5%; đạt TP1 chốt 30–50%, phần còn lại kéo stop lên giá vốn/MA10",
         "riskReward": "1.52:1, risk ~3.63%, target ~5.5%",
         "positionSizing": "Chỉ theo dõi hoặc thăm dò rất nhỏ; chưa đủ điều kiện T+ xác suất cao",
@@ -23191,7 +23362,7 @@
         "stage": "Đang tích lũy, chưa xác nhận",
         "thesis": "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn.",
         "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
-        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 15.130",
+        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 15.135",
         "retestBuy": "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh",
         "breakoutBuy": "Mua xác nhận khi vượt vùng 17.000 kèm volume >= 1.3–1.5 lần trung bình",
         "targets": "Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +75% hoặc trailing theo MA20/MA50",
@@ -23608,7 +23779,7 @@
       "ret20": -3.12,
       "ret60": 2.48,
       "volume_status": "Trung bình",
-      "volumeRatio": 0.81,
+      "volumeRatio": 0.82,
       "ma20": 12420.0,
       "ma50": 12468.0,
       "ma100": 12792.0,
@@ -23754,175 +23925,6 @@
       ],
       "cautions": [
         "Gần đạt mẫu Chu kỳ tăng mới: 6/9 tiêu chí, cần thêm xác nhận",
-        "Giá dưới MA50, chưa đủ điều kiện mua mới"
-      ]
-    },
-    {
-      "ticker": "CTS",
-      "name": "CTS",
-      "sector": "Chứng khoán",
-      "score": 21,
-      "subscores": {
-        "trend": 3,
-        "momentum": 3,
-        "moneyFlow": 3,
-        "setup": 2,
-        "risk": 2,
-        "relativeStrength": 8
-      },
-      "setupType": "Chưa có setup rõ",
-      "marketState": "Yếu",
-      "action": "TRÁNH MUA MỚI",
-      "risk": "Cao",
-      "close": 27250.0,
-      "rsi14": 49.6,
-      "ret20": -1.8,
-      "ret60": 1.11,
-      "volume_status": "Trung bình",
-      "volumeRatio": 0.8,
-      "ma20": 27655.0,
-      "ma50": 27394.0,
-      "ma100": 28848.0,
-      "ma200": 33296.0,
-      "macd": -98.56,
-      "macd_signal": -2.53,
-      "atr14": 814.29,
-      "distanceToMA20": -1.46,
-      "distanceToMA50": -0.53,
-      "signals": [
-        "MA20 nằm trên MA50, cấu trúc ngắn hạn tốt"
-      ],
-      "warnings": [
-        "Giá dưới MA50, chưa đủ điều kiện mua mới"
-      ],
-      "filters": {
-        "topOpportunity": false,
-        "cycleTurnaround": false,
-        "tplus": false,
-        "breakout": false,
-        "pullbackMA20": false,
-        "moneyFlow": false,
-        "accumulation": false,
-        "safe": false
-      },
-      "tplusScore": 33.3,
-      "cycleScore": 44.4,
-      "reason": "CTS đạt 21/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 3/20, rủi ro 2/15. Hành động phù hợp: tránh mua mới.",
-      "expertSummary": "CTS đạt 21/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 3/20, rủi ro 2/15. Hành động phù hợp: tránh mua mới.",
-      "buyZone": "Canh quanh MA20 ~ 27.655 hoặc nền tích lũy gần nhất.",
-      "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
-      "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
-      "allocation": "0%",
-      "tplusPlan": {
-        "score": 33.3,
-        "yesCount": 3,
-        "totalChecks": 9,
-        "strategy": "Chưa đủ setup T+ xác suất cao",
-        "entry": "Chờ thêm tín hiệu MACD/volume/setup, không mua vì thấy xanh mạnh",
-        "quickStop": "Cắt nhanh quanh 26.296 hoặc khi mất MA20/vùng breakout; risk khoảng 3.63%",
-        "quickTakeProfit": "TP1 +3.6% đến +5.5%; đạt TP1 chốt 30–50%, phần còn lại kéo stop lên giá vốn/MA10",
-        "riskReward": "1.52:1, risk ~3.63%, target ~5.5%",
-        "positionSizing": "Chỉ theo dõi hoặc thăm dò rất nhỏ; chưa đủ điều kiện T+ xác suất cao",
-        "holdingPeriod": "T+3 đến T+10; sau 2–3 phiên không chạy thì giảm tỷ trọng",
-        "invalidCondition": "MACD quay đầu xấu, RSI > 70 khi chưa có nền, volume cao nhưng râu trên dài, giá thủng MA20/MA50, hoặc VN-Index gãy hỗ trợ",
-        "checklist": [
-          {
-            "label": "VN-Index/xu hướng không quá yếu",
-            "ok": false
-          },
-          {
-            "label": "Giá nằm trên MA20 và MA50",
-            "ok": false
-          },
-          {
-            "label": "MACD cắt lên/đang trên Signal",
-            "ok": false
-          },
-          {
-            "label": "RSI nằm vùng đẹp 52–65",
-            "ok": false
-          },
-          {
-            "label": "Volume cao hơn trung bình 20 phiên",
-            "ok": false
-          },
-          {
-            "label": "Có điểm mua: breakout/pullback/retest/tích lũy",
-            "ok": false
-          },
-          {
-            "label": "Không mua đuổi: giá không cách MA20 quá xa",
-            "ok": true
-          },
-          {
-            "label": "Thanh khoản đủ để đánh T+",
-            "ok": true
-          },
-          {
-            "label": "Risk/Reward >= 1.5 và stop dưới 5%",
-            "ok": true
-          }
-        ]
-      },
-      "cyclePlan": {
-        "score": 44.4,
-        "yesCount": 4,
-        "totalChecks": 9,
-        "stage": "Đang tích lũy, chưa xác nhận",
-        "thesis": "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn.",
-        "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
-        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 27.655",
-        "retestBuy": "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh",
-        "breakoutBuy": "Mua xác nhận khi vượt vùng 28.600 kèm volume >= 1.3–1.5 lần trung bình",
-        "targets": "Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +57.0% hoặc trailing theo MA20/MA50",
-        "protection": "Cắt lỗ nếu thủng MA50/nền tích lũy hoặc MACD quay đầu xấu; bảo vệ lợi nhuận bằng MA20 khi đã có lãi",
-        "capitalPlan": "Mua thăm dò 20–30%, gia tăng 30–40% khi retest thành công, phần còn lại khi breakout xác nhận; không mua đuổi nếu cách MA20 > 12–15%",
-        "fundamentalNote": "Cần bổ sung dữ liệu cơ bản/catalyst: doanh thu, lợi nhuận, ROE/ROA, nợ vay, dòng tiền kinh doanh, P/E, P/B, câu chuyện ngành/tái cấu trúc/dự án mới.",
-        "checklist": [
-          {
-            "label": "Đã giảm sâu hoặc tích lũy 3–6 tháng",
-            "ok": true
-          },
-          {
-            "label": "Cấu trúc đáy sau/đỉnh sau cải thiện",
-            "ok": true
-          },
-          {
-            "label": "Giá vượt MA20/MA50 và tiếp cận MA100/MA200",
-            "ok": false
-          },
-          {
-            "label": "MA20 bắt đầu cong lên/gần cắt MA50",
-            "ok": false
-          },
-          {
-            "label": "MACD cải thiện từ vùng yếu hoặc cắt lên Signal",
-            "ok": false
-          },
-          {
-            "label": "RSI phục hồi trên 50, lý tưởng 50–65",
-            "ok": false
-          },
-          {
-            "label": "Volume tăng khi breakout, điều chỉnh volume thấp",
-            "ok": true
-          },
-          {
-            "label": "Thoát vùng Ichimoku proxy hoặc test Kijun thành công",
-            "ok": false
-          },
-          {
-            "label": "Không tăng nóng, thanh khoản đủ để theo chu kỳ",
-            "ok": true
-          }
-        ]
-      },
-      "catalysts": [
-        "Vnstock API",
-        "Tín hiệu kỹ thuật",
-        "Chứng khoán"
-      ],
-      "cautions": [
         "Giá dưới MA50, chưa đủ điều kiện mua mới"
       ]
     },
@@ -25986,20 +25988,20 @@
       "action": "TRÁNH MUA MỚI",
       "risk": "Cao",
       "close": 13300.0,
-      "rsi14": 46.56,
+      "rsi14": 46.15,
       "ret20": -1.99,
       "ret60": -11.63,
       "volume_status": "Trung bình",
-      "volumeRatio": 0.8,
-      "ma20": 13353.0,
-      "ma50": 13905.0,
-      "ma100": 14238.0,
-      "ma200": 14365.0,
-      "macd": -204.69,
-      "macd_signal": -212.08,
-      "atr14": 226.43,
-      "distanceToMA20": -0.4,
-      "distanceToMA50": -4.35,
+      "volumeRatio": 0.78,
+      "ma20": 13373.0,
+      "ma50": 13913.0,
+      "ma100": 14242.0,
+      "ma200": 14367.0,
+      "macd": -180.05,
+      "macd_signal": -202.04,
+      "atr14": 237.14,
+      "distanceToMA20": -0.55,
+      "distanceToMA50": -4.41,
       "signals": [
         "MACD đang trên đường tín hiệu"
       ],
@@ -26020,7 +26022,7 @@
       "cycleScore": 33.3,
       "reason": "GEG đạt 20/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 3/20, rủi ro 0/15. Hành động phù hợp: tránh mua mới.",
       "expertSummary": "GEG đạt 20/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 3/20, rủi ro 0/15. Hành động phù hợp: tránh mua mới.",
-      "buyZone": "Canh quanh MA20 ~ 13.353 hoặc nền tích lũy gần nhất.",
+      "buyZone": "Canh quanh MA20 ~ 13.373 hoặc nền tích lũy gần nhất.",
       "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
       "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
       "allocation": "0%",
@@ -26082,7 +26084,7 @@
         "stage": "Đang tích lũy, chưa xác nhận",
         "thesis": "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn.",
         "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
-        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 13.353",
+        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 13.373",
         "retestBuy": "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh",
         "breakoutBuy": "Mua xác nhận khi vượt vùng 13.670 kèm volume >= 1.3–1.5 lần trung bình",
         "targets": "Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +48.0% hoặc trailing theo MA20/MA50",
@@ -26644,177 +26646,6 @@
       ],
       "cautions": [
         "Giá dưới MA50, chưa đủ điều kiện mua mới"
-      ]
-    },
-    {
-      "ticker": "AAS",
-      "name": "AAS",
-      "sector": "Chứng khoán",
-      "score": 19,
-      "subscores": {
-        "trend": 0,
-        "momentum": 5,
-        "moneyFlow": 4,
-        "setup": 2,
-        "risk": 0,
-        "relativeStrength": 8
-      },
-      "setupType": "Chưa có setup rõ",
-      "marketState": "Yếu",
-      "action": "TRÁNH MUA MỚI",
-      "risk": "Cao",
-      "close": 8300.0,
-      "rsi14": 50.0,
-      "ret20": -1.19,
-      "ret60": -2.35,
-      "volume_status": "Trung bình",
-      "volumeRatio": 0.34,
-      "ma20": 8385.0,
-      "ma50": 8450.0,
-      "ma100": 9030.0,
-      "ma200": 10062.0,
-      "macd": -37.89,
-      "macd_signal": -34.09,
-      "atr14": 200.0,
-      "distanceToMA20": -1.01,
-      "distanceToMA50": -1.78,
-      "signals": [
-        "Chưa có nhiều tín hiệu xác nhận rõ ràng"
-      ],
-      "warnings": [
-        "Giá dưới MA50, chưa đủ điều kiện mua mới",
-        "Thanh khoản thấp, cần hạn chế tỷ trọng"
-      ],
-      "filters": {
-        "topOpportunity": false,
-        "cycleTurnaround": false,
-        "tplus": false,
-        "breakout": false,
-        "pullbackMA20": false,
-        "moneyFlow": false,
-        "accumulation": false,
-        "safe": false
-      },
-      "tplusScore": 22.2,
-      "cycleScore": 33.3,
-      "reason": "AAS đạt 19/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 4/20, rủi ro 0/15. Hành động phù hợp: tránh mua mới.",
-      "expertSummary": "AAS đạt 19/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 4/20, rủi ro 0/15. Hành động phù hợp: tránh mua mới.",
-      "buyZone": "Canh quanh MA20 ~ 8.385 hoặc nền tích lũy gần nhất.",
-      "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
-      "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
-      "allocation": "0%",
-      "tplusPlan": {
-        "score": 22.2,
-        "yesCount": 2,
-        "totalChecks": 9,
-        "strategy": "Chưa đủ setup T+ xác suất cao",
-        "entry": "Chờ thêm tín hiệu MACD/volume/setup, không mua vì thấy xanh mạnh",
-        "quickStop": "Cắt nhanh quanh 8.009 hoặc khi mất MA20/vùng breakout; risk khoảng 3.63%",
-        "quickTakeProfit": "TP1 +3.6% đến +5.5%; đạt TP1 chốt 30–50%, phần còn lại kéo stop lên giá vốn/MA10",
-        "riskReward": "1.52:1, risk ~3.63%, target ~5.5%",
-        "positionSizing": "Chỉ theo dõi hoặc thăm dò rất nhỏ; chưa đủ điều kiện T+ xác suất cao",
-        "holdingPeriod": "T+3 đến T+10; sau 2–3 phiên không chạy thì giảm tỷ trọng",
-        "invalidCondition": "MACD quay đầu xấu, RSI > 70 khi chưa có nền, volume cao nhưng râu trên dài, giá thủng MA20/MA50, hoặc VN-Index gãy hỗ trợ",
-        "checklist": [
-          {
-            "label": "VN-Index/xu hướng không quá yếu",
-            "ok": false
-          },
-          {
-            "label": "Giá nằm trên MA20 và MA50",
-            "ok": false
-          },
-          {
-            "label": "MACD cắt lên/đang trên Signal",
-            "ok": false
-          },
-          {
-            "label": "RSI nằm vùng đẹp 52–65",
-            "ok": false
-          },
-          {
-            "label": "Volume cao hơn trung bình 20 phiên",
-            "ok": false
-          },
-          {
-            "label": "Có điểm mua: breakout/pullback/retest/tích lũy",
-            "ok": false
-          },
-          {
-            "label": "Không mua đuổi: giá không cách MA20 quá xa",
-            "ok": true
-          },
-          {
-            "label": "Thanh khoản đủ để đánh T+",
-            "ok": false
-          },
-          {
-            "label": "Risk/Reward >= 1.5 và stop dưới 5%",
-            "ok": true
-          }
-        ]
-      },
-      "cyclePlan": {
-        "score": 33.3,
-        "yesCount": 3,
-        "totalChecks": 9,
-        "stage": "Đang tích lũy, chưa xác nhận",
-        "thesis": "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn.",
-        "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
-        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 8.385",
-        "retestBuy": "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh",
-        "breakoutBuy": "Mua xác nhận khi vượt vùng 8.600 kèm volume >= 1.3–1.5 lần trung bình",
-        "targets": "Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +56.0% hoặc trailing theo MA20/MA50",
-        "protection": "Cắt lỗ nếu thủng MA50/nền tích lũy hoặc MACD quay đầu xấu; bảo vệ lợi nhuận bằng MA20 khi đã có lãi",
-        "capitalPlan": "Mua thăm dò 20–30%, gia tăng 30–40% khi retest thành công, phần còn lại khi breakout xác nhận; không mua đuổi nếu cách MA20 > 12–15%",
-        "fundamentalNote": "Cần bổ sung dữ liệu cơ bản/catalyst: doanh thu, lợi nhuận, ROE/ROA, nợ vay, dòng tiền kinh doanh, P/E, P/B, câu chuyện ngành/tái cấu trúc/dự án mới.",
-        "checklist": [
-          {
-            "label": "Đã giảm sâu hoặc tích lũy 3–6 tháng",
-            "ok": true
-          },
-          {
-            "label": "Cấu trúc đáy sau/đỉnh sau cải thiện",
-            "ok": false
-          },
-          {
-            "label": "Giá vượt MA20/MA50 và tiếp cận MA100/MA200",
-            "ok": false
-          },
-          {
-            "label": "MA20 bắt đầu cong lên/gần cắt MA50",
-            "ok": false
-          },
-          {
-            "label": "MACD cải thiện từ vùng yếu hoặc cắt lên Signal",
-            "ok": false
-          },
-          {
-            "label": "RSI phục hồi trên 50, lý tưởng 50–65",
-            "ok": true
-          },
-          {
-            "label": "Volume tăng khi breakout, điều chỉnh volume thấp",
-            "ok": true
-          },
-          {
-            "label": "Thoát vùng Ichimoku proxy hoặc test Kijun thành công",
-            "ok": false
-          },
-          {
-            "label": "Không tăng nóng, thanh khoản đủ để theo chu kỳ",
-            "ok": false
-          }
-        ]
-      },
-      "catalysts": [
-        "Vnstock API",
-        "Tín hiệu kỹ thuật",
-        "Chứng khoán"
-      ],
-      "cautions": [
-        "Giá dưới MA50, chưa đủ điều kiện mua mới",
-        "Thanh khoản thấp, cần hạn chế tỷ trọng"
       ]
     },
     {
@@ -27842,6 +27673,175 @@
       ]
     },
     {
+      "ticker": "CTS",
+      "name": "CTS",
+      "sector": "Chứng khoán",
+      "score": 17,
+      "subscores": {
+        "trend": 3,
+        "momentum": 3,
+        "moneyFlow": 3,
+        "setup": 2,
+        "risk": 2,
+        "relativeStrength": 4
+      },
+      "setupType": "Chưa có setup rõ",
+      "marketState": "Yếu",
+      "action": "TRÁNH MUA MỚI",
+      "risk": "Cao",
+      "close": 27250.0,
+      "rsi14": 49.6,
+      "ret20": -1.8,
+      "ret60": 1.11,
+      "volume_status": "Trung bình",
+      "volumeRatio": 0.8,
+      "ma20": 27655.0,
+      "ma50": 27394.0,
+      "ma100": 28848.0,
+      "ma200": 33296.0,
+      "macd": -98.56,
+      "macd_signal": -2.53,
+      "atr14": 814.29,
+      "distanceToMA20": -1.46,
+      "distanceToMA50": -0.53,
+      "signals": [
+        "MA20 nằm trên MA50, cấu trúc ngắn hạn tốt"
+      ],
+      "warnings": [
+        "Giá dưới MA50, chưa đủ điều kiện mua mới"
+      ],
+      "filters": {
+        "topOpportunity": false,
+        "cycleTurnaround": false,
+        "tplus": false,
+        "breakout": false,
+        "pullbackMA20": false,
+        "moneyFlow": false,
+        "accumulation": false,
+        "safe": false
+      },
+      "tplusScore": 33.3,
+      "cycleScore": 44.4,
+      "reason": "CTS đạt 17/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 3/20, rủi ro 2/15. Hành động phù hợp: tránh mua mới.",
+      "expertSummary": "CTS đạt 17/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 3/20, rủi ro 2/15. Hành động phù hợp: tránh mua mới.",
+      "buyZone": "Canh quanh MA20 ~ 27.655 hoặc nền tích lũy gần nhất.",
+      "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
+      "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
+      "allocation": "0%",
+      "tplusPlan": {
+        "score": 33.3,
+        "yesCount": 3,
+        "totalChecks": 9,
+        "strategy": "Chưa đủ setup T+ xác suất cao",
+        "entry": "Chờ thêm tín hiệu MACD/volume/setup, không mua vì thấy xanh mạnh",
+        "quickStop": "Cắt nhanh quanh 26.296 hoặc khi mất MA20/vùng breakout; risk khoảng 3.63%",
+        "quickTakeProfit": "TP1 +3.6% đến +5.5%; đạt TP1 chốt 30–50%, phần còn lại kéo stop lên giá vốn/MA10",
+        "riskReward": "1.52:1, risk ~3.63%, target ~5.5%",
+        "positionSizing": "Chỉ theo dõi hoặc thăm dò rất nhỏ; chưa đủ điều kiện T+ xác suất cao",
+        "holdingPeriod": "T+3 đến T+10; sau 2–3 phiên không chạy thì giảm tỷ trọng",
+        "invalidCondition": "MACD quay đầu xấu, RSI > 70 khi chưa có nền, volume cao nhưng râu trên dài, giá thủng MA20/MA50, hoặc VN-Index gãy hỗ trợ",
+        "checklist": [
+          {
+            "label": "VN-Index/xu hướng không quá yếu",
+            "ok": false
+          },
+          {
+            "label": "Giá nằm trên MA20 và MA50",
+            "ok": false
+          },
+          {
+            "label": "MACD cắt lên/đang trên Signal",
+            "ok": false
+          },
+          {
+            "label": "RSI nằm vùng đẹp 52–65",
+            "ok": false
+          },
+          {
+            "label": "Volume cao hơn trung bình 20 phiên",
+            "ok": false
+          },
+          {
+            "label": "Có điểm mua: breakout/pullback/retest/tích lũy",
+            "ok": false
+          },
+          {
+            "label": "Không mua đuổi: giá không cách MA20 quá xa",
+            "ok": true
+          },
+          {
+            "label": "Thanh khoản đủ để đánh T+",
+            "ok": true
+          },
+          {
+            "label": "Risk/Reward >= 1.5 và stop dưới 5%",
+            "ok": true
+          }
+        ]
+      },
+      "cyclePlan": {
+        "score": 44.4,
+        "yesCount": 4,
+        "totalChecks": 9,
+        "stage": "Đang tích lũy, chưa xác nhận",
+        "thesis": "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn.",
+        "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
+        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 27.655",
+        "retestBuy": "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh",
+        "breakoutBuy": "Mua xác nhận khi vượt vùng 28.600 kèm volume >= 1.3–1.5 lần trung bình",
+        "targets": "Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +57.0% hoặc trailing theo MA20/MA50",
+        "protection": "Cắt lỗ nếu thủng MA50/nền tích lũy hoặc MACD quay đầu xấu; bảo vệ lợi nhuận bằng MA20 khi đã có lãi",
+        "capitalPlan": "Mua thăm dò 20–30%, gia tăng 30–40% khi retest thành công, phần còn lại khi breakout xác nhận; không mua đuổi nếu cách MA20 > 12–15%",
+        "fundamentalNote": "Cần bổ sung dữ liệu cơ bản/catalyst: doanh thu, lợi nhuận, ROE/ROA, nợ vay, dòng tiền kinh doanh, P/E, P/B, câu chuyện ngành/tái cấu trúc/dự án mới.",
+        "checklist": [
+          {
+            "label": "Đã giảm sâu hoặc tích lũy 3–6 tháng",
+            "ok": true
+          },
+          {
+            "label": "Cấu trúc đáy sau/đỉnh sau cải thiện",
+            "ok": true
+          },
+          {
+            "label": "Giá vượt MA20/MA50 và tiếp cận MA100/MA200",
+            "ok": false
+          },
+          {
+            "label": "MA20 bắt đầu cong lên/gần cắt MA50",
+            "ok": false
+          },
+          {
+            "label": "MACD cải thiện từ vùng yếu hoặc cắt lên Signal",
+            "ok": false
+          },
+          {
+            "label": "RSI phục hồi trên 50, lý tưởng 50–65",
+            "ok": false
+          },
+          {
+            "label": "Volume tăng khi breakout, điều chỉnh volume thấp",
+            "ok": true
+          },
+          {
+            "label": "Thoát vùng Ichimoku proxy hoặc test Kijun thành công",
+            "ok": false
+          },
+          {
+            "label": "Không tăng nóng, thanh khoản đủ để theo chu kỳ",
+            "ok": true
+          }
+        ]
+      },
+      "catalysts": [
+        "Vnstock API",
+        "Tín hiệu kỹ thuật",
+        "Chứng khoán"
+      ],
+      "cautions": [
+        "Giá dưới MA50, chưa đủ điều kiện mua mới"
+      ]
+    },
+    {
       "ticker": "TIP",
       "name": "TIP",
       "sector": "Bất động sản / KCN",
@@ -28354,6 +28354,175 @@
         "RSI cao, hạn chế mua đuổi",
         "Giá dưới MA50, chưa đủ điều kiện mua mới",
         "Thanh khoản thấp, cần hạn chế tỷ trọng"
+      ]
+    },
+    {
+      "ticker": "DDV",
+      "name": "DDV",
+      "sector": "Hóa chất / Phân bón / Cao su / Nhựa",
+      "score": 17,
+      "subscores": {
+        "trend": 0,
+        "momentum": 4,
+        "moneyFlow": 3,
+        "setup": 2,
+        "risk": 0,
+        "relativeStrength": 8
+      },
+      "setupType": "Chưa có setup rõ",
+      "marketState": "Yếu",
+      "action": "TRÁNH MUA MỚI",
+      "risk": "Trung bình",
+      "close": 25800.0,
+      "rsi14": 35.0,
+      "ret20": -3.37,
+      "ret60": -12.84,
+      "volume_status": "Trung bình",
+      "volumeRatio": 0.45,
+      "ma20": 26260.0,
+      "ma50": 26774.0,
+      "ma100": 27909.0,
+      "ma200": 28716.0,
+      "macd": -283.89,
+      "macd_signal": -288.94,
+      "atr14": 485.71,
+      "distanceToMA20": -1.75,
+      "distanceToMA50": -3.64,
+      "signals": [
+        "MACD đang trên đường tín hiệu"
+      ],
+      "warnings": [
+        "Giá dưới MA50, chưa đủ điều kiện mua mới"
+      ],
+      "filters": {
+        "topOpportunity": false,
+        "cycleTurnaround": false,
+        "tplus": false,
+        "breakout": false,
+        "pullbackMA20": false,
+        "moneyFlow": false,
+        "accumulation": false,
+        "safe": false
+      },
+      "tplusScore": 33.3,
+      "cycleScore": 22.2,
+      "reason": "DDV đạt 17/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 3/20, rủi ro 0/15. Hành động phù hợp: tránh mua mới.",
+      "expertSummary": "DDV đạt 17/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 3/20, rủi ro 0/15. Hành động phù hợp: tránh mua mới.",
+      "buyZone": "Canh quanh MA20 ~ 26.260 hoặc nền tích lũy gần nhất.",
+      "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
+      "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
+      "allocation": "0%",
+      "tplusPlan": {
+        "score": 33.3,
+        "yesCount": 3,
+        "totalChecks": 9,
+        "strategy": "Chưa đủ setup T+ xác suất cao",
+        "entry": "Chờ thêm tín hiệu MACD/volume/setup, không mua vì thấy xanh mạnh",
+        "quickStop": "Cắt nhanh quanh 24.897 hoặc khi mất MA20/vùng breakout; risk khoảng 3.63%",
+        "quickTakeProfit": "TP1 +3.6% đến +5.5%; đạt TP1 chốt 30–50%, phần còn lại kéo stop lên giá vốn/MA10",
+        "riskReward": "1.52:1, risk ~3.63%, target ~5.5%",
+        "positionSizing": "Chỉ theo dõi hoặc thăm dò rất nhỏ; chưa đủ điều kiện T+ xác suất cao",
+        "holdingPeriod": "T+3 đến T+10; sau 2–3 phiên không chạy thì giảm tỷ trọng",
+        "invalidCondition": "MACD quay đầu xấu, RSI > 70 khi chưa có nền, volume cao nhưng râu trên dài, giá thủng MA20/MA50, hoặc VN-Index gãy hỗ trợ",
+        "checklist": [
+          {
+            "label": "VN-Index/xu hướng không quá yếu",
+            "ok": false
+          },
+          {
+            "label": "Giá nằm trên MA20 và MA50",
+            "ok": false
+          },
+          {
+            "label": "MACD cắt lên/đang trên Signal",
+            "ok": true
+          },
+          {
+            "label": "RSI nằm vùng đẹp 52–65",
+            "ok": false
+          },
+          {
+            "label": "Volume cao hơn trung bình 20 phiên",
+            "ok": false
+          },
+          {
+            "label": "Có điểm mua: breakout/pullback/retest/tích lũy",
+            "ok": false
+          },
+          {
+            "label": "Không mua đuổi: giá không cách MA20 quá xa",
+            "ok": true
+          },
+          {
+            "label": "Thanh khoản đủ để đánh T+",
+            "ok": false
+          },
+          {
+            "label": "Risk/Reward >= 1.5 và stop dưới 5%",
+            "ok": true
+          }
+        ]
+      },
+      "cyclePlan": {
+        "score": 22.2,
+        "yesCount": 2,
+        "totalChecks": 9,
+        "stage": "Chưa đạt mẫu chu kỳ tăng mới",
+        "thesis": "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn.",
+        "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
+        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 26.260",
+        "retestBuy": "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh",
+        "breakoutBuy": "Mua xác nhận khi vượt vùng 27.300 kèm volume >= 1.3–1.5 lần trung bình",
+        "targets": "Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +54.0% hoặc trailing theo MA20/MA50",
+        "protection": "Cắt lỗ nếu thủng MA50/nền tích lũy hoặc MACD quay đầu xấu; bảo vệ lợi nhuận bằng MA20 khi đã có lãi",
+        "capitalPlan": "Mua thăm dò 20–30%, gia tăng 30–40% khi retest thành công, phần còn lại khi breakout xác nhận; không mua đuổi nếu cách MA20 > 12–15%",
+        "fundamentalNote": "Cần bổ sung dữ liệu cơ bản/catalyst: doanh thu, lợi nhuận, ROE/ROA, nợ vay, dòng tiền kinh doanh, P/E, P/B, câu chuyện ngành/tái cấu trúc/dự án mới.",
+        "checklist": [
+          {
+            "label": "Đã giảm sâu hoặc tích lũy 3–6 tháng",
+            "ok": false
+          },
+          {
+            "label": "Cấu trúc đáy sau/đỉnh sau cải thiện",
+            "ok": false
+          },
+          {
+            "label": "Giá vượt MA20/MA50 và tiếp cận MA100/MA200",
+            "ok": false
+          },
+          {
+            "label": "MA20 bắt đầu cong lên/gần cắt MA50",
+            "ok": false
+          },
+          {
+            "label": "MACD cải thiện từ vùng yếu hoặc cắt lên Signal",
+            "ok": true
+          },
+          {
+            "label": "RSI phục hồi trên 50, lý tưởng 50–65",
+            "ok": false
+          },
+          {
+            "label": "Volume tăng khi breakout, điều chỉnh volume thấp",
+            "ok": true
+          },
+          {
+            "label": "Thoát vùng Ichimoku proxy hoặc test Kijun thành công",
+            "ok": false
+          },
+          {
+            "label": "Không tăng nóng, thanh khoản đủ để theo chu kỳ",
+            "ok": false
+          }
+        ]
+      },
+      "catalysts": [
+        "Vnstock API",
+        "Tín hiệu kỹ thuật",
+        "Hóa chất / Phân bón / Cao su / Nhựa"
+      ],
+      "cautions": [
+        "Giá dưới MA50, chưa đủ điều kiện mua mới"
       ]
     },
     {
@@ -32261,6 +32430,177 @@
       ],
       "cautions": [
         "Giá dưới MA50, chưa đủ điều kiện mua mới"
+      ]
+    },
+    {
+      "ticker": "SBS",
+      "name": "SBS",
+      "sector": "Chứng khoán",
+      "score": 14,
+      "subscores": {
+        "trend": 0,
+        "momentum": 0,
+        "moneyFlow": 12,
+        "setup": 2,
+        "risk": 0,
+        "relativeStrength": 0
+      },
+      "setupType": "Chưa có setup rõ",
+      "marketState": "Yếu",
+      "action": "TRÁNH MUA MỚI",
+      "risk": "Cao",
+      "close": 4600.0,
+      "rsi14": 40.0,
+      "ret20": -8.0,
+      "ret60": -13.21,
+      "volume_status": "Tốt",
+      "volumeRatio": 1.26,
+      "ma20": 4705.0,
+      "ma50": 5012.0,
+      "ma100": 5379.0,
+      "ma200": 5753.0,
+      "macd": -157.19,
+      "macd_signal": -151.18,
+      "atr14": 164.29,
+      "distanceToMA20": -2.23,
+      "distanceToMA50": -8.22,
+      "signals": [
+        "Chưa có nhiều tín hiệu xác nhận rõ ràng"
+      ],
+      "warnings": [
+        "Giá dưới MA50, chưa đủ điều kiện mua mới",
+        "Thanh khoản thấp, cần hạn chế tỷ trọng"
+      ],
+      "filters": {
+        "topOpportunity": false,
+        "cycleTurnaround": false,
+        "tplus": false,
+        "breakout": false,
+        "pullbackMA20": false,
+        "moneyFlow": false,
+        "accumulation": false,
+        "safe": false
+      },
+      "tplusScore": 33.3,
+      "cycleScore": 11.1,
+      "reason": "SBS đạt 14/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 12/20, rủi ro 0/15. Hành động phù hợp: tránh mua mới.",
+      "expertSummary": "SBS đạt 14/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 12/20, rủi ro 0/15. Hành động phù hợp: tránh mua mới.",
+      "buyZone": "Canh quanh MA20 ~ 4.705 hoặc nền tích lũy gần nhất.",
+      "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
+      "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
+      "allocation": "0%",
+      "tplusPlan": {
+        "score": 33.3,
+        "yesCount": 3,
+        "totalChecks": 9,
+        "strategy": "Chưa đủ setup T+ xác suất cao",
+        "entry": "Chờ thêm tín hiệu MACD/volume/setup, không mua vì thấy xanh mạnh",
+        "quickStop": "Cắt nhanh quanh 4.439 hoặc khi mất MA20/vùng breakout; risk khoảng 3.63%",
+        "quickTakeProfit": "TP1 +3.6% đến +5.5%; đạt TP1 chốt 30–50%, phần còn lại kéo stop lên giá vốn/MA10",
+        "riskReward": "1.52:1, risk ~3.63%, target ~5.5%",
+        "positionSizing": "Chỉ theo dõi hoặc thăm dò rất nhỏ; chưa đủ điều kiện T+ xác suất cao",
+        "holdingPeriod": "T+3 đến T+10; sau 2–3 phiên không chạy thì giảm tỷ trọng",
+        "invalidCondition": "MACD quay đầu xấu, RSI > 70 khi chưa có nền, volume cao nhưng râu trên dài, giá thủng MA20/MA50, hoặc VN-Index gãy hỗ trợ",
+        "checklist": [
+          {
+            "label": "VN-Index/xu hướng không quá yếu",
+            "ok": false
+          },
+          {
+            "label": "Giá nằm trên MA20 và MA50",
+            "ok": false
+          },
+          {
+            "label": "MACD cắt lên/đang trên Signal",
+            "ok": false
+          },
+          {
+            "label": "RSI nằm vùng đẹp 52–65",
+            "ok": false
+          },
+          {
+            "label": "Volume cao hơn trung bình 20 phiên",
+            "ok": true
+          },
+          {
+            "label": "Có điểm mua: breakout/pullback/retest/tích lũy",
+            "ok": false
+          },
+          {
+            "label": "Không mua đuổi: giá không cách MA20 quá xa",
+            "ok": true
+          },
+          {
+            "label": "Thanh khoản đủ để đánh T+",
+            "ok": false
+          },
+          {
+            "label": "Risk/Reward >= 1.5 và stop dưới 5%",
+            "ok": true
+          }
+        ]
+      },
+      "cyclePlan": {
+        "score": 11.1,
+        "yesCount": 1,
+        "totalChecks": 9,
+        "stage": "Đang tích lũy, chưa xác nhận",
+        "thesis": "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn.",
+        "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
+        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 4.705",
+        "retestBuy": "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh",
+        "breakoutBuy": "Mua xác nhận khi vượt vùng 5.000 kèm volume >= 1.3–1.5 lần trung bình",
+        "targets": "Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +63.0% hoặc trailing theo MA20/MA50",
+        "protection": "Cắt lỗ nếu thủng MA50/nền tích lũy hoặc MACD quay đầu xấu; bảo vệ lợi nhuận bằng MA20 khi đã có lãi",
+        "capitalPlan": "Mua thăm dò 20–30%, gia tăng 30–40% khi retest thành công, phần còn lại khi breakout xác nhận; không mua đuổi nếu cách MA20 > 12–15%",
+        "fundamentalNote": "Cần bổ sung dữ liệu cơ bản/catalyst: doanh thu, lợi nhuận, ROE/ROA, nợ vay, dòng tiền kinh doanh, P/E, P/B, câu chuyện ngành/tái cấu trúc/dự án mới.",
+        "checklist": [
+          {
+            "label": "Đã giảm sâu hoặc tích lũy 3–6 tháng",
+            "ok": true
+          },
+          {
+            "label": "Cấu trúc đáy sau/đỉnh sau cải thiện",
+            "ok": false
+          },
+          {
+            "label": "Giá vượt MA20/MA50 và tiếp cận MA100/MA200",
+            "ok": false
+          },
+          {
+            "label": "MA20 bắt đầu cong lên/gần cắt MA50",
+            "ok": false
+          },
+          {
+            "label": "MACD cải thiện từ vùng yếu hoặc cắt lên Signal",
+            "ok": false
+          },
+          {
+            "label": "RSI phục hồi trên 50, lý tưởng 50–65",
+            "ok": false
+          },
+          {
+            "label": "Volume tăng khi breakout, điều chỉnh volume thấp",
+            "ok": false
+          },
+          {
+            "label": "Thoát vùng Ichimoku proxy hoặc test Kijun thành công",
+            "ok": false
+          },
+          {
+            "label": "Không tăng nóng, thanh khoản đủ để theo chu kỳ",
+            "ok": false
+          }
+        ]
+      },
+      "catalysts": [
+        "Vnstock API",
+        "Tín hiệu kỹ thuật",
+        "Chứng khoán"
+      ],
+      "cautions": [
+        "Giá dưới MA50, chưa đủ điều kiện mua mới",
+        "Thanh khoản thấp, cần hạn chế tỷ trọng"
       ]
     },
     {
@@ -38905,177 +39245,6 @@
       ]
     },
     {
-      "ticker": "SBS",
-      "name": "SBS",
-      "sector": "Chứng khoán",
-      "score": 11,
-      "subscores": {
-        "trend": 0,
-        "momentum": 0,
-        "moneyFlow": 9,
-        "setup": 2,
-        "risk": 0,
-        "relativeStrength": 0
-      },
-      "setupType": "Chưa có setup rõ",
-      "marketState": "Yếu",
-      "action": "TRÁNH MUA MỚI",
-      "risk": "Cao",
-      "close": 4500.0,
-      "rsi14": 33.33,
-      "ret20": -10.0,
-      "ret60": -15.09,
-      "volume_status": "Tốt",
-      "volumeRatio": 1.25,
-      "ma20": 4700.0,
-      "ma50": 5010.0,
-      "ma100": 5378.0,
-      "ma200": 5752.0,
-      "macd": -165.16,
-      "macd_signal": -152.77,
-      "atr14": 164.29,
-      "distanceToMA20": -4.26,
-      "distanceToMA50": -10.18,
-      "signals": [
-        "Chưa có nhiều tín hiệu xác nhận rõ ràng"
-      ],
-      "warnings": [
-        "Giá dưới MA50, chưa đủ điều kiện mua mới",
-        "Thanh khoản thấp, cần hạn chế tỷ trọng"
-      ],
-      "filters": {
-        "topOpportunity": false,
-        "cycleTurnaround": false,
-        "tplus": false,
-        "breakout": false,
-        "pullbackMA20": false,
-        "moneyFlow": false,
-        "accumulation": false,
-        "safe": false
-      },
-      "tplusScore": 33.3,
-      "cycleScore": 11.1,
-      "reason": "SBS đạt 11/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 9/20, rủi ro 0/15. Hành động phù hợp: tránh mua mới.",
-      "expertSummary": "SBS đạt 11/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 9/20, rủi ro 0/15. Hành động phù hợp: tránh mua mới.",
-      "buyZone": "Canh quanh MA20 ~ 4.700 hoặc nền tích lũy gần nhất.",
-      "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
-      "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
-      "allocation": "0%",
-      "tplusPlan": {
-        "score": 33.3,
-        "yesCount": 3,
-        "totalChecks": 9,
-        "strategy": "Chưa đủ setup T+ xác suất cao",
-        "entry": "Chờ thêm tín hiệu MACD/volume/setup, không mua vì thấy xanh mạnh",
-        "quickStop": "Cắt nhanh quanh 4.342 hoặc khi mất MA20/vùng breakout; risk khoảng 3.63%",
-        "quickTakeProfit": "TP1 +3.6% đến +5.5%; đạt TP1 chốt 30–50%, phần còn lại kéo stop lên giá vốn/MA10",
-        "riskReward": "1.52:1, risk ~3.63%, target ~5.5%",
-        "positionSizing": "Chỉ theo dõi hoặc thăm dò rất nhỏ; chưa đủ điều kiện T+ xác suất cao",
-        "holdingPeriod": "T+3 đến T+10; sau 2–3 phiên không chạy thì giảm tỷ trọng",
-        "invalidCondition": "MACD quay đầu xấu, RSI > 70 khi chưa có nền, volume cao nhưng râu trên dài, giá thủng MA20/MA50, hoặc VN-Index gãy hỗ trợ",
-        "checklist": [
-          {
-            "label": "VN-Index/xu hướng không quá yếu",
-            "ok": false
-          },
-          {
-            "label": "Giá nằm trên MA20 và MA50",
-            "ok": false
-          },
-          {
-            "label": "MACD cắt lên/đang trên Signal",
-            "ok": false
-          },
-          {
-            "label": "RSI nằm vùng đẹp 52–65",
-            "ok": false
-          },
-          {
-            "label": "Volume cao hơn trung bình 20 phiên",
-            "ok": true
-          },
-          {
-            "label": "Có điểm mua: breakout/pullback/retest/tích lũy",
-            "ok": false
-          },
-          {
-            "label": "Không mua đuổi: giá không cách MA20 quá xa",
-            "ok": true
-          },
-          {
-            "label": "Thanh khoản đủ để đánh T+",
-            "ok": false
-          },
-          {
-            "label": "Risk/Reward >= 1.5 và stop dưới 5%",
-            "ok": true
-          }
-        ]
-      },
-      "cyclePlan": {
-        "score": 11.1,
-        "yesCount": 1,
-        "totalChecks": 9,
-        "stage": "Đang tích lũy, chưa xác nhận",
-        "thesis": "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn.",
-        "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
-        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 4.700",
-        "retestBuy": "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh",
-        "breakoutBuy": "Mua xác nhận khi vượt vùng 5.000 kèm volume >= 1.3–1.5 lần trung bình",
-        "targets": "Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +63.0% hoặc trailing theo MA20/MA50",
-        "protection": "Cắt lỗ nếu thủng MA50/nền tích lũy hoặc MACD quay đầu xấu; bảo vệ lợi nhuận bằng MA20 khi đã có lãi",
-        "capitalPlan": "Mua thăm dò 20–30%, gia tăng 30–40% khi retest thành công, phần còn lại khi breakout xác nhận; không mua đuổi nếu cách MA20 > 12–15%",
-        "fundamentalNote": "Cần bổ sung dữ liệu cơ bản/catalyst: doanh thu, lợi nhuận, ROE/ROA, nợ vay, dòng tiền kinh doanh, P/E, P/B, câu chuyện ngành/tái cấu trúc/dự án mới.",
-        "checklist": [
-          {
-            "label": "Đã giảm sâu hoặc tích lũy 3–6 tháng",
-            "ok": true
-          },
-          {
-            "label": "Cấu trúc đáy sau/đỉnh sau cải thiện",
-            "ok": false
-          },
-          {
-            "label": "Giá vượt MA20/MA50 và tiếp cận MA100/MA200",
-            "ok": false
-          },
-          {
-            "label": "MA20 bắt đầu cong lên/gần cắt MA50",
-            "ok": false
-          },
-          {
-            "label": "MACD cải thiện từ vùng yếu hoặc cắt lên Signal",
-            "ok": false
-          },
-          {
-            "label": "RSI phục hồi trên 50, lý tưởng 50–65",
-            "ok": false
-          },
-          {
-            "label": "Volume tăng khi breakout, điều chỉnh volume thấp",
-            "ok": false
-          },
-          {
-            "label": "Thoát vùng Ichimoku proxy hoặc test Kijun thành công",
-            "ok": false
-          },
-          {
-            "label": "Không tăng nóng, thanh khoản đủ để theo chu kỳ",
-            "ok": false
-          }
-        ]
-      },
-      "catalysts": [
-        "Vnstock API",
-        "Tín hiệu kỹ thuật",
-        "Chứng khoán"
-      ],
-      "cautions": [
-        "Giá dưới MA50, chưa đủ điều kiện mua mới",
-        "Thanh khoản thấp, cần hạn chế tỷ trọng"
-      ]
-    },
-    {
       "ticker": "NVL",
       "name": "Novaland",
       "sector": "Bất động sản / KCN",
@@ -39097,7 +39266,7 @@
       "ret20": -14.95,
       "ret60": 4.93,
       "volume_status": "Trung bình",
-      "volumeRatio": 0.56,
+      "volumeRatio": 0.55,
       "ma20": 13996.0,
       "ma50": 15076.0,
       "ma100": 13380.0,
@@ -40419,175 +40588,6 @@
           {
             "label": "Không tăng nóng, thanh khoản đủ để theo chu kỳ",
             "ok": true
-          }
-        ]
-      },
-      "catalysts": [
-        "Vnstock API",
-        "Tín hiệu kỹ thuật",
-        "Hóa chất / Phân bón / Cao su / Nhựa"
-      ],
-      "cautions": [
-        "Giá dưới MA50, chưa đủ điều kiện mua mới"
-      ]
-    },
-    {
-      "ticker": "DDV",
-      "name": "DDV",
-      "sector": "Hóa chất / Phân bón / Cao su / Nhựa",
-      "score": 10,
-      "subscores": {
-        "trend": 0,
-        "momentum": 0,
-        "moneyFlow": 0,
-        "setup": 2,
-        "risk": 0,
-        "relativeStrength": 8
-      },
-      "setupType": "Chưa có setup rõ",
-      "marketState": "Yếu",
-      "action": "TRÁNH MUA MỚI",
-      "risk": "Trung bình",
-      "close": 25700.0,
-      "rsi14": 33.33,
-      "ret20": -3.75,
-      "ret60": -13.18,
-      "volume_status": "Trung bình",
-      "volumeRatio": 0.43,
-      "ma20": 26255.0,
-      "ma50": 26772.0,
-      "ma100": 27908.0,
-      "ma200": 28716.0,
-      "macd": -291.87,
-      "macd_signal": -290.53,
-      "atr14": 485.71,
-      "distanceToMA20": -2.11,
-      "distanceToMA50": -4.0,
-      "signals": [
-        "Chưa có nhiều tín hiệu xác nhận rõ ràng"
-      ],
-      "warnings": [
-        "Giá dưới MA50, chưa đủ điều kiện mua mới"
-      ],
-      "filters": {
-        "topOpportunity": false,
-        "cycleTurnaround": false,
-        "tplus": false,
-        "breakout": false,
-        "pullbackMA20": false,
-        "moneyFlow": false,
-        "accumulation": false,
-        "safe": false
-      },
-      "tplusScore": 22.2,
-      "cycleScore": 22.2,
-      "reason": "DDV đạt 10/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 0/20, rủi ro 0/15. Hành động phù hợp: tránh mua mới.",
-      "expertSummary": "DDV đạt 10/100 điểm, setup Chưa có setup rõ. Xu hướng yếu, dòng tiền 0/20, rủi ro 0/15. Hành động phù hợp: tránh mua mới.",
-      "buyZone": "Canh quanh MA20 ~ 26.255 hoặc nền tích lũy gần nhất.",
-      "stopLoss": "-7% đến -10% hoặc khi thủng MA50/nền hỗ trợ",
-      "takeProfit": "+12% đến +25% hoặc dùng trailing stop theo MA20",
-      "allocation": "0%",
-      "tplusPlan": {
-        "score": 22.2,
-        "yesCount": 2,
-        "totalChecks": 9,
-        "strategy": "Chưa đủ setup T+ xác suất cao",
-        "entry": "Chờ thêm tín hiệu MACD/volume/setup, không mua vì thấy xanh mạnh",
-        "quickStop": "Cắt nhanh quanh 24.800 hoặc khi mất MA20/vùng breakout; risk khoảng 3.63%",
-        "quickTakeProfit": "TP1 +3.6% đến +5.5%; đạt TP1 chốt 30–50%, phần còn lại kéo stop lên giá vốn/MA10",
-        "riskReward": "1.52:1, risk ~3.63%, target ~5.5%",
-        "positionSizing": "Chỉ theo dõi hoặc thăm dò rất nhỏ; chưa đủ điều kiện T+ xác suất cao",
-        "holdingPeriod": "T+3 đến T+10; sau 2–3 phiên không chạy thì giảm tỷ trọng",
-        "invalidCondition": "MACD quay đầu xấu, RSI > 70 khi chưa có nền, volume cao nhưng râu trên dài, giá thủng MA20/MA50, hoặc VN-Index gãy hỗ trợ",
-        "checklist": [
-          {
-            "label": "VN-Index/xu hướng không quá yếu",
-            "ok": false
-          },
-          {
-            "label": "Giá nằm trên MA20 và MA50",
-            "ok": false
-          },
-          {
-            "label": "MACD cắt lên/đang trên Signal",
-            "ok": false
-          },
-          {
-            "label": "RSI nằm vùng đẹp 52–65",
-            "ok": false
-          },
-          {
-            "label": "Volume cao hơn trung bình 20 phiên",
-            "ok": false
-          },
-          {
-            "label": "Có điểm mua: breakout/pullback/retest/tích lũy",
-            "ok": false
-          },
-          {
-            "label": "Không mua đuổi: giá không cách MA20 quá xa",
-            "ok": true
-          },
-          {
-            "label": "Thanh khoản đủ để đánh T+",
-            "ok": false
-          },
-          {
-            "label": "Risk/Reward >= 1.5 và stop dưới 5%",
-            "ok": true
-          }
-        ]
-      },
-      "cyclePlan": {
-        "score": 22.2,
-        "yesCount": 2,
-        "totalChecks": 9,
-        "stage": "Đang tích lũy, chưa xác nhận",
-        "thesis": "Mã chưa đủ xác nhận chu kỳ tăng mới; cần thêm tín hiệu về cấu trúc giá, dòng tiền hoặc MA dài hạn.",
-        "confirmation": "Cần duy trì trên MA20/MA50, MACD không quay đầu, RSI giữ trên 50 và volume xác nhận trong phiên breakout/retest",
-        "probeBuy": "Thăm dò quanh MA20/MA50 nếu giữ nền; ưu tiên vùng gần MA20 ~ 26.255",
-        "retestBuy": "Gia tăng khi retest MA20/MA50 hoặc nền breakout thành công, volume giảm trong nhịp chỉnh",
-        "breakoutBuy": "Mua xác nhận khi vượt vùng 27.300 kèm volume >= 1.3–1.5 lần trung bình",
-        "targets": "Target 1 +15%; Target 2 +25–35%; Target 3 nếu thành chu kỳ mạnh: +54.0% hoặc trailing theo MA20/MA50",
-        "protection": "Cắt lỗ nếu thủng MA50/nền tích lũy hoặc MACD quay đầu xấu; bảo vệ lợi nhuận bằng MA20 khi đã có lãi",
-        "capitalPlan": "Mua thăm dò 20–30%, gia tăng 30–40% khi retest thành công, phần còn lại khi breakout xác nhận; không mua đuổi nếu cách MA20 > 12–15%",
-        "fundamentalNote": "Cần bổ sung dữ liệu cơ bản/catalyst: doanh thu, lợi nhuận, ROE/ROA, nợ vay, dòng tiền kinh doanh, P/E, P/B, câu chuyện ngành/tái cấu trúc/dự án mới.",
-        "checklist": [
-          {
-            "label": "Đã giảm sâu hoặc tích lũy 3–6 tháng",
-            "ok": true
-          },
-          {
-            "label": "Cấu trúc đáy sau/đỉnh sau cải thiện",
-            "ok": false
-          },
-          {
-            "label": "Giá vượt MA20/MA50 và tiếp cận MA100/MA200",
-            "ok": false
-          },
-          {
-            "label": "MA20 bắt đầu cong lên/gần cắt MA50",
-            "ok": false
-          },
-          {
-            "label": "MACD cải thiện từ vùng yếu hoặc cắt lên Signal",
-            "ok": false
-          },
-          {
-            "label": "RSI phục hồi trên 50, lý tưởng 50–65",
-            "ok": false
-          },
-          {
-            "label": "Volume tăng khi breakout, điều chỉnh volume thấp",
-            "ok": true
-          },
-          {
-            "label": "Thoát vùng Ichimoku proxy hoặc test Kijun thành công",
-            "ok": false
-          },
-          {
-            "label": "Không tăng nóng, thanh khoản đủ để theo chu kỳ",
-            "ok": false
           }
         ]
       },
