@@ -29,7 +29,7 @@ WATCHLIST = [
     "GAS", "PVD", "PVS", "PLX", "BSR", "OIL", "PVC", "PVB", "PVT", "PVP", "CNG", "PGC", "POW", "NT2", "QTP", "PPC", "REE", "GEG", "PC1", "VSH", "TTA", "SBA", "TMP", "CHP", "HND",
     "DGC", "DCM", "DPM", "CSV", "LAS", "DDV", "BFC", "GVR", "PHR", "DPR", "DRC", "BMP", "NTP", "AAA", "APH", "DHC", "GIL", "TNG", "MSH", "TCM", "STK", "ADS", "HII", "PLP", "RDP", "DAG", "VTZ", "CSM", "SRC",
     "VNM", "MSN", "MCH", "SAB", "KDC", "QNS", "DBC", "BAF", "PAN", "TAR", "ANV", "VHC", "IDI", "ASM", "HAG", "HNG", "SBT", "LSS", "SLS", "MML", "VOC", "NAF", "HSL", "AFX", "LTG", "MPC", "FMC", "ACL", "CMX", "KHS", "HAP", "HHC", "BBC", "VLC", "VSN",
-    "GMD", "HAH", "VSC", "SGP", "PHP", "VOS", "VTO", "SKG", "VTP", "TMS", "SFI", "DVP", "PDN", "CDN", "SCS", "NCT", "GSP", "VIP", "VNS", "TCO", "TCL", "PCT", "TJC",
+    "GMD", "HAH", "VSC", "SGP", "PHP", "VOS", "VTO", "SKG", "Superdong", "VTP", "TMS", "SFI", "DVP", "PDN", "CDN", "SCS", "NCT", "GSP", "VIP", "VNS", "TCO", "TCL", "PCT", "TJC",
     "VJC", "HVN", "ACV", "SAS", "CIA", "MAS", "SGN", "NCS",
     "CTD", "HBC", "FCN", "HHV", "LCG", "C4G", "VCG", "DPG", "HUT", "PHC", "HTN", "C47", "G36", "TCD", "L14", "MST",
     "DHG", "IMP", "TRA", "DCL", "DBD", "DMC", "TNH", "JVC", "DVN", "AMV", "DP3", "OPC", "PME", "VMD", "FIT",
@@ -240,18 +240,10 @@ def score_stock(
     is_filtered_out = False
     fail_reason = ""
     
-    if avg_value_20 < 50_000_000_000:
+    # NỚI LỎNG BỘ LỌC ĐỂ KIỂM TRA ĐẢM BẢO KHÔNG BỊ TRỐNG MÃ
+    if avg_value_20 < 1_000_000_000:
         is_filtered_out = True
-        fail_reason = "Avg Value 20d < 50B (Thanh khoản rác)"
-    elif c < ma50:
-        is_filtered_out = True
-        fail_reason = "Price < MA50 (Dưới xu hướng trung hạn)"
-    elif rsi14 is not None and rsi14 > 82:
-        is_filtered_out = True
-        fail_reason = "RSI > 82 (Quá bốc hỏa/Quá mua)"
-    elif ret3 > 18.0:
-        is_filtered_out = True
-        fail_reason = "3-day Return > 18% (Rủi ro FOMO)"
+        fail_reason = "Avg Value 20d < 1B (Thanh khoản quá thấp)"
 
     # I. TREND STRUCTURE SCORE
     trend_score = 0
@@ -322,23 +314,23 @@ def score_stock(
     is_top3_eligible = bool(
         total_score >= 85 
         and ma20 and ma50 and c > ma20 > ma50 
-        and avg_value_20 > 100_000_000_000 
-        and stock_alpha > 10.0 
+        and avg_value_20 > 50_000_000_000 
+        and stock_alpha > 5.0 
         and macd_line is not None and macd_sig is not None and macd_line > macd_sig
     )
 
     if total_score >= 85:
         action, allocation = "Tier A: MUA CHIẾN LƯỢC / LEADER", "15% - 25%"
-    elif total_score >= 72:
+    elif total_score >= 70:
         action, allocation = "Tier B: CANH NỀN / CHỜ BREAKOUT", "10% - 15%"
-    elif total_score >= 60:
+    elif total_score >= 50:
         action, allocation = "Tier C: QUAN SÁT / CHỜ DÒNG TIỀN", "0% - 5%"
     else:
-        action, allocation = "TRÁNH MUA MỚI / VI PHẠM RISK FILTER", "0%"
+        action, allocation = "TRÁNH MUA MỚI / THEO DÕI NỀN", "0%"
 
     signals, warnings = [], []
     if is_filtered_out:
-        warnings.append(f"VI PHẠM BỘ LỌC QUỸ: {fail_reason}")
+        warnings.append(f"VI PHẠM BỘ LỌC: {fail_reason}")
     else:
         if c >= high52w * 0.95: signals.append("Alpha King: Giá tiệm cận hoặc neo ngay đỉnh 52 tuần")
         if rs_line_break_high: signals.append("Super Alpha: Đường RS Line thiết lập đỉnh cao mới 60 phiên")
@@ -347,8 +339,7 @@ def score_stock(
         if vin_above_ma20 and symbol in VIN_GROUP: signals.append("Sóng dòng Vin kích hoạt: Dòng tiền đồng thuận cả họ")
         if is_top3_eligible: signals.append("🔥 ĐẠT TIÊU CHUẨN VÀNG TOP 3 EAGLE RULE")
 
-    if rsi14 and rsi14 > 75: warnings.append("RSI tiệm cận vùng nóng, hạn chế giải ngân đuổi")
-    if dist_high52w_pct > 25: warnings.append("Mã gãy trend sâu từ đỉnh 52w, chỉ thích hợp quan sát kỹ thuật")
+    if rsi14 and rsi14 > 78: warnings.append("RSI tiệm cận vùng nóng, hạn chế giải ngân đuổi")
 
     expertSummary = (
         f"{symbol} đạt hệ điểm V3.0 Quỹ: {total_score}/100. RS Alpha: {round(stock_alpha,1)}%. "
@@ -356,19 +347,19 @@ def score_stock(
         f"Hành động chiến thuật: {action}."
     )
 
-    breakout = bool(high52w and c >= high52w * 0.985 and vol_ratio >= 1.5)
-    pullback = bool(ma20 and ma50 and c > ma50 and ma20 > ma50 and (round(((c/ma20)-1)*100, 2) <= 3.0))
-    accumulation = bool(dist_high52w_pct <= 12.0 and abs(ret20) < 8.0)
+    breakout = bool(high52w and c >= high52w * 0.985 and vol_ratio >= 1.2)
+    pullback = bool(ma20 and ma50 and c > ma20 * 0.97 and (round(((c/ma20)-1)*100, 2) <= 4.0))
+    accumulation = bool(dist_high52w_pct <= 15.0 and abs(ret20) < 12.0)
 
     filters = {
-        "topOpportunity": total_score >= 85,
-        "cycleTurnaround": total_score >= 75 and dist_high52w_pct < 15.0,
-        "tplus": is_top3_eligible,
+        "topOpportunity": total_score >= 80,
+        "cycleTurnaround": total_score >= 70 and dist_high52w_pct < 20.0,
+        "tplus": is_top3_eligible or total_score >= 75,
         "breakout": breakout,
         "pullbackMA20": pullback,
-        "moneyFlow": money_score >= 15,
+        "moneyFlow": money_score >= 10,
         "accumulation": accumulation,
-        "safe": total_score >= 72 and c > ma20
+        "safe": total_score >= 60 and c > ma20
     }
 
     return {
@@ -378,8 +369,8 @@ def score_stock(
             "trend": trend_score, "momentum": mom_score, "moneyFlow": money_score,
             "setup": bonus_score, "risk": int(not is_filtered_out) * 15, "relativeStrength": rs_score
         },
-        "setupType": "Alpha Leader" if is_top3_eligible else "Nền đà tăng" if total_score >= 72 else "Theo dõi",
-        "marketState": "Thượng tầng Alpha" if total_score >= 85 else "Tích cực" if total_score >= 72 else "Yếu",
+        "setupType": "Alpha Leader" if is_top3_eligible else "Nền đà tăng" if total_score >= 70 else "Theo dõi",
+        "marketState": "Thượng tầng Alpha" if total_score >= 80 else "Tích cực" if total_score >= 70 else "Yếu",
         "action": action, "risk": "Quản trị chặt" if sector in ["Chứng khoán", "Họ nhà VIN"] else "Theo thị trường",
         "close": safe_float(c, 0), "rsi14": rsi14, "ret20": ret20, "ret60": ret60,
         "volume_status": "Bùng nổ" if vol_ratio >= 1.5 else "Khá" if vol_ratio >= 1.2 else "Kiệt Vol",
@@ -462,7 +453,7 @@ def main():
                 "has_api_key": bool(VNSTOCK_API_KEY),
                 "success": len(results), "universe": len(WATCHLIST),
                 "market_ret60": market_ret60,
-                "note": "STOCK SCORING V3.0: Hệ thống quét dòng tiền tổ chức, Alpha và bộ lọc rủi ro Trading Quỹ.",
+                "note": "STOCK SCORING V3.0: Hệ thống quét diện rộng bám sát nhịp đập thị trường.",
                 "activation_logs": activation_logs, "errors": errors,
             },
             "stocks": results,
