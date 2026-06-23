@@ -57,27 +57,6 @@ NAMES = {
     "BVH": "Bảo Việt Holdings", "BMI": "Bảo Minh", "PVI": "PVI Holdings", "BIC": "BIC", "MIG": "MIG", "ABI": "ABI", "PTI": "PTI", "PRE": "PRE", "VNR": "VNR",
     "VGT": "VGT", "M10": "M10", "EVE": "EVE", "KMR": "KMR", "TDT": "TDT",
     "BWE": "Biwase", "TDM": "Nước Thủ Dầu Một", "GEX": "Gelex", "SJD": "SJD", "TBC": "TBC",
-    "RAL": "RAL", "PAC": "PAC", "SAV": "SAV"
-}
-
-SECTORS = {
-    "VCB": "Ngân hàng", "BID": "Ngân hàng", "CTG": "Ngân hàng", "TCB": "Ngân hàng", "MBB": "Ngân hàng", "ACB": "Ngân hàng", "VPB": "Ngân hàng", "STB": "Ngân hàng", "HDB": "Ngân hàng", "VIB": "Ngân hàng", "SHB": "Ngân hàng", "LPB": "Ngân hàng", "MSB": "Ngân hàng", "EIB": "Ngân hàng", "OCB": "Ngân hàng", "TPB": "Ngân hàng", "SSB": "Ngân hàng", "NAB": "Ngân hàng", "BAB": "Ngân hàng", "BVB": "Ngân hàng", "ABB": "Ngân hàng", "VAB": "Ngân hàng", "KLB": "Ngân hàng", "PGB": "Ngân hàng",
-    "SSI": "Chứng khoán", "VND": "Chứng khoán", "HCM": "Chứng khoán", "VCI": "Chứng khoán", "MBS": "Chứng khoán", "FTS": "Chứng khoán", "BSI": "Chứng khoán", "CTS": "Chứng khoán", "SHS": "Chứng khoán", "ORS": "Chứng khoán", "AGR": "Chứng khoán", "APG": "Chứng khoán", "VDS": "Chứng khoán", "BVS": "Chứng khoán", "TVS": "Chứng khoán", "AAS": "Chứng khoán", "CSI": "Chứng khoán", "EVS": "Chứng khoán", "VIX": "Chứng khoán", "APS": "Chứng khoán", "WSS": "Chứng khoán", "SBS": "Chứng khoán", "IVS": "Chứng khoán", "TVC": "Chứng khoán",
-    "VHM": "Họ nhà VIN", "VIC": "Họ nhà VIN", "VRE": "Họ nhà VIN",
-    "KDH": "Bất động sản / KCN", "NLG": "Bất động sản / KCN", "DXG": "Bất động sản / KCN", "PDR": "Bất động sản / KCN", "DIG": "Bất động sản / KCN", "CEO": "Bất động sản / KCN", "NVL": "Bất động sản / KCN", "TCH": "Bất động sản / KCN", "SCR": "Bất động sản / KCN", "HDC": "Bất động sản / KCN", "HDG": "Bất động sản / KCN", "KBC": "Bất động sản / KCN", "SZC": "Bất động sản / KCN", "BCM": "Bất động sản / KCN", "IDC": "Bất động sản / KCN", "VGC": "Bất động sản / KCN", "IJC": "Bất động sản / KCN", "CII": "Bất động sản / KCN", "NBB": "Bất động sản / KCN", "NTL": "Bất động sản / KCN", "SIP": "Bất động sản / KCN", "TIP": "Bất động sản / KCN", "LHG": "Bất động sản / KCN", "HQC": "Bất động sản / KCN", "ITA": "Bất động sản / KCN", "LDG": "Bất động sản / KCN", "AGG": "Bất động sản / KCN", "CRE": "Bất động sản / KCN", "DRH": "Bất động sản / KCN", "QCG": "Bất động sản / KCN", "SJS": "Bất động sản / KCN", "TDC": "Bất động sản / KCN", "D2D": "Bất động sản / KCN", "SZL": "Bất động sản / KCN", "NTC": "Bất động sản / KCN", "HLD": "Bất động sản / KCN", "HAR": "Bất động sản / KCN", "HPX": "Bất động sản / KCN", "NHA": "Bất động sản / KCN", "API": "Bất động sản / KCN", "CSC": "Bất động sản / KCN", "DTA": "Bất động sản / KCN", "FIR": "Bất động sản / KCN",
-    "HPG": "Thép / Vật liệu xây dựng", "HSG": "Thép / Vật liệu xây dựng", "NKG": "Thép / Vật liệu xây dựng", "TLH": "Thép / Vật liệu xây dựng", "SMC": "Thép / Vật liệu xây dựng", "VGS": "Thép / Vật liệu xây dựng", "TVN": "Thép / Vật liệu xây dựng", "TIS": "Thép / Vật liệu xây dựng", "KSB": "Thép / Vật liệu xây dựng", "DHA": "Thép / Vật liệu xây dựng", "HT1": "Thép / Vật liệu xây dựng", "BCC": "Thép / Vật liệu xây dựng", "HOM": "Thép / Vật liệu xây dựng", "CLH": "Thép / Vật liệu xây dựng", "C32": "Thép / Vật liệu xây dựng", "PLC": "Thép / Vật liệu xây dựng", "VCS": "Thép / Vật liệu xây dựng", "PTB": "Thép / Vật liệu xây dựng", "ACC": "Thép / Vật liệu xây dựng", "BTS": "Thép / Vật liệu xây dựng", "HLY": "Thép / Vật liệu xây dựng", "YBM": "Thép / Vật liệu xây dựng",
-    "FPT": "Công nghệ / Viễn thông", "CMG": "Công nghệ / Viễn thông", "ELC": "Công nghệ / Viễn thông", "CTR": "Công nghệ / Viễn thông", "VGI": "Công nghệ / Viễn thông", "FOX": "Công nghệ / Viễn thông", "SAM": "Công nghệ / Viễn thông", "ITD": "Công nghệ / Viễn thông", "ICT": "Công nghệ / Viễn thông", "ONE": "Công nghệ / Viễn thông", "SGT": "Công nghệ / Viễn thông", "TTN": "Công nghệ / Viễn thông", "VNZ": "Công nghệ / Viễn thông", "DST": "Công nghệ / Viễn thông", "HPT": "Công nghệ / Viễn thông",
-    "MWG": "Bán lẻ / Phân phối", "FRT": "Bán lẻ / Phân phối", "DGW": "Bán lẻ / Phân phối", "PNJ": "Bán lẻ / Phân phối", "PET": "Bán lẻ / Phân phối", "PSD": "Bán lẻ / Phân phối", "AST": "Bán lẻ / Phân phối", "SVC": "Bán lẻ / Phân phối", "HAX": "Bán lẻ / Phân phối", "CTF": "Bán lẻ / Phân phối", "TMT": "Bán lẻ / Phân phối", "HTC": "Bán lẻ / Phân phối", "COM": "Bán lẻ / Phân phối", "PIT": "Bán lẻ / Phân phối", "TNA": "Bán lẻ / Phân phối", "BTT": "Bán lẻ / Phân phối",
-    "GAS": "Dầu khí / Năng lượng", "PVD": "Dầu khí / Năng lượng", "PVS": "Dầu khí / Năng lượng", "PLX": "Dầu khí / Năng lượng", "BSR": "Dầu khí / Năng lượng", "OIL": "Dầu khí / Năng lượng", "PVC": "Dầu khí / Năng lượng", "PVB": "Dầu khí / Năng lượng", "PVT": "Dầu khí / Năng lượng", "PVP": "Dầu khí / Năng lượng", "CNG": "Dầu khí / Năng lượng", "PGC": "Dầu khí / Năng lượng", "POW": "Dầu khí / Năng lượng", "NT2": "Dầu khí / Năng lượng", "QTP": "Dầu khí / Năng lượng", "PPC": "Dầu khí / Năng lượng", "REE": "REE Corp", "GEG": "GEG", "PC1": "PC1 Group", "VSH": "VSH", "TTA": "TTA", "SBA": "SBA", "TMP": "TMP", "CHP": "CHP", "HND": "HND",
-    "DGC": "Hóa chất / Phân bón / Cao su / Nhựa", "DCM": "Hóa chất / Phân bón / Cao su / Nhựa", "DPM": "Hóa chất / Phân bón / Cao su / Nhựa", "CSV": "Hóa chất / Phân bón / Cao su / Nhựa", "LAS": "Hóa chất / Phân bón / Cao su / Nhựa", "DDV": "Hóa chất / Phân bón / Cao su / Nhựa", "BFC": "Hóa chất / Phân bón / Cao su / Nhựa", "GVR": "Hóa chất / Phân bón / Cao su / Nhựa", "PHR": "Hóa chất / Phân bón / Cao su / Nhựa", "DPR": "Hóa chất / Phân bón / Cao su / Nhựa", "DRC": "Hóa chất / Phân bón / Cao su / Nhựa", "BMP": "Hóa chất / Phân bón / Cao su / Nhựa", "NTP": "Hóa chất / Phân bón / Cao su / Nhựa", "AAA": "Hóa chất / Phân bón / Cao su / Nhựa", "APH": "Hóa chất / Phân bón / Cao su / Nhựa", "DHC": "Hóa chất / Phân bón / Cao su / Nhựa", "GIL": "Hóa chất / Phân bón / Cao su / Nhựa", "TNG": "Hóa chất / Phân bón / Cao su / Nhựa", "MSH": "Hóa chất / Phân bón / Cao su / Nhựa", "TCM": "Hóa chất / Phân bón / Cao su / Nhựa", "STK": "Hóa chất / Phân bón / Cao su / Nhựa", "ADS": "Hóa chất / Phân bón / Cao su / Nhựa", "HII": "Hóa chất / Phân bón / Cao su / Nhựa", "PLP": "Hóa chất / Phân bón / Cao su / Nhựa", "RDP": "Hóa chất / Phân bón / Cao su / Nhựa", "DAG": "Hóa chất / Phân bón / Cao su / Nhựa", "VTZ": "Hóa chất / Phân bón / Cao su / Nhựa", "CSM": "Hóa chất / Phân bón / Cao su / Nhựa", "SRC": "Hóa chất / Phân bón / Cao su / Nhựa",
-    "VNM": "Tiêu dùng / Thực phẩm / Nông nghiệp", "MSN": "Tiêu dùng / Thực phẩm / Nông nghiệp", "MCH": "Tiêu dùng / Thực phẩm / Nông nghiệp", "SAB": "Tiêu dùng / Thực phẩm / Nông nghiệp", "KDC": "Tiêu dùng / Thực phẩm / Nông nghiệp", "QNS": "Đường Quảng Ngãi", "DBC": "Dabaco", "BAF": "BAF Việt Nam", "PAN": "PAN", "TAR": "TAR", "ANV": "Nam Việt", "VHC": "Vĩnh Hoàn", "IDI": "IDI", "ASM": "ASM", "HAG": "HAG", "HNG": "HNG", "SBT": "SBT", "LSS": "LSS", "SLS": "SLS", "MML": "MML", "VOC": "VOC", "NAF": "NAF", "HSL": "HSL", "AFX": "AFX", "LTG": "LTG", "MPC": "MPC", "FMC": "FMC", "ACL": "ACL", "CMX": "CMX", "KHS": "KHS", "HAP": "HAP", "HHC": "HHC", "BBC": "BBC", "VLC": "VLC", "VSN": "VSN",
-    "GMD": "Logistics / Cảng biển / Vận tải", "HAH": "Logistics / Cảng biển / Vận tải", "VSC": "Logistics / Cảng biển / Vận tải", "SGP": "Logistics / Cảng biển / Vận tải", "PHP": "Logistics / Cảng biển / Vận tải", "VOS": "Logistics / Cảng biển / Vận tải", "VTO": "Logistics / Cảng biển / Vận tải", "SKG": "Logistics / Cảng biển / Vận tải", "VTP": "Logistics / Cảng biển / Vận tải", "TMS": "Logistics / Cảng biển / Vận tải", "SFI": "Logistics / Cảng biển / Vận tải", "DVP": "Logistics / Cảng biển / Vận tải", "PDN": "Logistics / Cảng biển / Vận tải", "CDN": "Logistics / Cảng biển / Vận tải", "SCS": "Logistics / Cảng biển / Vận tải", "NCT": "Logistics / Cảng biển / Vận tải", "GSP": "Logistics / Cảng biển / Vận tải", "VIP": "Logistics / Cảng biển / Vận tải", "VNS": "Logistics / Cảng biển / Vận tải", "TCO": "Logistics / Cảng biển / Vận tải", "TCL": "Logistics / Cảng biển / Vận tải", "PCT": "Logistics / Cảng biển / Vận tải", "TJC": "Logistics / Cảng biển / Vận tải",
-    "VJC": "Hàng không / Dịch vụ sân bay", "HVN": "Hàng không / Dịch vụ sân bay", "ACV": "Hàng không / Dịch vụ sân bay", "SAS": "Hàng không / Dịch vụ sân bay", "CIA": "Hàng không / Dịch vụ sân bay", "MAS": "Hàng không / Dịch vụ sân bay", "SGN": "Hàng không / Dịch vụ sân bay", "NCS": "Hàng không / Dịch vụ sân bay",
-    "CTD": "Xây dựng / Hạ tầng", "HBC": "Xây dựng / Hạ tầng", "FCN": "Xây dựng / Hạ tầng", "HHV": "Xây dựng / Hạ tầng", "LCG": "Xây dựng / Hạ tầng", "C4G": "Xây dựng / Hạ tầng", "VCG": "Vinaconex", "DPG": "Xây dựng / Hạ tầng", "HUT": "Xây dựng / Hạ tầng", "PHC": "Xây dựng / Hạ tầng", "HTN": "Xây dựng / Hạ tầng", "C47": "Xây dựng / Hạ tầng", "G36": "Xây dựng / Hạ tầng", "TCD": "Xây dựng / Hạ tầng", "L14": "Xây dựng / Hạ tầng", "MST": "Xây dựng / Hạ tầng",
-    "DHG": "Dược / Y tế", "IMP": "Dược / Y tế", "TRA": "Dược / Y tế", "DCL": "Dược / Y tế", "DBD": "Dược / Y tế", "DMC": "Dược / Y tế", "TNH": "Dược / Y tế", "JVC": "Dược / Y tế", "DVN": "Dược / Y tế", "AMV": "Dược / Y tế", "DP3": "Dược / Y tế", "OPC": "Dược / Y tế", "PME": "Dược / Y tế", "VMD": "Dược / Y tế", "FIT": "Dược / Y tế",
-    "BVH": "Bảo hiểm", "BMI": "Bảo hiểm", "PVI": "Bảo hiểm", "BIC": "Bảo hiểm", "MIG": "Bảo hiểm", "ABI": "Bảo hiểm", "PTI": "Bảo hiểm", "PRE": "Bảo hiểm", "VNR": "Bảo hiểm",
-    "VGT": "Dệt may / Xuất khẩu", "M10": "Dệt may / Xuất khẩu", "EVE": "Dệt may / Xuất khẩu", "KMR": "Dệt may / Xuất khẩu", "TDT": "Dệt may / Xuất khẩu",
-    "BWE": "Điện / Nước / Tiện ích", "TDM": "Nước Thủ Dầu Một", "GEX": "Gelex", "SJD": "SJD", "TBC": "TBC",
     "RAL": "Khác / Công nghiệp", "PAC": "PAC", "SAV": "SAV"
 }
 
@@ -234,21 +213,18 @@ def score_stock(
     df["obv"] = obv(df)
 
     last = df.iloc[-1]
-    prev = df.iloc[-2] if len(df) > 1 else last
     
     c = float(last["close"])
     v = float(last["volume"])
     
     ma20 = safe_float(last.get("ma20"), 0)
     ma50 = safe_float(last.get("ma50"), 0)
-    ma100 = safe_float(last.get("ma100"), 0)
     ma200 = safe_float(last.get("ma200"), 0)
     rsi14 = safe_float(last.get("rsi14"))
     macd_line = safe_float(last.get("macd"))
     macd_sig = safe_float(last.get("macd_signal"))
     high52w = float(last["high52w"]) if pd.notna(last.get("high52w")) else c
 
-    # Tính toán cơ bản
     vol20 = float(volume.rolling(20).mean().iloc[-1]) if len(df) >= 20 else v
     avg_value_20 = float((close * volume).rolling(20).mean().iloc[-1]) if len(df) >= 20 else (c * v)
     vol_ratio = round(v / vol20, 2) if vol20 else 1.0
@@ -261,7 +237,6 @@ def score_stock(
     ret60 = round((c / prev60_close - 1) * 100, 2) if prev60_close else 0.0
     close_pos = round((c - float(last["low"])) / max(1.0, float(last["high"]) - float(last["low"])), 2)
 
-    # VIII. WATCHLIST PHÂN TẦNG & SYSTEM FILTERS (LỌC RỦI RO CHIẾN LƯỢC QUỸ)
     is_filtered_out = False
     fail_reason = ""
     
@@ -273,19 +248,18 @@ def score_stock(
         fail_reason = "Price < MA50 (Dưới xu hướng trung hạn)"
     elif rsi14 is not None and rsi14 > 82:
         is_filtered_out = True
-        fail_reason = "RSI > 82 (Quá bốc hỏa/Quá mua nặng)"
+        fail_reason = "RSI > 82 (Quá bốc hỏa/Quá mua)"
     elif ret3 > 18.0:
         is_filtered_out = True
-        fail_reason = "3-day Return > 18% (Rủi ro FOMO đỉnh ngắn hạn)"
+        fail_reason = "3-day Return > 18% (Rủi ro FOMO)"
 
-    # I. TREND STRUCTURE SCORE (Tối đa: 30 điểm)
+    # I. TREND STRUCTURE SCORE
     trend_score = 0
     if ma20 and c > ma20: trend_score += 5
     if ma20 and ma50 and ma20 > ma50: trend_score += 10
-    if ma50 and ma100 and ma50 > ma100: trend_score += 5
-    if ma100 and ma200 and ma100 > ma200: trend_score += 5
+    if ma50 and safe_float(last.get("ma100"), 0) and ma50 > safe_float(last.get("ma100"), 0): trend_score += 5
+    if safe_float(last.get("ma100"), 0) and ma200 and safe_float(last.get("ma100"), 0) > ma200: trend_score += 5
     
-    # Golden Cross ngắn hạn (MA20 cắt lên MA50 trong 3 phiên gần đây)
     ma20_s = df["ma20"]
     ma50_s = df["ma50"]
     golden_cross = False
@@ -296,12 +270,11 @@ def score_stock(
                 break
     if golden_cross: trend_score += 5
     
-    # Vị trí giá đối với đỉnh 52 tuần
     if dist_high52w_pct < 10.0: trend_score += 5
     elif dist_high52w_pct <= 20.0: trend_score += 2
-    if dist_high52w_pct > 25.0: trend_score -= 10  # Trừ nặng mã giảm sâu khỏi đỉnh
+    if dist_high52w_pct > 25.0: trend_score -= 10
 
-    # II. INSTITUTIONAL MONEY FLOW (Tối đa: 25 điểm)
+    # II. INSTITUTIONAL MONEY FLOW
     money_score = 0
     if avg_value_20 > 200_000_000_000: money_score += 10
     elif avg_value_20 > 100_000_000_000: money_score += 7
@@ -311,17 +284,15 @@ def score_stock(
     elif vol_ratio >= 1.5: money_score += 7
     elif vol_ratio >= 1.2: money_score += 4
     
-    # OBV dốc lên 5 phiên
     if len(df) >= 5 and (df["obv"].tail(5).diff().dropna() > 0).all(): money_score += 5
 
-    # III. SUPER ALPHA & RELATIVE STRENGTH (Tối đa: 20 điểm)
+    # III. SUPER ALPHA & RELATIVE STRENGTH
     rs_score = 0
     stock_alpha = ret60 - (market_ret60 if market_ret60 is not None else 0.0)
     if stock_alpha > 20.0: rs_score += 10
     elif stock_alpha > 10.0: rs_score += 7
     elif stock_alpha > 5.0: rs_score += 4
     
-    # RS Line Phá Đỉnh 60 phiên (Sức mạnh tương đối tối mật)
     rs_line_break_high = False
     if all_symbols_df and "VNINDEX" in all_symbols_df:
         m_df = all_symbols_df["VNINDEX"]
@@ -332,7 +303,7 @@ def score_stock(
                 rs_line_break_high = True
     if rs_line_break_high: rs_score += 10
 
-    # IV. MOMENTUM & PRICE POSITION (Tối đa: 15 điểm)
+    # IV. MOMENTUM & PRICE POSITION
     mom_score = 0
     if rsi14 is not None and 52.0 <= rsi14 <= 72.0: mom_score += 5
     if macd_line is not None and macd_sig is not None and macd_line > macd_sig and macd_line > 0: mom_score += 5
@@ -343,13 +314,11 @@ def score_stock(
     sector = SECTORS.get(symbol, "Khác")
     if symbol in SECTOR_LEADERS.get(sector, []): bonus_score += 5
     if symbol in VIN_GROUP: bonus_score += 5
-    if symbol in VIN_GROUP and vin_above_ma20: bonus_score += 5 # Thưởng thêm hiệu ứng sóng dòng VIN
+    if symbol in VIN_GROUP and vin_above_ma20: bonus_score += 5
 
-    # Tổng điểm V3.0 tối đa chặn 100
     total_score = clamp(round(trend_score + money_score + rs_score + mom_score + bonus_score, 1), 0, 100)
-    if is_filtered_out: total_score = 0.0 # Bị loại rủi ro ép về 0 điểm
+    if is_filtered_out: total_score = 0.0
 
-    # X. TOP 3 EAGLE RULE (Quy tắc tiệm cận Alpha tuyệt đối)
     is_top3_eligible = bool(
         total_score >= 85 
         and ma20 and ma50 and c > ma20 > ma50 
@@ -358,7 +327,6 @@ def score_stock(
         and macd_line is not None and macd_sig is not None and macd_line > macd_sig
     )
 
-    # Phân tầng hành động hiển thị lên giao diện
     if total_score >= 85:
         action, allocation = "Tier A: MUA CHIẾN LƯỢC / LEADER", "15% - 25%"
     elif total_score >= 72:
@@ -388,7 +356,6 @@ def score_stock(
         f"Hành động chiến thuật: {action}."
     )
 
-    # Đóng gói bộ lọc tương thích giao diện HTML của Sếp
     filters = {
         "topOpportunity": total_score >= 85,
         "cycleTurnaround": total_score >= 75 and dist_high52w_pct < 15.0,
@@ -440,7 +407,6 @@ def main():
     all_dfs = {}
     errors = {}
 
-    # Tải trước VNINDEX làm mốc đối chiếu sức mạnh tương đối (Relative Strength Alpha)
     market_ret60 = 0.0
     try:
         m_df, _ = fetch_history("VNINDEX")
@@ -450,7 +416,6 @@ def main():
     except Exception as exc:
         print("WARN VNINDEX FETCH FAILED:", exc)
 
-    # Tiến hành quét vũ trụ danh mục của Sếp
     for symbol in WATCHLIST:
         try:
             df, src = fetch_history(symbol)
@@ -460,7 +425,6 @@ def main():
             errors[symbol] = str(exc)
             print(f"FETCH ERROR {symbol}: {exc}")
 
-    # Lớp Layer kiểm tra hiệu ứng sóng dòng họ Vin: Kiểm tra đồng thời VIC > MA20 và VHM > MA20
     vin_above_ma20 = False
     try:
         if "VIC" in all_dfs and "VHM" in all_dfs:
@@ -486,7 +450,6 @@ def main():
             print(f"SCORE ERROR {symbol}: {exc}")
 
     if results:
-        # Sắp xếp điểm hệ thống quét từ cao xuống thấp
         results = sorted(results, key=lambda x: x.get("score", 0), reverse=True)
         data = {
             "meta": {
