@@ -406,4 +406,72 @@ def fallback_data(errors: dict[str, str], activation_logs: list[str]):
 
 def main():
     activation_logs = try_activate_key()
-    print("Activation logs
+    print("Activation logs:", activation_logs)
+
+    all_dfs = {}
+    errors = {}
+
+    market_ret60 = 0.0
+    try:
+        m_df, _ = fetch_history("VNINDEX")
+        all_dfs["VNINDEX"] = m_df
+        if len(m_df) > 60:
+            market_ret60 = round((m_df.iloc[-1]["close"] / m_df.iloc[-61]["close"] - 1) * 100, 2)
+    except Exception as exc:
+        print("WARN VNINDEX FETCH FAILED:", exc)
+
+    for symbol in WATCHLIST:
+        try:
+            df, src = fetch_history(symbol)
+            all_dfs[symbol] = df
+            print(f"FETCH OK -> {symbol}")
+        except Exception as exc:
+            errors[symbol] = str(exc)
+            print(f"FETCH ERROR {symbol}: {exc}")
+
+    vin_above_ma20 = False
+    try:
+        if "VIC" in all_dfs and "VHM" in all_dfs:
+            vic_close = all_dfs["VIC"].iloc[-1]["close"]
+            vic_ma20 = all_dfs["VIC"]["close"].rolling(20).mean().iloc[-1]
+            vhm_close = all_dfs["VHM"].iloc[-1]["close"]
+            vhm_ma20 = all_dfs["VHM"]["close"].rolling(20).mean().iloc[-1]
+            if vic_close > vic_ma20 and vhm_close > vhm_ma20:
+                vin_above_ma20 = True
+                print(">>> ĐÃ KÍCH HOẠT HIỆU ỨNG SÓNG DÒNG VIN GROUP (+5 PTS) <<<")
+    except Exception as e:
+        print("WARN VIN LAYER COMPUTE:", e)
+
+    results = []
+    for symbol, df in all_dfs.items():
+        if symbol == "VNINDEX":
+            continue
+        try:
+            item = score_stock(symbol, df, "Vnstock API", market_ret60, vin_above_ma20, all_dfs)
+            results.append(item)
+        except Exception as exc:
+            errors[symbol] = f"Scoring exception: {exc}"
+            print(f"SCORE ERROR {symbol}: {exc}")
+
+    if results:
+        results = sorted(results, key=lambda x: x.get("score", 0), reverse=True)
+        data = {
+            "meta": {
+                "updated_at": datetime.now(VN_TZ).strftime("%Y-%m-%d %H:%M:%S VN"),
+                "source": "VN Stock Eagle Picker Pro V3.0",
+                "has_api_key": bool(VNSTOCK_API_KEY),
+                "success": len(results), "universe": len(WATCHLIST),
+                "market_ret60": market_ret60,
+                "note": "STOCK SCORING V3.0: Hệ thống quét dòng tiền tổ chức, Alpha và bộ lọc rủi ro Trading Quỹ.",
+                "activation_logs": activation_logs, "errors": errors,
+            },
+            "stocks": results,
+        }
+    else:
+        data = fallback_data(errors, activation_logs)
+
+    Path("data.json").write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Successfully deployed System V3.0! Output {len(data['stocks'])} signals to data.json")
+
+if __name__ == "__main__":
+    main()
