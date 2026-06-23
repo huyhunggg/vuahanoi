@@ -356,10 +356,54 @@ def score_stock(
         f"Hành động chiến thuật: {action}."
     )
 
+    breakout = bool(high52w and c >= high52w * 0.985 and vol_ratio >= 1.5)
+    pullback = bool(ma20 and ma50 and c > ma50 and ma20 > ma50 and (round(((c/ma20)-1)*100, 2) <= 3.0))
+    accumulation = bool(dist_high52w_pct <= 12.0 and abs(ret20) < 8.0)
+
     filters = {
         "topOpportunity": total_score >= 85,
         "cycleTurnaround": total_score >= 75 and dist_high52w_pct < 15.0,
         "tplus": is_top3_eligible,
-        "breakout": vol_ratio >= 1.5 and close_pos >= 0.7,
-        "pullbackMA20": bool(ma20 and 0 <= ((c/ma20)-1)*100 <= 3.0),
-        "moneyFlow": money_score >=
+        "breakout": breakout,
+        "pullbackMA20": pullback,
+        "moneyFlow": money_score >= 15,
+        "accumulation": accumulation,
+        "safe": total_score >= 72 and c > ma20
+    }
+
+    return {
+        "ticker": symbol, "name": NAMES.get(symbol, symbol), "sector": sector,
+        "score": total_score,
+        "subscores": {
+            "trend": trend_score, "momentum": mom_score, "moneyFlow": money_score,
+            "setup": bonus_score, "risk": int(not is_filtered_out) * 15, "relativeStrength": rs_score
+        },
+        "setupType": "Alpha Leader" if is_top3_eligible else "Nền đà tăng" if total_score >= 72 else "Theo dõi",
+        "marketState": "Thượng tầng Alpha" if total_score >= 85 else "Tích cực" if total_score >= 72 else "Yếu",
+        "action": action, "risk": "Quản trị chặt" if sector in ["Chứng khoán", "Họ nhà VIN"] else "Theo thị trường",
+        "close": safe_float(c, 0), "rsi14": rsi14, "ret20": ret20, "ret60": ret60,
+        "volume_status": "Bùng nổ" if vol_ratio >= 1.5 else "Khá" if vol_ratio >= 1.2 else "Kiệt Vol",
+        "volumeRatio": vol_ratio, "ma20": ma20, "ma50": ma50, "ma200": ma200,
+        "macd": macd_line, "macd_signal": macd_sig, "distanceToMA20": round(((c/ma20)-1)*100, 2) if ma20 else 0,
+        "signals": signals if signals else ["Duy trì cấu trúc nền tích lũy ổn định"], 
+        "warnings": warnings, "filters": filters,
+        "reason": expertSummary, "expertSummary": expertSummary, "buyZone": f"Quanh vùng MA20 ~ {int(ma20):,}".replace(",", "."),
+        "stopLoss": "Thủng MA50 hoặc mất nền giá gần nhất -5%", "takeProfit": "Kỳ vọng Alpha ngắn hạn +15% hoặc trailing theo đường MA20",
+        "allocation": allocation
+    }
+
+def fallback_data(errors: dict[str, str], activation_logs: list[str]):
+    return {
+        "meta": {
+            "updated_at": datetime.now(VN_TZ).strftime("%Y-%m-%d %H:%M:%S VN"),
+            "source": "fallback sample system V3.0",
+            "has_api_key": bool(VNSTOCK_API_KEY), "success": 0, "universe": len(WATCHLIST),
+            "note": "Hệ thống Quỹ đang đợi kích hoạt cào từ GitHub Actions.",
+            "activation_logs": activation_logs, "errors": errors,
+        },
+        "stocks": []
+    }
+
+def main():
+    activation_logs = try_activate_key()
+    print("Activation logs
