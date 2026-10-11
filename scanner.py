@@ -111,15 +111,20 @@ def build_universe(state):
     return universe[:MAX_SYMBOLS]
 
 
+LAST_ERROR = ""
+
+
 def http_json(url, retries=3):
+    global LAST_ERROR
     for attempt in range(retries):
         try:
             req = urllib.request.Request(url, headers=HEADERS)
             with urllib.request.urlopen(req, timeout=25) as r:
                 return json.loads(r.read().decode("utf-8"))
         except Exception as e:
-            print(f"  lỗi tải dữ liệu (lần {attempt + 1}): {str(e)[:100]}")
-            time.sleep(3 * (attempt + 1))
+            LAST_ERROR = f"{type(e).__name__}: {str(e)[:150]} | {url[:90]}"
+            print(f"  lỗi tải dữ liệu (lần {attempt + 1}): {LAST_ERROR}")
+            time.sleep(2 * (attempt + 1))
     return None
 
 
@@ -565,8 +570,11 @@ def main():
         print("Không lấy được VN-Index: bỏ qua Trụ cột 4.")
 
     today = datetime.now(VN_TZ).date().isoformat()
-    metrics, scanned, cut = [], 0, False
+    metrics, scanned, cut, fails = [], 0, False, 0
     for i, s in enumerate(symbols, 1):
+        if fails >= 8 and not metrics:
+            print("Liên tiếp 8 mã không tải được dữ liệu: dừng sớm để tránh lãng phí thời gian.")
+            break
         if time.time() - t0 > TIME_BUDGET_SEC:
             cut = True
             print("Hết thời gian cho phép, dừng quét; các mã còn lại sẽ quét ở lần sau.")
@@ -574,6 +582,7 @@ def main():
         print(f"[{i}/{len(symbols)}] {s}")
         df = fetch(s)
         scanned += 1
+        fails = 0 if df is not None else fails + 1
         if df is not None:
             try:
                 m = compute_metrics(s, df, idx)
@@ -596,7 +605,8 @@ def main():
     now = datetime.now(VN_TZ).strftime("%d/%m/%Y %H:%M")
     os.makedirs("reports", exist_ok=True)
     if not metrics:
-        md = f"# Kết quả quét {now}\n\nKhông lấy được dữ liệu. Kiểm tra log hoặc API key.\n"
+        md = (f"# Kết quả quét {now}\n\n**Không lấy được dữ liệu giá.**\n\n"
+              f"Lỗi gần nhất: `{LAST_ERROR or 'API trả về dữ liệu rỗng'}`\n")
         khoe = pd.DataFrame()
     else:
         t = pd.DataFrame(metrics)
