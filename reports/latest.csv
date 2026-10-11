@@ -1,82 +1,236 @@
-﻿Mã,Điểm,Phân loại,Khỏe,Yếu,RS,Giá,%Phiên,%1T,%1Tuần,RSI,Vol/TB20,Tích lũy%,GTGD tỷ,T1,T2,T3,T4,Tín hiệu
-DRI,91,🟢 KHỎE,5/6,0/6,95,16.9,1.2,25.1,4.3,72.6,1.6,71,24.3,22,25,24,20,"RS 95, 1T >15% (nóng), Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, Tích lũy 71%, MACD>0, Vol đột biến nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
-HDB,90,🟢 KHỎE,5/6,0/6,82,22.4,4.0,8.7,2.4,68.8,2.81,71,263.8,22,23,25,20,"RS 82, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, Tích lũy 71%, MACD>0, Vol rất lớn nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
-FRT,88,🟢 KHỎE,6/6,0/6,88,149.6,-0.86,9.2,4.7,62.0,0.76,71,95.9,25,25,21,17,"RS 88, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, Tích lũy 71%, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
-GMD,84,🟡 THEO DÕI,4/6,0/6,89,55.0,1.48,10.6,6.3,71.9,1.18,49,52.9,25,25,14,20,"RS 89, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
-MSB,81,🟢 KHỎE,5/6,0/6,93,14.6,-1.02,12.7,3.9,67.4,1.55,57,138.7,25,25,16,20,"RS 93, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
-VPB,81,🟡 THEO DÕI,4/6,0/6,81,23.8,1.49,11.3,3.9,68.6,0.91,66,498.7,23,25,16,17,"RS 81, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, Mạnh hơn VN-Index 1T"
-BVH,80,🟢 KHỎE,5/6,0/6,92,76.2,-2.18,19.1,0.5,66.3,0.6,65,79.0,21,23,16,20,"RS 92, 1T >15% (nóng), Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
-MSR,78,🟡 THEO DÕI,4/6,0/6,99,67.9,-0.44,44.4,12.6,86.4,0.94,69,132.5,20,25,13,20,"RS 99, 1T >15% (nóng), Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ RSI>80 quá mua"
-DGW,78,🟢 KHỎE,5/6,0/6,91,47.25,-1.05,8.8,5.9,64.0,0.64,54,87.6,25,25,11,17,"RS 91, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
-MWG,78,🟢 KHỎE,5/6,0/6,60,75.9,-0.26,7.9,5.1,63.3,0.95,80,214.9,18,22,21,17,"1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50, Trên mây, Walking the Bands, Tích lũy 80%, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
-PVT,76,🟢 KHỎE,5/6,0/6,94,25.2,-1.37,14.0,7.2,65.3,0.84,48,200.7,25,23,11,17,"RS 94, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
-BSR,75,🟢 KHỎE,5/6,0/6,98,31.05,-2.97,12.7,2.0,56.2,0.8,46,417.7,24,23,11,17,"RS 98, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
-PVS,73,🟢 KHỎE,5/6,0/6,87,33.9,-0.88,5.9,1.2,57.0,1.25,48,140.5,24,23,11,15,"RS 87, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
-TNG,72,🟡 THEO DÕI,4/6,0/6,72,18.3,-2.66,13.7,10.2,68.0,1.71,78,9.3,18,18,21,20,"1T +5~15%, Tuần xác nhận sóng, Trên mây, Walking the Bands, Tích lũy 78%, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
-MSN,71,🟡 THEO DÕI,4/6,0/6,68,74.2,0.0,11.6,5.0,67.2,0.91,51,391.2,18,22,11,20,"1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50, Trên mây, Walking the Bands, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
-DCM,69,🟡 THEO DÕI,4/6,0/6,71,34.85,1.31,7.2,6.4,60.5,0.84,55,107.8,18,20,16,15,"1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50, Trên mây, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
-NT2,67,🟡 THEO DÕI,3/6,0/6,64,22.85,-0.65,11.5,2.5,68.5,1.69,69,16.1,17,22,13,20,"1T +5~15%, Tuần nén chặt, Giá>MA20>MA50, Trên mây, Walking the Bands, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
-HAH,67,🟡 THEO DÕI,3/6,0/6,61,50.3,-2.9,9.3,-1.8,52.7,1.09,70,59.4,17,20,13,17,"1T +5~15%, Tuần nén chặt, Giá>MA20>MA50, Trên mây, MACD>0, Mạnh hơn VN-Index 1T"
-VGC,62,🟡 THEO DÕI,3/6,0/6,74,43.1,-3.15,5.1,-1.7,53.5,1.83,49,25.6,17,25,8,17,"1T +5~15%, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
-PLX,60,🟡 THEO DÕI,3/6,0/6,78,37.35,-0.66,6.1,4.3,56.7,1.4,47,196.3,18,18,14,10,"1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50, Trên mây, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
-VJC,57,🟡 THEO DÕI,3/6,0/6,65,129.0,0.39,3.4,-0.3,49.5,0.73,81,136.2,14,8,15,20,"Tuần nén chặt, Tích lũy 81%, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
-PHR,56,🟡 THEO DÕI,2/6,1/6,69,32.9,-1.2,0.3,-0.9,51.8,0.89,24,17.6,14,14,8,20,"Tuần nén chặt, Trên mây, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
-GVR,55,🟡 THEO DÕI,3/6,1/6,84,32.85,-2.95,9.5,0.3,53.5,1.21,27,94.8,22,20,8,5,"RS 84, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50, Trên mây, MACD>0, Mạnh hơn VN-Index 1T"
-CTD,53,⚪ TRUNG LẬP,2/6,1/6,43,62.3,0.0,7.4,7.8,62.1,1.52,46,16.0,13,15,8,17,"1T +5~15%, Tuần xác nhận sóng, Walking the Bands, RSI khoẻ, Mạnh hơn VN-Index 1T"
-TCB,51,⚪ TRUNG LẬP,3/6,1/6,59,32.35,1.41,2.4,0.3,50.5,0.92,73,536.1,9,9,18,15,"Tuần nén chặt, Trên mây, Tích lũy 73%, MACD>0, Mạnh hơn VN-Index 1T"
-DPR,48,⚪ TRUNG LẬP,2/6,1/6,63,37.65,-0.4,0.4,-1.3,48.4,1.37,22,17.3,14,9,5,20,"Tuần nén chặt, Trên mây, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
-VIB,46,⚪ TRUNG LẬP,2/6,1/6,48,13.65,-1.09,3.0,2.2,53.9,1.4,40,59.6,9,15,5,17,"Tuần nén chặt, Giá>MA20>MA50, Mạnh hơn VN-Index 1T"
-ANV,46,⚪ TRUNG LẬP,1/6,1/6,32,18.65,0.0,19.2,9.7,70.8,2.71,69,12.5,10,11,10,15,"1T >15% (nóng), Tuần xác nhận sóng, Walking the Bands, Mạnh hơn VN-Index 1T"
-VHC,41,⚪ TRUNG LẬP,2/6,2/6,51,52.4,-1.13,4.4,3.4,58.5,1.38,47,17.3,10,5,6,20,"Tuần xác nhận sóng, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
-SSB,36,⚪ TRUNG LẬP,1/6,2/6,83,16.8,-1.75,-8.2,-1.5,40.1,0.71,49,76.1,16,5,0,15,"RS 83, Tuần nén chặt, Trên mây, Chống chịu tốt khi VNI giảm"
-GAS,33,🔴 YẾU,1/6,1/6,86,80.7,-1.59,0.2,2.4,48.5,0.66,38,125.5,21,7,0,5,"RS 86, Tuần nén chặt, Trên mây, Mạnh hơn VN-Index 1T"
-NVL,33,🔴 YẾU,1/6,4/6,41,10.95,6.83,-9.6,4.8,41.5,3.12,82,259.1,7,0,14,12,"Tuần xác nhận sóng, Tích lũy 82%, Vol rất lớn nến xanh"
-SAB,31,🔴 YẾU,1/6,4/6,66,42.9,-0.23,-2.2,1.1,40.5,1.08,25,19.2,11,0,0,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
-KBC,31,🔴 YẾU,1/6,4/6,34,25.5,0.39,-3.8,1.2,36.6,0.82,79,33.6,6,0,10,15,"Tuần nén chặt, Tích lũy 79%, Chống chịu tốt khi VNI giảm"
-VCB,30,🔴 YẾU,1/6,4/6,55,56.7,0.18,-2.6,-0.7,36.8,0.72,33,247.3,6,4,0,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
-PDR,29,🔴 YẾU,1/6,5/6,11,11.3,1.8,-3.8,0.9,39.6,2.45,95,43.8,6,0,16,7,"Tuần nén chặt, Tích lũy 95%, Vol đột biến nến xanh"
-NKG,27,🔴 YẾU,0/6,5/6,22,9.29,1.53,-8.9,1.0,32.8,1.51,16,16.6,6,0,6,15,"Tuần nén chặt, Vol đột biến nến xanh, Chống chịu tốt khi VNI giảm"
-STB,26,🔴 YẾU,0/6,4/6,76,67.3,0.0,-12.9,-1.6,27.5,0.84,22,234.1,11,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
-VNM,26,🔴 YẾU,0/6,3/6,70,57.7,-0.35,-3.7,0.7,38.2,0.55,35,146.0,11,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
-OCB,26,🔴 YẾU,1/6,4/6,53,9.96,0.0,-2.4,-1.4,33.3,1.96,32,12.8,6,0,0,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
-MBB,26,🔴 YẾU,0/6,4/6,52,19.05,0.79,-3.5,-0.3,36.3,1.2,44,232.1,6,2,3,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
-CTG,26,🔴 YẾU,1/6,4/6,45,29.5,1.03,-1.5,-0.8,39.8,1.12,47,223.3,6,2,3,15,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
-PC1,26,🔴 YẾU,0/6,4/6,40,18.85,-0.26,-7.6,-2.1,33.8,1.26,61,30.3,6,0,5,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
-HSG,26,🔴 YẾU,1/6,5/6,39,9.9,-0.1,-2.9,-0.8,33.2,0.97,22,20.7,6,0,0,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
-DBC,26,🔴 YẾU,1/6,5/6,29,15.55,0.0,-2.8,1.0,43.6,1.14,29,20.2,6,0,0,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
-VIC,25,🔴 YẾU,1/6,4/6,97,225.5,-1.1,-7.3,0.7,44.6,0.86,24,832.5,18,7,0,0,"RS 97, Tuần nén chặt, Trên mây"
-DPM,25,🔴 YẾU,1/6,3/6,58,21.9,-1.13,-2.2,0.2,44.1,0.58,34,76.5,6,4,0,15,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
-POW,25,🔴 YẾU,1/6,4/6,57,12.45,-0.4,-1.2,-2.0,39.0,0.88,33,73.6,6,2,0,17,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
-NLG,25,🔴 YẾU,0/6,5/6,30,21.9,-0.23,-11.3,0.0,38.2,0.73,19,38.8,6,4,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
-REE,24,🔴 YẾU,1/6,3/6,47,44.95,-1.21,0.0,-5.2,40.0,2.08,42,22.0,3,6,0,20,"Tuần < -5%, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
-DIG,24,🔴 YẾU,0/6,4/6,13,9.4,1.08,-6.5,1.6,40.6,2.17,42,33.0,6,0,6,12,"Tuần nén chặt, Vol đột biến nến xanh"
-HDG,24,🔴 YẾU,0/6,5/6,8,14.6,0.69,-8.5,-3.0,28.5,1.32,15,11.9,6,0,3,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
-HCM,23,🔴 YẾU,0/6,3/6,75,23.15,-1.91,-9.2,-1.5,36.3,0.81,46,74.9,11,0,0,12,Tuần nén chặt
-PVD,21,🔴 YẾU,0/6,1/6,77,18.2,-0.27,-1.9,1.1,45.2,0.96,33,107.3,11,0,0,10,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
-LPB,21,🔴 YẾU,0/6,4/6,46,40.7,0.12,-12.8,1.2,34.2,0.87,31,94.4,6,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
-HPG,21,🔴 YẾU,0/6,4/6,42,20.1,-0.25,-5.6,0.2,37.0,0.87,37,374.6,6,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
-DXG,21,🔴 YẾU,0/6,4/6,23,9.75,1.46,-9.3,-2.4,30.7,1.39,50,92.4,6,0,3,12,Tuần nén chặt
-LCG,21,🔴 YẾU,0/6,5/6,18,6.27,-0.16,-8.5,-0.6,24.9,1.04,15,4.3,6,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
-DGC,20,🔴 YẾU,0/6,5/6,19,33.8,4.0,-12.8,-4.8,41.0,0.72,27,25.0,4,4,0,12,
-ACB,19,🔴 YẾU,0/6,5/6,54,20.15,-0.98,-8.6,-4.5,26.4,1.47,26,169.5,4,0,0,15,Chống chịu tốt khi VNI giảm
-KDH,19,🔴 YẾU,0/6,5/6,5,13.4,1.13,-9.6,-2.4,28.3,1.48,17,58.2,6,0,3,10,Tuần nén chặt
-VHM,18,🔴 YẾU,0/6,5/6,80,66.0,0.46,-8.3,-2.8,38.1,0.73,21,629.9,16,2,0,0,"RS 80, Tuần nén chặt"
-EIB,18,🔴 YẾU,0/6,4/6,25,16.1,0.0,-4.2,-2.4,35.4,1.07,33,67.4,6,0,0,12,Tuần nén chặt
-VCG,18,🔴 YẾU,0/6,5/6,12,13.65,0.37,-9.3,2.6,30.7,0.95,11,25.3,6,0,0,12,Tuần nén chặt
-SHB,18,🔴 YẾU,0/6,5/6,9,10.0,-0.5,-13.4,-10.3,16.6,3.23,69,451.7,3,0,5,10,Tuần < -5%
-BID,17,🔴 YẾU,0/6,5/6,49,33.9,0.0,-4.8,-2.6,29.3,0.98,33,137.0,6,4,0,7,Tuần nén chặt
-VND,17,🔴 YẾU,0/6,6/6,20,13.2,0.76,-12.9,-0.8,31.4,1.71,20,147.1,6,0,6,5,"Tuần nén chặt, Vol đột biến nến xanh"
-CEO,17,🔴 YẾU,0/6,6/6,6,10.3,4.04,-13.4,-1.9,34.7,2.18,26,59.9,6,0,6,5,"Tuần nén chặt, Vol đột biến nến xanh"
-TPB,16,🔴 YẾU,0/6,4/6,37,11.45,-1.29,-3.6,-3.8,30.6,0.71,41,115.0,4,0,0,12,
-TCH,16,🔴 YẾU,0/6,5/6,24,10.75,2.38,-8.1,-1.4,39.6,1.42,59,49.1,6,2,8,0,Tuần nén chặt
-SSI,15,🔴 YẾU,0/6,4/6,36,19.0,-0.26,-6.4,-3.6,30.3,1.19,31,447.5,4,4,0,7,
-CII,14,🔴 YẾU,0/6,6/6,7,11.95,2.14,-9.8,1.7,37.3,1.35,17,88.7,6,0,3,5,Tuần nén chặt
-HHV,13,🔴 YẾU,0/6,5/6,26,8.75,-0.68,-8.3,-0.9,25.3,1.95,16,19.7,6,0,0,12,"Tuần nén chặt, ⚠ Vol lớn nến đỏ (phân phối?)"
-SZC,13,🔴 YẾU,0/6,6/6,16,16.9,-1.46,-6.1,0.6,38.8,0.96,20,4.7,6,0,0,7,Tuần nén chặt
-BCM,13,🔴 YẾU,0/6,4/6,14,38.3,-2.17,-1.4,-1.0,40.0,0.85,33,20.8,6,2,0,5,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
-FPT,12,🔴 YẾU,0/6,5/6,31,57.9,-3.02,-12.4,-6.8,23.7,1.99,23,353.3,3,2,0,12,"Tuần < -5%, ⚠ Vol lớn nến đỏ (phân phối?)"
-KOS,11,🔴 YẾU,0/6,6/6,2,10.35,-6.76,-68.9,-29.6,1.3,20.46,15,3.0,1,0,0,10,Tuần < -5%
-VRE,10,🔴 YẾU,0/6,5/6,35,23.15,0.22,-9.6,-1.9,33.3,0.68,31,98.3,6,4,0,0,Tuần nén chặt
-GEX,8,🔴 YẾU,0/6,6/6,28,22.25,2.06,-7.1,-2.8,37.7,0.77,11,194.3,6,2,0,0,Tuần nén chặt
-VCI,6,🔴 YẾU,0/6,6/6,17,18.55,0.0,-7.5,-0.5,35.5,1.17,21,180.3,6,0,0,0,Tuần nén chặt
-PNJ,3,🔴 YẾU,0/6,6/6,3,19.5,6.85,-47.7,-15.4,18.0,0.61,6,285.9,3,0,0,0,Tuần < -5%
+﻿Cách MA20%,Cắt lỗ,Rủi ro%,Mục tiêu,pen,Mã,Điểm,Phân loại,Khỏe,Yếu,RS,Giá,%Phiên,%1T,%1Tuần,RSI,Vol/TB20,Tích lũy%,GTGD tỷ,T1,T2,T3,T4,Tín hiệu
+6.6,19.31,11.8,27.09,0,CDC,92,🟢 KHỎE,5/6,0/6,91,21.9,3.79,13.5,6.8,68.5,1.02,77,4.2,25,23,24,20,"RS 91, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Tích lũy 77%, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+12.1,14.48,14.3,21.74,0,DRI,91,🟢 KHỎE,5/6,0/6,95,16.9,1.2,25.1,4.3,72.6,1.6,71,24.3,22,25,24,20,"RS 95, 1T >15% (nóng), Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, Tích lũy 71%, MACD>0, Vol đột biến nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+2.3,6.89,4.5,7.87,0,HTN,90,🟢 KHỎE,6/6,0/6,94,7.22,-1.77,8.6,-1.5,62.6,0.95,78,2.3,24,25,21,20,"RS 94, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, Tích lũy 78%, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+5.0,20.53,8.3,26.14,0,HDB,90,🟢 KHỎE,5/6,0/6,83,22.4,4.0,8.7,2.4,68.8,2.81,71,263.8,22,23,25,20,"RS 83, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, Tích lũy 71%, MACD>0, Vol rất lớn nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+7.0,134.94,9.8,178.91,0,FRT,88,🟢 KHỎE,6/6,0/6,88,149.6,-0.86,9.2,4.7,62.0,0.76,71,95.9,25,25,21,17,"RS 88, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, Tích lũy 71%, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
+1.9,48.95,5.5,57.49,0,QNS,87,🟢 KHỎE,6/6,0/6,86,51.8,-0.77,4.6,-2.4,61.2,1.37,93,17.2,21,25,21,20,"RS 86, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, Tích lũy 93%, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+28.1,6.89,31.1,16.21,0,HDA,86,🟢 KHỎE,5/6,0/6,97,10.0,3.09,51.5,17.6,87.3,2.23,100,1.7,20,25,21,20,"RS 97, 1T >15% (nóng), Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, Tích lũy 100%, MACD>0, Vol đột biến nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ RSI>80 quá mua"
+9.0,42.85,12.2,60.7,0,DCL,86,🟢 KHỎE,6/6,0/6,93,48.8,-2.59,27.2,4.9,66.6,0.17,92,74.5,22,23,21,20,"RS 93, 1T >15% (nóng), Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Tích lũy 92%, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+9.0,45.62,9.7,60.25,0,PET,85,🟢 KHỎE,6/6,0/6,98,50.5,2.23,31.9,1.4,61.9,0.65,73,42.0,21,23,21,20,"RS 98, 1T >15% (nóng), Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, Tích lũy 73%, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+1.1,17.14,2.9,18.67,0,HHP,85,🟢 KHỎE,6/6,0/6,96,17.65,0.28,3.2,-1.4,63.4,0.69,79,16.9,21,23,21,20,"RS 96, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, Tích lũy 79%, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+6.0,50.43,8.3,64.13,0,GMD,84,🟡 THEO DÕI,4/6,0/6,88,55.0,1.48,10.6,6.3,71.9,1.18,49,52.9,25,25,14,20,"RS 88, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+2.0,14.33,11.3,19.79,0,ASP,83,🟢 KHỎE,5/6,0/6,99,16.15,0.31,12.9,0.9,62.5,0.68,68,3.4,24,23,16,20,"RS 99, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+7.2,43.04,12.3,61.21,0,PHP,81,🟢 KHỎE,5/6,0/6,95,49.1,-1.6,7.9,5.1,61.5,1.28,45,12.7,25,25,11,20,"RS 95, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+5.7,13.6,6.8,16.59,5,MSB,81,🟢 KHỎE,5/6,0/6,92,14.6,-1.02,12.7,3.9,67.4,1.55,57,138.7,25,25,16,20,"RS 92, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
+22.1,13.0,24.0,25.3,0,NVB,81,🟡 THEO DÕI,4/6,0/6,92,17.1,3.01,46.2,14.0,75.0,1.65,61,24.4,20,25,19,17,"RS 92, 1T >15% (nóng), Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, Vol đột biến nến xanh, Mạnh hơn VN-Index 1T"
+4.9,21.87,8.1,27.67,0,VPB,81,🟡 THEO DÕI,4/6,0/6,82,23.8,1.49,11.3,3.9,68.6,0.91,66,498.7,23,25,16,17,"RS 82, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, Mạnh hơn VN-Index 1T"
+6.6,31.72,10.7,43.07,0,IDC,81,🟡 THEO DÕI,4/6,0/6,76,35.5,1.72,18.3,5.3,70.2,1.22,90,48.6,15,22,24,20,"1T >15% (nóng), Tuần xác nhận sóng, Giá>MA20>MA50, Trên mây, Walking the Bands, Tích lũy 90%, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+19.9,47.62,23.3,91.05,0,BFC,80,🟢 KHỎE,5/6,0/6,94,62.1,-0.48,32.8,13.7,84.9,1.02,73,12.3,20,22,18,20,"RS 94, 1T >15% (nóng), Giá>MA20>MA50, Trên mây, Walking the Bands, Tích lũy 73%, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ RSI>80 quá mua"
+5.3,67.77,11.1,93.06,0,BVH,80,🟢 KHỎE,5/6,0/6,91,76.2,-2.18,19.1,0.5,66.3,0.6,65,79.0,21,23,16,20,"RS 91, 1T >15% (nóng), Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+2.8,13.54,7.2,16.71,0,HAG,80,🟢 KHỎE,5/6,0/6,61,14.6,0.69,7.4,-1.4,63.5,0.77,85,32.2,17,22,21,20,"1T +5~15%, Tuần nén chặt, Giá>MA20>MA50, Trên mây, Walking the Bands, Tích lũy 85%, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+2.8,50.23,7.0,61.53,0,NTP,79,🟢 KHỎE,5/6,0/6,84,54.0,2.08,0.2,5.3,61.4,2.05,42,8.3,18,21,20,20,"RS 84, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Vol đột biến nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+6.9,8.87,12.2,12.57,0,AAS,79,🟡 THEO DÕI,3/6,0/6,80,10.1,2.02,16.1,4.1,68.4,1.3,67,12.3,20,23,16,20,"RS 80, 1T >15% (nóng), Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+22.5,50.33,25.9,103.03,0,MSR,78,🟡 THEO DÕI,4/6,0/6,99,67.9,-0.44,44.4,12.6,86.4,0.94,69,132.5,20,25,13,20,"RS 99, 1T >15% (nóng), Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ RSI>80 quá mua"
+4.5,41.96,11.2,57.84,0,DGW,78,🟢 KHỎE,5/6,0/6,90,47.25,-1.05,8.8,5.9,64.0,0.64,54,87.6,25,25,11,17,"RS 90, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
+0.2,6.57,6.4,7.92,0,APH,78,🟢 KHỎE,5/6,0/6,89,7.02,-3.57,9.2,0.6,56.2,0.75,50,4.0,24,23,11,20,"RS 89, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+4.9,69.5,8.4,88.7,0,MWG,78,🟢 KHỎE,5/6,0/6,66,75.9,-0.26,7.9,5.1,63.3,0.95,80,214.9,18,22,21,17,"1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50, Trên mây, Walking the Bands, Tích lũy 80%, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
+1.0,134.06,6.3,160.88,0,MCH,77,🟢 KHỎE,5/6,0/6,81,143.0,-0.35,0.8,2.7,59.1,1.32,68,87.4,19,19,19,20,"RS 81, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+6.4,22.66,10.1,30.29,0,PVT,76,🟢 KHỎE,5/6,0/6,94,25.2,-1.37,14.0,7.2,65.3,0.84,48,200.7,25,23,11,17,"RS 94, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
+0.3,29.5,5.0,34.15,0,BSR,75,🟢 KHỎE,5/6,0/6,96,31.05,-2.97,12.7,2.0,56.2,0.8,46,417.7,24,23,11,17,"RS 96, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
+0.8,14.09,2.9,15.33,0,ABW,73,🟢 KHỎE,5/6,0/6,89,14.5,0.0,4.3,-0.7,57.2,0.42,49,1.5,19,23,11,20,"RS 89, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+1.5,31.13,8.2,39.45,0,PVS,73,🟢 KHỎE,5/6,0/6,87,33.9,-0.88,5.9,1.2,57.0,1.25,48,140.5,24,23,11,15,"RS 87, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
+8.9,9.36,14.9,14.29,5,GSP,73,🟢 KHỎE,5/6,0/6,84,11.0,-1.79,11.4,10.0,76.4,1.63,94,1.3,21,22,15,20,"RS 84, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50, Trên mây, Walking the Bands, Tích lũy 94%, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
+4.7,8.57,9.8,11.36,5,TVN,73,🟢 KHỎE,5/6,0/6,82,9.5,-3.06,6.8,5.6,58.6,1.59,63,4.5,23,19,16,20,"RS 82, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50, Walking the Bands, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
+15.7,20.19,16.2,31.92,0,PVP,72,🟡 THEO DÕI,4/6,0/6,98,24.1,-3.6,34.4,9.5,72.9,0.77,51,31.0,22,25,8,17,"RS 98, 1T >15% (nóng), Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, Mạnh hơn VN-Index 1T"
+6.3,10.64,10.6,14.42,5,VGT,72,🟡 THEO DÕI,4/6,0/6,78,11.9,-2.46,8.2,5.3,63.6,2.26,76,5.5,18,18,21,20,"1T +5~15%, Tuần xác nhận sóng, Trên mây, Walking the Bands, Tích lũy 76%, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
+8.8,15.86,13.3,23.18,5,TNG,72,🟡 THEO DÕI,4/6,0/6,75,18.3,-2.66,13.7,10.2,68.0,1.71,78,9.3,18,18,21,20,"1T +5~15%, Tuần xác nhận sóng, Trên mây, Walking the Bands, Tích lũy 78%, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
+10.8,12.9,15.7,20.09,5,DXP,71,🟡 THEO DÕI,4/6,0/6,91,15.3,-1.92,18.6,9.3,67.2,1.51,66,4.6,22,18,16,20,"RS 91, 1T >15% (nóng), Tuần xác nhận sóng, Trên mây, Walking the Bands, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
+10.5,4.83,18.2,8.05,0,EVS,71,🟡 THEO DÕI,4/6,0/6,73,5.9,-1.67,22.9,11.3,59.7,1.03,80,1.7,15,18,21,17,"1T >15% (nóng), Tuần xác nhận sóng, Trên mây, Walking the Bands, Tích lũy 80%, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
+5.8,67.08,9.6,88.44,0,MSN,71,🟡 THEO DÕI,4/6,0/6,71,74.2,0.0,11.6,5.0,67.2,0.91,51,391.2,18,22,11,20,"1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50, Trên mây, Walking the Bands, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+1.7,36.15,3.9,40.5,0,VEA,70,🟡 THEO DÕI,4/6,0/6,83,37.6,0.0,4.7,0.3,71.7,1.1,45,13.7,19,23,8,20,"RS 83, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+5.0,10.93,9.6,14.43,0,VOS,69,🟡 THEO DÕI,4/6,0/6,77,12.1,-3.97,13.8,9.0,59.7,1.21,50,16.3,18,20,11,20,"1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+3.2,31.62,9.3,41.31,0,DCM,69,🟡 THEO DÕI,4/6,0/6,74,34.85,1.31,7.2,6.4,60.5,0.84,55,107.8,18,20,16,15,"1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50, Trên mây, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
+7.3,10.24,13.9,15.21,0,LAS,68,🟡 THEO DÕI,4/6,1/6,49,11.9,1.71,9.9,9.2,62.6,1.98,49,3.8,13,18,20,17,"1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50, Trên mây, MACD>0, RSI khoẻ, Vol đột biến nến xanh, Mạnh hơn VN-Index 1T"
+-0.8,17.04,2.6,18.42,0,ABB,67,🟡 THEO DÕI,4/6,0/6,93,17.5,0.0,1.7,-1.1,49.7,0.39,87,17.9,21,11,15,20,"RS 93, Tuần nén chặt, Trên mây, Tích lũy 87%, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+6.9,20.29,11.2,27.97,5,NT2,67,🟡 THEO DÕI,3/6,0/6,68,22.85,-0.65,11.5,2.5,68.5,1.69,69,16.1,17,22,13,20,"1T +5~15%, Tuần nén chặt, Giá>MA20>MA50, Trên mây, Walking the Bands, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
+0.9,49.09,2.4,52.73,0,HAH,67,🟡 THEO DÕI,3/6,0/6,67,50.3,-2.9,9.3,-1.8,52.7,1.09,70,59.4,17,20,13,17,"1T +5~15%, Tuần nén chặt, Giá>MA20>MA50, Trên mây, MACD>0, Mạnh hơn VN-Index 1T"
+2.5,34.08,8.8,43.89,0,PLX,65,🟡 THEO DÕI,4/6,0/6,81,37.35,-0.66,6.1,4.3,56.7,1.4,47,196.3,23,18,14,10,"RS 81, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50, Trên mây, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T"
+0.0,47.08,1.9,49.83,0,NAF,63,🟡 THEO DÕI,3/6,1/6,86,48.0,0.1,0.0,0.0,45.1,1.07,100,13.2,18,12,13,20,"RS 86, Tuần nén chặt, Trên mây, Tích lũy 100%, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+0.3,21.87,4.3,24.82,0,SBT,63,🟡 THEO DÕI,3/6,0/6,78,22.85,0.22,-0.2,2.5,52.8,0.95,69,27.1,11,19,13,20,"Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+14.5,11.43,17.8,18.85,5,PSD,62,🟡 THEO DÕI,3/6,0/6,86,13.9,-2.8,20.9,17.8,69.0,2.33,54,1.4,18,18,11,20,"RS 86, 1T >15% (nóng), Trên mây, Walking the Bands, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
+1.7,41.07,4.7,47.15,5,VGC,62,🟡 THEO DÕI,3/6,0/6,76,43.1,-3.15,5.1,-1.7,53.5,1.83,49,25.6,17,25,8,17,"1T +5~15%, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
+0.6,15.46,3.3,17.07,0,MIG,62,🟡 THEO DÕI,3/6,0/6,64,16.0,-2.14,2.9,-0.9,50.7,1.32,57,1.8,12,17,13,20,"Tuần nén chặt, Giá>MA20>MA50, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+3.3,38.12,6.8,46.46,0,ACV,61,🟡 THEO DÕI,3/6,1/6,53,40.9,-0.97,4.6,4.3,61.0,1.45,78,12.4,10,13,18,20,"Tuần xác nhận sóng, Walking the Bands, Tích lũy 78%, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+0.9,8.67,7.8,10.86,0,MST,60,🟡 THEO DÕI,3/6,1/6,90,9.4,3.3,-3.1,4.4,48.5,1.65,87,10.1,19,5,16,20,"RS 90, Tuần xác nhận sóng, Tích lũy 87%, Vol đột biến nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+4.4,1.08,16.7,1.73,0,CVN,60,🟡 THEO DÕI,2/6,1/6,61,1.3,0.0,8.3,8.3,53.8,3.2,83,0.3,18,9,13,20,"1T +5~15%, Tuần xác nhận sóng, Tích lũy 83%, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+8.3,6.3,14.8,9.59,0,CTP,60,🟡 THEO DÕI,4/6,1/6,58,7.4,-1.33,8.8,-2.6,59.4,0.73,52,0.9,10,19,11,20,"1T +5~15%, Tuần nén chặt, Giá>MA20>MA50, Walking the Bands, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-0.2,11.87,2.3,12.71,0,NAB,58,🟡 THEO DÕI,2/6,0/6,69,12.15,-1.62,8.5,-2.8,50.1,1.46,58,23.9,17,8,13,20,"1T +5~15%, Tuần nén chặt, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+1.1,31.37,4.5,35.81,0,GVR,57,🟡 THEO DÕI,3/6,1/6,85,32.85,-2.95,9.5,0.3,53.5,1.21,27,94.8,24,20,8,5,"RS 85, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50, Trên mây, MACD>0, Mạnh hơn VN-Index 1T"
+-0.8,125.0,3.1,137.01,0,VJC,57,🟡 THEO DÕI,3/6,0/6,70,129.0,0.39,3.4,-0.3,49.5,0.73,81,136.2,14,8,15,20,"Tuần nén chặt, Tích lũy 81%, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+1.6,31.32,4.8,36.05,0,PHR,56,🟡 THEO DÕI,2/6,1/6,71,32.9,-1.2,0.3,-0.9,51.8,0.89,24,17.6,14,14,8,20,"Tuần nén chặt, Trên mây, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-0.4,31.22,3.5,34.6,0,TCB,56,🟡 THEO DÕI,3/6,0/6,65,32.35,1.41,2.4,0.3,50.5,0.92,73,536.1,14,9,18,15,"Tuần nén chặt, Trên mây, Tích lũy 73%, MACD>0, Mạnh hơn VN-Index 1T"
+-0.6,12.51,8.7,16.08,0,OIL,53,⚪ TRUNG LẬP,2/6,1/6,85,13.7,3.79,-0.7,3.0,52.4,2.01,53,40.4,19,5,9,20,"RS 85, Tuần xác nhận sóng, Trên mây, Vol đột biến nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+5.4,56.44,9.4,74.02,0,CTD,53,⚪ TRUNG LẬP,2/6,1/6,51,62.3,0.0,7.4,7.8,62.1,1.52,46,16.0,13,15,8,17,"1T +5~15%, Tuần xác nhận sóng, Walking the Bands, RSI khoẻ, Mạnh hơn VN-Index 1T"
+10.4,4.32,16.2,6.83,0,IDI,53,⚪ TRUNG LẬP,2/6,2/6,44,5.16,6.83,8.4,12.2,71.6,9.38,83,0.9,9,7,17,20,"1T +5~15%, Tích lũy 83%, Vol rất lớn nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-0.6,13.99,7.4,17.33,0,PPT,51,⚪ TRUNG LẬP,2/6,1/6,74,15.1,0.67,1.3,-0.7,46.2,1.02,97,3.7,14,4,13,20,"Tuần nén chặt, Tích lũy 97%, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+10.2,19.31,14.6,29.19,0,CSV,50,⚪ TRUNG LẬP,1/6,2/6,54,22.6,5.12,8.4,12.7,71.0,6.85,60,4.1,11,10,12,17,"1T +5~15%, Trên mây, Vol rất lớn nến xanh, Mạnh hơn VN-Index 1T"
+6.5,13.4,11.0,18.36,0,PAC,50,⚪ TRUNG LẬP,2/6,2/6,34,15.05,1.69,6.7,6.7,61.4,2.41,60,2.0,11,5,17,17,"1T +5~15%, Tuần xác nhận sóng, RSI khoẻ, Vol đột biến nến xanh, Mạnh hơn VN-Index 1T"
+2.1,1.08,9.7,1.43,0,AMV,50,⚪ TRUNG LẬP,1/6,1/6,33,1.2,-7.69,20.0,0.0,50.6,0.73,56,0.8,9,11,10,20,"1T >15% (nóng), Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+3.1,27.58,8.7,35.44,0,PTB,49,⚪ TRUNG LẬP,2/6,2/6,51,30.2,1.34,0.7,2.7,54.4,2.89,72,3.5,7,5,17,20,"Tuần nén chặt, Tích lũy 72%, Vol rất lớn nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-4.5,3.89,15.2,5.99,0,HID,48,⚪ TRUNG LẬP,2/6,0/6,75,4.59,-1.29,6.0,9.3,53.6,0.42,49,5.9,18,7,8,15,"1T +5~15%, Tuần xác nhận sóng, Trên mây, MACD>0, Mạnh hơn VN-Index 1T"
+1.6,11.33,7.2,13.94,5,MZG,48,⚪ TRUNG LẬP,2/6,1/6,71,12.2,-0.81,-1.6,2.1,53.1,2.08,80,7.1,11,9,13,20,"Tuần nén chặt, Tích lũy 80%, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
+-0.8,36.69,2.5,39.57,0,DPR,48,⚪ TRUNG LẬP,2/6,1/6,67,37.65,-0.4,0.4,-1.3,48.4,1.37,22,17.3,14,9,5,20,"Tuần nén chặt, Trên mây, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+3.4,65.5,7.1,80.5,0,GEE,47,⚪ TRUNG LẬP,2/6,1/6,40,70.5,2.92,14.6,2.9,53.6,0.78,66,116.9,12,17,13,5,"1T +5~15%, Tuần nén chặt, Giá>MA20>MA50, MACD>0, Mạnh hơn VN-Index 1T"
+-0.9,49.45,2.1,52.61,0,KDC,46,⚪ TRUNG LẬP,2/6,3/6,73,50.5,-0.59,-1.6,-0.6,29.8,0.49,100,5.2,9,7,10,20,"Tuần nén chặt, Trên mây, Tích lũy 100%, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+0.5,12.71,4.8,14.64,0,ORS,46,⚪ TRUNG LẬP,1/6,1/6,66,13.35,0.38,2.7,0.0,47.9,1.34,68,26.3,14,7,8,17,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
+1.3,12.95,5.1,15.04,0,VIB,46,⚪ TRUNG LẬP,2/6,1/6,54,13.65,-1.09,3.0,2.2,53.9,1.4,40,59.6,9,15,5,17,"Tuần nén chặt, Giá>MA20>MA50, Mạnh hơn VN-Index 1T"
+13.6,14.87,20.2,26.2,0,ANV,46,⚪ TRUNG LẬP,1/6,1/6,40,18.65,0.0,19.2,9.7,70.8,2.71,69,12.5,10,11,10,15,"1T >15% (nóng), Tuần xác nhận sóng, Walking the Bands, Mạnh hơn VN-Index 1T"
+6.2,6.53,15.0,9.98,5,NHA,46,⚪ TRUNG LẬP,1/6,1/6,15,7.68,-1.54,6.5,0.4,53.3,3.43,58,1.1,10,11,10,20,"1T +5~15%, Tuần nén chặt, Walking the Bands, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
+-2.3,35.95,1.5,37.59,10,DHC,45,⚪ TRUNG LẬP,3/6,0/6,89,36.5,-6.89,4.8,-4.0,46.8,3.54,52,17.0,19,11,5,20,"RS 89, Trên mây, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Marubozu đỏ thủng MA20, ⚠ Vol lớn nến đỏ (phân phối?)"
+-1.4,29.7,4.7,34.05,0,BAF,45,⚪ TRUNG LẬP,2/6,3/6,77,31.15,-0.95,-2.8,1.1,41.9,0.97,90,52.3,11,4,10,20,"Tuần nén chặt, Tích lũy 90%, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-0.3,9.41,4.0,10.59,0,AFX,45,⚪ TRUNG LẬP,2/6,3/6,62,9.8,0.82,-1.0,0.7,42.2,1.67,81,1.4,9,0,16,20,"Tuần nén chặt, Tích lũy 81%, Vol đột biến nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+2.0,11.57,5.5,13.6,0,HT1,45,⚪ TRUNG LẬP,1/6,2/6,50,12.25,-0.41,4.0,1.7,53.1,1.09,25,3.9,9,11,5,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+5.3,1.95,11.8,2.73,0,OGC,45,⚪ TRUNG LẬP,2/6,2/6,22,2.21,-1.78,4.2,8.9,59.6,1.02,73,0.5,10,7,16,12,"Tuần xác nhận sóng, Tích lũy 73%, RSI khoẻ, Mạnh hơn VN-Index 1T"
+7.9,2.07,13.8,3.06,0,MBG,43,⚪ TRUNG LẬP,2/6,2/6,45,2.4,9.09,4.3,9.1,65.5,5.81,33,0.2,8,5,10,20,"Tuần xác nhận sóng, RSI khoẻ, Vol rất lớn nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+1.0,5.71,4.8,6.57,0,AAV,42,⚪ TRUNG LẬP,2/6,2/6,57,6.0,0.0,0.0,1.7,50.1,0.59,82,0.8,4,5,13,20,"Tuần nén chặt, Tích lũy 82%, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-0.9,4.33,4.7,4.98,0,KHG,42,⚪ TRUNG LẬP,2/6,4/6,42,4.55,0.89,-2.8,-0.9,40.7,1.87,90,8.1,6,0,16,20,"Tuần nén chặt, Tích lũy 90%, Vol đột biến nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-4.2,2.96,7.7,3.69,0,POM,41,⚪ TRUNG LẬP,1/6,2/6,68,3.2,0.0,-8.6,3.2,37.9,6.07,78,1.0,12,4,10,15,"Tuần xác nhận sóng, Tích lũy 78%, Chống chịu tốt khi VNI giảm"
+4.4,47.28,9.8,62.64,0,VHC,41,⚪ TRUNG LẬP,2/6,2/6,58,52.4,-1.13,4.4,3.4,58.5,1.38,47,17.3,10,5,6,20,"Tuần xác nhận sóng, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+2.6,5.71,13.4,8.37,0,NAG,41,⚪ TRUNG LẬP,1/6,2/6,47,6.6,-2.94,1.5,4.8,52.2,0.75,58,0.7,8,5,8,20,"Tuần xác nhận sóng, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+0.8,12.07,7.2,14.87,0,KSB,41,⚪ TRUNG LẬP,2/6,2/6,44,13.0,0.0,-0.4,2.8,49.2,1.2,80,5.4,6,5,10,20,"Tuần nén chặt, Tích lũy 80%, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+0.0,2.66,5.0,3.08,0,BGE,41,⚪ TRUNG LẬP,3/6,1/6,41,2.8,0.0,0.0,-3.4,47.8,0.95,100,0.5,2,4,15,20,"Tích lũy 100%, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-11.9,8.33,5.4,9.76,0,HII,40,⚪ TRUNG LẬP,1/6,2/6,97,8.81,0.0,-14.5,-0.5,40.1,0.51,37,7.9,18,7,0,15,"RS 97, Tuần nén chặt, Trên mây, Chống chịu tốt khi VNI giảm"
+-5.0,4.43,5.7,5.24,5,BIG,40,⚪ TRUNG LẬP,2/6,1/6,69,4.7,-4.08,-2.1,2.2,46.2,0.47,70,3.0,11,9,10,15,"Tuần nén chặt, Trên mây, Tích lũy 70%, Mạnh hơn VN-Index 1T, ⚠ Marubozu đỏ thủng MA20"
+7.0,2.36,18.2,3.94,0,JVC,40,⚪ TRUNG LẬP,2/6,2/6,13,2.89,5.47,-0.3,12.0,60.9,1.51,50,0.4,3,5,12,20,"RSI khoẻ, Vol đột biến nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-1.0,10.0,3.9,11.2,0,HVH,39,⚪ TRUNG LẬP,1/6,3/6,63,10.4,0.48,-5.0,0.5,44.8,1.29,75,2.2,11,0,13,15,"Tuần nén chặt, Tích lũy 75%, Chống chịu tốt khi VNI giảm"
+-5.1,16.84,8.5,21.51,0,CTF,38,⚪ TRUNG LẬP,1/6,3/6,72,18.4,0.0,-13.4,0.3,30.9,0.85,88,5.0,11,2,10,15,"Tuần nén chặt, Tích lũy 88%, Chống chịu tốt khi VNI giảm"
+0.6,2.65,8.3,3.37,0,ABS,38,⚪ TRUNG LẬP,1/6,1/6,62,2.89,0.35,2.1,7.4,49.5,0.6,52,0.4,13,5,0,20,"Tuần xác nhận sóng, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+5.3,0.59,26.1,1.22,0,HHG,38,⚪ TRUNG LẬP,1/6,1/6,30,0.8,0.0,14.3,-11.1,51.0,0.89,49,0.2,9,11,8,10,"1T +5~15%, Tuần < -5%, Walking the Bands, MACD>0, Mạnh hơn VN-Index 1T"
+-0.7,25.31,5.7,29.92,0,DPG,38,⚪ TRUNG LẬP,2/6,4/6,29,26.85,2.09,-0.7,3.7,42.8,1.57,79,7.7,7,0,16,15,"Tuần xác nhận sóng, Tích lũy 79%, Vol đột biến nến xanh, Mạnh hơn VN-Index 1T"
+2.3,1.81,6.6,2.2,0,HQC,38,⚪ TRUNG LẬP,1/6,2/6,24,1.94,3.19,-0.5,4.3,48.0,1.87,32,4.2,7,5,6,20,"Tuần xác nhận sóng, Vol đột biến nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-13.8,16.25,3.3,17.89,0,SSB,36,⚪ TRUNG LẬP,1/6,2/6,84,16.8,-1.75,-8.2,-1.5,40.1,0.71,49,76.1,16,5,0,15,"RS 84, Tuần nén chặt, Trên mây, Chống chịu tốt khi VNI giảm"
+-2.7,6.82,3.9,7.64,0,AAA,36,⚪ TRUNG LẬP,1/6,1/6,69,7.09,0.42,-1.1,0.6,45.4,0.41,32,16.4,11,5,0,20,"Tuần nén chặt, Trên mây, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-3.8,66.68,3.4,73.63,0,CTR,36,⚪ TRUNG LẬP,1/6,3/6,60,69.0,0.0,-6.8,-3.1,28.9,1.5,70,15.3,9,2,10,15,"Tích lũy 70%, Chống chịu tốt khi VNI giảm"
+1.6,17.53,6.7,21.33,0,PAN,36,⚪ TRUNG LẬP,1/6,2/6,49,18.8,-1.05,3.3,0.5,49.6,1.47,49,9.1,9,7,0,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-1.5,11.33,8.6,14.54,0,HUT,36,⚪ TRUNG LẬP,2/6,4/6,39,12.4,0.0,-3.1,0.8,40.8,0.92,94,19.5,6,0,10,20,"Tuần nén chặt, Tích lũy 94%, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-5.8,0.79,12.4,1.12,0,DDG,36,⚪ TRUNG LẬP,2/6,3/6,28,0.9,0.0,0.0,0.0,46.1,0.88,79,0.4,6,0,10,20,"Tuần nén chặt, Tích lũy 79%, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-2.5,55.16,2.7,59.78,0,VCB,35,⚪ TRUNG LẬP,1/6,3/6,63,56.7,0.18,-2.6,-0.7,36.8,0.72,33,247.3,11,4,0,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+3.5,14.97,12.4,21.36,0,DDV,35,⚪ TRUNG LẬP,1/6,2/6,24,17.1,-1.16,-0.6,8.2,53.2,1.36,68,7.4,7,5,8,15,"Tuần xác nhận sóng, Mạnh hơn VN-Index 1T"
+-2.8,76.34,5.4,89.42,0,GAS,33,🔴 YẾU,1/6,1/6,87,80.7,-1.59,0.2,2.4,48.5,0.66,38,125.5,21,7,0,5,"RS 87, Tuần nén chặt, Trên mây, Mạnh hơn VN-Index 1T"
+-3.5,9.46,13.6,13.94,0,NVL,33,🔴 YẾU,1/6,4/6,49,10.95,6.83,-9.6,4.8,41.5,3.12,82,259.1,7,0,14,12,"Tuần xác nhận sóng, Tích lũy 82%, Vol rất lớn nến xanh"
+-4.0,1.77,1.5,1.85,0,BNA,33,🔴 YẾU,1/6,4/6,2,1.8,0.0,0.0,0.0,21.8,0.0,94,0.6,6,2,10,15,"Tuần nén chặt, Tích lũy 94%, Mạnh hơn VN-Index 1T"
+-9.4,7.88,2.7,8.54,0,HSL,32,🔴 YẾU,0/6,3/6,80,8.1,-3.57,-13.8,-18.9,37.9,0.76,49,8.4,13,4,0,15,"RS 80, Tuần < -5%, Chống chịu tốt khi VNI giảm"
+-1.6,41.52,3.2,45.66,0,SAB,31,🔴 YẾU,1/6,4/6,70,42.9,-0.23,-2.2,1.1,40.5,1.08,25,19.2,11,0,0,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-3.2,3.78,3.3,4.17,0,HPX,31,🔴 YẾU,1/6,4/6,48,3.91,0.0,-2.0,-2.5,33.6,0.83,69,4.3,6,0,5,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-0.8,23.79,6.7,28.92,0,KBC,31,🔴 YẾU,1/6,4/6,41,25.5,0.39,-3.8,1.2,36.6,0.82,79,33.6,6,0,10,15,"Tuần nén chặt, Tích lũy 79%, Chống chịu tốt khi VNI giảm"
+-4.3,9.79,4.0,11.02,0,FCN,31,🔴 YẾU,1/6,4/6,37,10.2,-0.49,-7.3,-1.0,27.2,0.65,91,7.8,6,0,10,15,"Tuần nén chặt, Tích lũy 91%, Chống chịu tốt khi VNI giảm"
+-1.2,14.63,4.4,16.65,0,CTI,31,🔴 YẾU,1/6,4/6,36,15.3,0.0,-5.0,0.0,32.9,1.44,80,4.0,6,0,10,15,"Tuần nén chặt, Tích lũy 80%, Chống chịu tốt khi VNI giảm"
+-5.5,8.4,6.1,10.05,0,AGG,31,🔴 YẾU,1/6,4/6,32,8.95,-0.22,-13.1,-0.6,18.6,0.69,76,2.7,6,0,10,15,"Tuần nén chặt, Tích lũy 76%, Chống chịu tốt khi VNI giảm"
+-3.8,14.33,5.1,16.64,0,TCM,31,🔴 YẾU,1/6,4/6,19,15.1,0.0,-9.0,-1.3,27.1,0.88,94,12.9,6,0,10,15,"Tuần nén chặt, Tích lũy 94%, Chống chịu tốt khi VNI giảm"
+-2.0,4.77,4.7,5.47,0,CRC,31,🔴 YẾU,1/6,4/6,14,5.0,0.0,-3.5,0.0,24.7,1.8,91,1.4,6,0,10,15,"Tuần nén chặt, Tích lũy 91%, Chống chịu tốt khi VNI giảm"
+-2.5,20.68,5.5,24.33,0,DPM,30,🔴 YẾU,1/6,2/6,64,21.9,-1.13,-2.2,0.2,44.1,0.58,34,76.5,11,4,0,15,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
+-1.4,12.07,3.1,13.22,0,POW,30,🔴 YẾU,1/6,3/6,64,12.45,-0.4,-1.2,-2.0,39.0,0.88,33,73.6,11,2,0,17,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
+-19.2,6.67,6.2,7.99,0,PIT,29,🔴 YẾU,1/6,3/6,65,7.11,-2.2,-18.7,-2.1,35.5,0.01,97,2.1,9,0,10,10,"Tuần nén chặt, Tích lũy 97%"
+-6.8,7.39,2.8,8.02,0,HNM,29,🔴 YẾU,0/6,3/6,60,7.6,0.0,-11.6,-2.6,37.4,0.55,59,1.6,9,0,5,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-4.5,5.61,3.2,6.17,0,HNG,29,🔴 YẾU,1/6,4/6,55,5.8,-1.69,-7.9,-4.9,22.9,1.08,100,5.4,4,0,10,15,"Tích lũy 100%, Chống chịu tốt khi VNI giảm"
+0.5,0.89,11.4,1.23,0,KVC,29,🔴 YẾU,0/6,2/6,31,1.0,0.0,-9.1,0.0,49.7,2.53,66,0.1,4,5,5,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-0.7,10.39,8.0,13.12,0,PDR,29,🔴 YẾU,1/6,5/6,19,11.3,1.8,-3.8,0.9,39.6,2.45,95,43.8,6,0,16,7,"Tuần nén chặt, Tích lũy 95%, Vol đột biến nến xanh"
+-7.3,54.27,2.2,57.95,0,VPI,27,🔴 YẾU,0/6,2/6,76,55.5,-1.94,-6.9,-5.6,35.5,0.85,58,101.8,8,2,5,12,Tuần < -5%
+-2.0,73.88,2.3,79.05,0,KSF,27,🔴 YẾU,0/6,4/6,66,75.6,0.27,-5.5,-0.4,37.5,1.12,18,8.9,9,0,3,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-5.9,7.09,5.4,8.32,0,NDN,27,🔴 YẾU,1/6,4/6,31,7.5,-1.32,-4.4,-3.8,31.3,1.0,92,0.9,2,0,10,15,"Tích lũy 92%, Chống chịu tốt khi VNI giảm"
+-3.8,8.87,4.6,10.14,0,NKG,27,🔴 YẾU,0/6,5/6,26,9.29,1.53,-8.9,1.0,32.8,1.51,16,16.6,6,0,6,15,"Tuần nén chặt, Vol đột biến nến xanh, Chống chịu tốt khi VNI giảm"
+-1.4,1.48,13.1,2.14,0,AAH,27,🔴 YẾU,0/6,4/6,5,1.7,6.25,-10.5,0.0,44.6,1.5,35,0.5,6,0,6,15,"Tuần nén chặt, Vol đột biến nến xanh, Chống chịu tốt khi VNI giảm"
+-8.4,64.52,4.1,72.86,0,STB,26,🔴 YẾU,0/6,4/6,79,67.3,0.0,-12.9,-1.6,27.5,0.84,22,234.1,11,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-2.8,56.24,2.5,60.61,0,VNM,26,🔴 YẾU,0/6,3/6,72,57.7,-0.35,-3.7,0.7,38.2,0.55,35,146.0,11,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-3.2,18.37,3.6,20.41,0,MBB,26,🔴 YẾU,0/6,4/6,59,19.05,0.79,-3.5,-0.3,36.3,1.2,44,232.1,6,2,3,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-2.3,9.66,3.0,10.55,0,OCB,26,🔴 YẾU,1/6,4/6,59,9.96,0.0,-2.4,-1.4,33.3,1.96,32,12.8,6,0,0,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-0.7,21.03,3.3,23.19,0,DSE,26,🔴 YẾU,1/6,4/6,56,21.75,0.69,-0.2,0.0,42.0,1.33,33,10.4,6,0,3,17,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
+-1.8,10.83,4.1,12.23,0,EVF,26,🔴 YẾU,0/6,4/6,54,11.3,-0.44,-3.4,-1.3,33.1,1.16,70,16.7,6,0,5,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-2.2,28.42,3.7,31.67,0,CTG,26,🔴 YẾU,1/6,4/6,51,29.5,1.03,-1.5,-0.8,39.8,1.12,47,223.3,6,2,3,15,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
+-6.1,17.93,4.9,20.7,0,PC1,26,🔴 YẾU,0/6,4/6,48,18.85,-0.26,-7.6,-2.1,33.8,1.26,61,30.3,6,0,5,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-1.3,9.6,3.0,10.49,0,HSG,26,🔴 YẾU,1/6,5/6,46,9.9,-0.1,-2.9,-0.8,33.2,0.97,22,20.7,6,0,0,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-0.6,14.68,5.6,17.3,0,DBC,26,🔴 YẾU,1/6,5/6,35,15.55,0.0,-2.8,1.0,43.6,1.14,29,20.2,6,0,0,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-1.0,4.43,3.6,4.93,0,NRC,26,🔴 YẾU,1/6,4/6,33,4.6,0.0,0.0,0.0,43.8,0.58,64,2.5,6,0,5,15,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
+-3.3,211.78,6.1,252.95,0,VIC,25,🔴 YẾU,1/6,4/6,96,225.5,-1.1,-7.3,0.7,44.6,0.86,24,832.5,18,7,0,0,"RS 96, Tuần nén chặt, Trên mây"
+0.6,17.63,7.2,21.74,0,PLC,25,🔴 YẾU,0/6,2/6,46,19.0,-1.04,2.7,3.3,49.9,0.5,46,2.1,8,7,0,10,"Tuần xác nhận sóng, Mạnh hơn VN-Index 1T"
+-3.3,20.98,4.2,23.74,0,NLG,25,🔴 YẾU,0/6,5/6,37,21.9,-0.23,-11.3,0.0,38.2,0.73,19,38.8,6,4,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-6.0,19.85,1.5,20.75,0,ACB,24,🔴 YẾU,0/6,4/6,61,20.15,-0.98,-8.6,-4.5,26.4,1.47,26,169.5,9,0,0,15,Chống chịu tốt khi VNI giảm
+-3.0,43.73,2.7,47.38,5,REE,24,🔴 YẾU,1/6,3/6,52,44.95,-1.21,0.0,-5.2,40.0,2.08,42,22.0,3,6,0,20,"Tuần < -5%, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?)"
+-0.9,25.22,3.4,27.87,0,MML,24,🔴 YẾU,1/6,4/6,46,26.1,0.0,-2.2,-0.4,40.8,2.01,44,2.8,4,0,0,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-0.2,9.51,3.9,10.66,0,DRC,24,🔴 YẾU,1/6,4/6,35,9.89,0.82,-0.3,1.5,44.2,0.9,37,1.3,4,0,0,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-5.2,5.81,3.1,6.38,5,CRE,24,🔴 YẾU,2/6,4/6,34,6.0,-5.96,-1.6,-3.2,37.9,1.38,83,1.0,2,0,10,17,"Tích lũy 83%, Mạnh hơn VN-Index 1T, ⚠ Marubozu đỏ thủng MA20"
+-4.7,3.2,9.1,4.16,0,PLP,24,🔴 YẾU,0/6,4/6,29,3.52,0.57,-18.3,0.9,32.6,0.5,63,0.8,4,0,5,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-1.4,2.76,4.9,3.18,0,FIT,24,🔴 YẾU,1/6,4/6,24,2.9,0.69,0.3,-3.3,43.2,0.6,38,1.3,7,0,0,17,Mạnh hơn VN-Index 1T
+-2.8,8.58,8.7,11.04,0,DIG,24,🔴 YẾU,0/6,4/6,20,9.4,1.08,-6.5,1.6,40.6,2.17,42,33.0,6,0,6,12,"Tuần nén chặt, Vol đột biến nến xanh"
+0.0,0.3,26.1,0.61,0,DFF,24,🔴 YẾU,1/6,4/6,15,0.4,0.0,0.0,0.0,42.4,1.07,29,0.1,4,0,0,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T"
+-5.6,13.94,4.5,15.92,0,HDG,24,🔴 YẾU,0/6,5/6,14,14.6,0.69,-8.5,-3.0,28.5,1.32,15,11.9,6,0,3,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-4.9,22.16,4.3,25.12,0,HCM,23,🔴 YẾU,0/6,3/6,79,23.15,-1.91,-9.2,-1.5,36.3,0.81,46,74.9,11,0,0,12,Tuần nén chặt
+-3.5,75.55,2.3,80.8,0,VGI,23,🔴 YẾU,0/6,4/6,74,77.3,-1.02,-4.2,-3.9,36.9,1.2,24,21.1,9,4,0,10,
+-12.3,10.69,5.0,12.38,5,ELC,23,🔴 YẾU,1/6,4/6,10,11.25,-4.66,-14.8,-8.2,27.1,1.12,74,6.5,3,0,10,15,"Tuần < -5%, Tích lũy 74%, Chống chịu tốt khi VNI giảm, ⚠ Marubozu đỏ thủng MA20"
+-9.4,12.71,2.3,13.59,0,TVS,22,🔴 YẾU,0/6,3/6,56,13.0,-2.62,-11.0,-9.1,32.9,0.43,46,3.1,3,4,0,15,"Tuần < -5%, Chống chịu tốt khi VNI giảm"
+-1.5,26.94,3.8,30.12,0,GEL,22,🔴 YẾU,0/6,3/6,55,28.0,0.0,1.8,0.4,45.9,0.52,46,49.7,9,8,0,5,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
+-0.1,9.75,4.4,11.1,0,DTD,22,🔴 YẾU,0/6,5/6,18,10.2,2.0,-3.8,2.0,38.1,1.07,27,1.1,4,0,3,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-2.7,17.19,5.6,20.22,0,PVD,21,🔴 YẾU,0/6,1/6,79,18.2,-0.27,-1.9,1.1,45.2,0.96,33,107.3,11,0,0,10,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
+-8.9,39.6,2.7,42.91,0,LPB,21,🔴 YẾU,0/6,4/6,52,40.7,0.12,-12.8,1.2,34.2,0.87,31,94.4,6,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-2.6,19.31,4.0,21.69,0,HPG,21,🔴 YẾU,0/6,4/6,50,20.1,-0.25,-5.6,0.2,37.0,0.87,37,374.6,6,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-2.1,10.05,3.9,11.26,0,BVB,21,🔴 YẾU,0/6,4/6,43,10.45,-0.48,-5.9,0.5,38.6,1.12,37,14.2,6,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-1.3,19.7,2.7,21.35,0,HVN,21,🔴 YẾU,0/6,5/6,38,20.25,0.75,-4.5,-1.5,39.2,0.95,9,14.5,6,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-0.6,20.0,6.6,24.21,0,PVB,21,🔴 YẾU,1/6,3/6,36,21.4,0.94,-0.9,2.4,49.7,0.54,36,2.6,4,0,0,17,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
+-2.5,10.83,7.4,13.43,0,NTL,21,🔴 YẾU,0/6,5/6,28,11.7,2.18,-8.2,2.6,39.9,0.47,23,7.6,6,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-5.0,9.16,6.0,10.93,0,DXG,21,🔴 YẾU,0/6,4/6,27,9.75,1.46,-9.3,-2.4,30.7,1.39,50,92.4,6,0,3,12,Tuần nén chặt
+-4.4,5.91,5.7,6.99,0,LCG,21,🔴 YẾU,0/6,5/6,23,6.27,-0.16,-8.5,-0.6,24.9,1.04,15,4.3,6,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-1.3,3.74,5.7,4.42,0,SCR,21,🔴 YẾU,0/6,4/6,13,3.97,1.79,-6.1,-0.3,37.4,1.44,46,4.4,6,0,3,12,Tuần nén chặt
+-4.3,31.67,6.3,38.06,0,DGC,20,🔴 YẾU,0/6,5/6,25,33.8,4.0,-12.8,-4.8,41.0,0.72,27,25.0,4,4,0,12,
+-6.8,8.22,6.5,9.95,0,HHS,20,🔴 YẾU,1/6,5/6,21,8.8,2.56,-12.0,-3.3,29.2,1.69,70,9.2,4,0,16,0,"Tích lũy 70%, Vol đột biến nến xanh"
+-6.0,2.82,9.7,3.73,0,TLH,20,🔴 YẾU,0/6,4/6,16,3.12,0.65,-14.8,9.1,33.8,0.85,51,0.4,5,0,0,15,"Tuần xác nhận sóng, Chống chịu tốt khi VNI giảm"
+-2.7,7.27,6.4,8.77,0,GIL,20,🔴 YẾU,0/6,3/6,7,7.77,-2.02,2.2,-2.4,44.0,1.26,49,1.3,7,6,0,7,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
+-0.9,10.44,3.3,11.52,5,QTP,19,🔴 YẾU,1/6,5/6,57,10.8,-0.92,-1.8,0.0,40.1,0.67,21,1.3,4,0,0,20,"Tuần nén chặt, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Marubozu đỏ thủng MA20"
+-2.5,11.38,3.2,12.5,0,GEG,19,🔴 YẾU,0/6,4/6,47,11.75,0.0,-5.2,-0.4,21.1,1.21,51,1.6,4,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-2.8,4.62,5.9,5.49,0,ASM,19,🔴 YẾU,0/6,5/6,38,4.91,0.0,-5.6,-2.0,33.0,5.35,22,0.7,4,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-4.6,1.58,3.9,1.77,0,BKG,19,🔴 YẾU,0/6,4/6,11,1.64,-0.61,-11.8,-1.2,26.6,0.91,33,0.3,4,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-7.5,2.66,8.3,3.38,0,IDJ,19,🔴 YẾU,0/6,5/6,11,2.9,0.0,-17.1,3.6,28.8,0.76,28,1.1,7,0,0,12,Tuần xác nhận sóng
+-5.2,13.59,5.6,16.01,0,VGS,19,🔴 YẾU,0/6,5/6,9,14.4,0.0,-14.3,2.9,28.4,1.03,21,2.2,4,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-5.3,4.24,7.9,5.33,0,C4G,19,🔴 YẾU,0/6,4/6,9,4.6,0.0,-14.8,-2.1,31.6,0.65,31,0.9,4,0,0,15,"Tuần nén chặt, Chống chịu tốt khi VNI giảm"
+-4.1,12.8,4.4,14.59,0,KDH,19,🔴 YẾU,0/6,5/6,7,13.4,1.13,-9.6,-2.4,28.3,1.48,17,58.2,6,0,3,10,Tuần nén chặt
+-4.2,63.34,4.0,71.33,0,VHM,18,🔴 YẾU,1/6,5/6,81,66.0,0.46,-8.3,-2.8,38.1,0.73,21,629.9,16,2,0,0,"RS 81, Tuần nén chặt"
+-4.4,11.23,4.8,12.94,0,PVC,18,🔴 YẾU,0/6,3/6,59,11.8,-0.84,-2.5,-2.5,43.2,1.04,38,11.4,6,2,0,10,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
+-2.0,15.51,3.6,17.27,0,EIB,18,🔴 YẾU,0/6,4/6,31,16.1,0.0,-4.2,-2.4,35.4,1.07,33,67.4,6,0,0,12,Tuần nén chặt
+-4.9,1.84,2.5,1.99,0,DLG,18,🔴 YẾU,0/6,5/6,25,1.89,0.53,-10.0,-5.0,27.0,0.56,28,1.0,3,0,0,15,"Tuần < -5%, Chống chịu tốt khi VNI giảm"
+-2.1,12.95,5.1,15.04,0,VCG,18,🔴 YẾU,0/6,5/6,19,13.65,0.37,-9.3,2.6,30.7,0.95,11,25.3,6,0,0,12,Tuần nén chặt
+-11.4,9.41,5.9,11.19,0,SHB,18,🔴 YẾU,0/6,5/6,17,10.0,-0.5,-13.4,-10.3,16.6,3.23,69,451.7,3,0,5,10,Tuần < -5%
+-2.3,6.09,7.1,7.48,0,IJC,18,🔴 YẾU,0/6,4/6,17,6.55,0.15,-3.2,-0.2,36.4,0.69,33,7.3,6,0,0,12,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
+-6.4,4.54,7.7,5.68,0,DXS,18,🔴 YẾU,0/6,4/6,8,4.92,1.23,-8.9,0.8,36.1,0.89,49,8.5,6,0,0,12,Tuần nén chặt
+-9.9,3.4,3.2,3.73,0,EVG,18,🔴 YẾU,0/6,4/6,6,3.51,0.0,-14.2,-7.9,17.3,1.52,41,1.5,3,0,0,15,"Tuần < -5%, Chống chịu tốt khi VNI giảm"
+-29.5,1.05,1.5,1.1,0,DRH,18,🔴 YẾU,0/6,5/6,4,1.07,-6.14,-35.9,-28.7,14.5,18.14,7,0.3,3,0,0,15,"Tuần < -5%, Chống chịu tốt khi VNI giảm"
+-4.7,32.75,3.4,36.2,0,BID,17,🔴 YẾU,0/6,5/6,56,33.9,0.0,-4.8,-2.6,29.3,0.98,33,137.0,6,4,0,7,Tuần nén chặt
+-6.6,12.41,6.0,14.78,0,VND,17,🔴 YẾU,0/6,6/6,26,13.2,0.76,-12.9,-0.8,31.4,1.71,20,147.1,6,0,6,5,"Tuần nén chặt, Vol đột biến nến xanh"
+-6.3,4.04,10.3,5.42,0,API,17,🔴 YẾU,0/6,5/6,21,4.5,0.0,-18.2,7.1,35.6,1.16,15,0.7,5,0,0,12,Tuần xác nhận sóng
+-6.8,3.9,4.2,4.41,0,APG,17,🔴 YẾU,0/6,5/6,10,4.07,0.74,-12.5,-3.6,26.0,1.06,28,0.5,2,0,3,12,
+-6.8,9.46,8.2,11.99,0,CEO,17,🔴 YẾU,0/6,6/6,9,10.3,4.04,-13.4,-1.9,34.7,2.18,26,59.9,6,0,6,5,"Tuần nén chặt, Vol đột biến nến xanh"
+-4.1,11.08,3.2,12.19,0,TPB,16,🔴 YẾU,0/6,4/6,45,11.45,-1.29,-3.6,-3.8,30.6,0.71,41,115.0,4,0,0,12,
+-5.0,10.0,7.0,12.25,0,TCH,16,🔴 YẾU,0/6,5/6,29,10.75,2.38,-8.1,-1.4,39.6,1.42,59,49.1,6,2,8,0,Tuần nén chặt
+-8.3,10.39,5.1,12.07,0,KLB,15,🔴 YẾU,0/6,4/6,53,10.95,-1.35,-9.1,-6.0,28.9,0.99,32,4.3,3,0,0,12,Tuần < -5%
+-6.3,18.37,3.3,20.26,0,SSI,15,🔴 YẾU,0/6,4/6,44,19.0,-0.26,-6.4,-3.6,30.3,1.19,31,447.5,4,4,0,7,
+-6.6,45.7,2.8,49.59,0,VTP,15,🔴 YẾU,0/6,4/6,43,47.0,-2.08,-5.1,-9.4,34.4,1.37,44,38.7,3,2,0,10,Tuần < -5%
+-0.2,12.46,5.2,14.53,0,VSC,15,🔴 YẾU,0/6,4/6,12,13.15,0.38,1.2,3.5,45.5,0.73,28,103.5,10,0,0,5,"Tuần xác nhận sóng, Mạnh hơn VN-Index 1T"
+-3.9,11.18,6.4,13.49,0,CII,14,🔴 YẾU,0/6,6/6,12,11.95,2.14,-9.8,1.7,37.3,1.35,17,88.7,6,0,3,5,Tuần nén chặt
+-7.1,9.46,6.4,11.39,0,HDC,14,🔴 YẾU,0/6,5/6,6,10.1,1.2,-11.0,-2.4,27.5,1.45,54,12.6,6,0,3,5,Tuần nén chặt
+-7.6,2.33,5.1,2.71,0,FIR,14,🔴 YẾU,0/6,5/6,4,2.46,2.5,-19.1,-1.6,19.0,0.71,22,0.3,4,0,0,10,Tuần nén chặt
+-3.8,24.53,6.0,29.25,0,BVS,13,🔴 YẾU,0/6,4/6,41,26.1,2.76,-5.1,2.4,43.3,1.21,36,18.1,6,2,3,2,Tuần nén chặt
+-4.0,8.43,3.6,9.39,5,HHV,13,🔴 YẾU,0/6,5/6,32,8.75,-0.68,-8.3,-0.9,25.3,1.95,16,19.7,6,0,0,12,"Tuần nén chặt, ⚠ Vol lớn nến đỏ (phân phối?)"
+-2.8,15.96,5.6,18.79,0,SZC,13,🔴 YẾU,0/6,6/6,21,16.9,-1.46,-6.1,0.6,38.8,0.96,20,4.7,6,0,0,7,Tuần nén chặt
+-3.2,35.95,6.1,42.99,0,BCM,13,🔴 YẾU,0/6,4/6,20,38.3,-2.17,-1.4,-1.0,40.0,0.85,33,20.8,6,2,0,5,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
+-13.7,2.86,1.5,2.99,5,HBC,13,🔴 YẾU,0/6,4/6,5,2.9,-3.33,-17.1,-12.1,17.9,1.0,36,2.0,3,0,0,15,"Tuần < -5%, Chống chịu tốt khi VNI giảm, ⚠ Marubozu đỏ thủng MA20"
+-9.2,56.64,2.2,60.43,5,FPT,12,🔴 YẾU,0/6,5/6,39,57.9,-3.02,-12.4,-6.8,23.7,1.99,23,353.3,3,2,0,12,"Tuần < -5%, ⚠ Vol lớn nến đỏ (phân phối?)"
+-4.6,6.6,5.7,7.8,0,DST,12,🔴 YẾU,0/6,4/6,27,7.0,0.0,4.5,0.0,41.2,0.62,49,1.2,7,0,0,5,"Tuần nén chặt, Mạnh hơn VN-Index 1T"
+-8.4,19.5,2.7,21.14,5,CMG,12,🔴 YẾU,0/6,5/6,16,20.05,-1.72,-14.1,-5.0,20.9,2.68,15,3.2,2,0,0,15,"Chống chịu tốt khi VNI giảm, ⚠ Vol lớn nến đỏ (phân phối?)"
+-6.0,10.83,7.0,13.28,0,VIX,12,🔴 YẾU,0/6,6/6,14,11.65,3.1,-12.1,-1.3,36.0,1.53,12,374.2,6,0,6,0,"Tuần nén chặt, Vol đột biến nến xanh"
+-6.2,10.39,3.8,11.62,0,AGR,11,🔴 YẾU,0/6,6/6,26,10.8,1.76,-9.5,-1.7,27.9,1.2,19,2.5,6,0,3,2,Tuần nén chặt
+-2.4,2.33,3.9,2.62,0,LDG,11,🔴 YẾU,0/6,5/6,16,2.43,0.41,-3.6,-0.8,40.5,0.8,33,1.9,6,0,0,5,Tuần nén chặt
+-32.3,2.56,1.5,2.68,0,DVM,11,🔴 YẾU,0/6,5/6,4,2.6,-7.14,-43.5,-23.5,5.4,2.96,21,0.7,1,0,0,10,Tuần < -5%
+-51.6,10.19,1.5,10.66,0,KOS,11,🔴 YẾU,0/6,6/6,1,10.35,-6.76,-68.9,-29.6,1.3,20.46,15,3.0,1,0,0,10,Tuần < -5%
+-5.4,22.51,2.8,24.44,0,VRE,10,🔴 YẾU,0/6,5/6,42,23.15,0.22,-9.6,-1.9,33.3,0.68,31,98.3,6,4,0,0,Tuần nén chặt
+-9.2,16.99,4.0,19.12,0,FTS,10,🔴 YẾU,0/6,6/6,11,17.7,0.57,-13.9,-4.3,23.9,1.69,19,12.4,4,0,6,0,Vol đột biến nến xanh
+-9.0,26.2,3.1,28.75,0,TCX,9,🔴 YẾU,0/6,6/6,36,27.05,-0.73,-14.8,-3.0,23.8,1.27,20,72.3,4,0,0,5,
+-5.5,23.25,5.1,27.01,0,BSI,9,🔴 YẾU,0/6,6/6,18,24.5,0.82,-8.6,-0.6,29.7,1.47,27,6.6,6,0,3,0,Tuần nén chặt
+-9.4,10.64,9.1,13.82,0,SHS,9,🔴 YẾU,0/6,5/6,8,11.7,0.86,-14.8,-6.3,27.2,2.38,31,104.5,3,0,6,0,"Tuần < -5%, Vol đột biến nến xanh"
+-4.9,21.03,5.5,24.69,0,GEX,8,🔴 YẾU,0/6,6/6,34,22.25,2.06,-7.1,-2.8,37.7,0.77,11,194.3,6,2,0,0,Tuần nén chặt
+-0.8,5.02,11.9,7.05,0,APS,7,🔴 YẾU,0/6,4/6,39,5.7,0.0,-5.0,9.6,48.1,1.12,31,3.0,7,0,0,0,Tuần xác nhận sóng
+-7.1,8.86,6.2,10.61,0,VDS,7,🔴 YẾU,0/6,6/6,6,9.44,1.72,-14.2,-3.5,29.0,1.41,13,5.6,4,0,3,0,
+-5.9,18.67,4.8,21.47,0,CTS,6,🔴 YẾU,0/6,6/6,30,19.6,-0.25,-8.8,-1.5,30.5,1.42,18,21.2,6,0,0,0,Tuần nén chặt
+-5.0,17.78,4.2,20.09,0,VCI,6,🔴 YẾU,0/6,6/6,22,18.55,0.0,-7.5,-0.5,35.5,1.17,21,180.3,6,0,0,0,Tuần nén chặt
+-7.7,13.2,10.2,17.7,0,MBS,4,🔴 YẾU,0/6,6/6,23,14.7,0.0,-10.9,-3.9,24.8,1.73,29,45.6,4,0,0,0,
+-33.9,17.53,10.1,23.43,0,PNJ,3,🔴 YẾU,0/6,6/6,3,19.5,6.85,-47.7,-15.4,18.0,0.61,6,285.9,3,0,0,0,Tuần < -5%
+-11.2,3.45,6.3,4.15,0,ACC,1,🔴 YẾU,0/6,6/6,2,3.68,0.82,-14.8,-10.0,20.1,0.61,16,0.8,1,0,0,0,Tuần < -5%
+-18.5,1.12,1.5,1.17,5,VPG,0,🔴 YẾU,0/6,6/6,3,1.14,-6.56,-30.9,-16.8,23.8,2.22,29,0.4,3,0,0,0,"Tuần < -5%, ⚠ Vol lớn nến đỏ (phân phối?)"
