@@ -1,0 +1,42 @@
+name: Quet co phieu
+
+on:
+  schedule:
+    # Mỗi giờ từ 9h đến 15h giờ VN (02:00-08:00 UTC), thứ 2 đến thứ 6
+    - cron: "5 2-8 * * 1-5"
+  workflow_dispatch:   # cho phép bấm chạy thủ công
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Chạy quét
+        env:
+          VNSTOCK_API_KEY: ${{ secrets.VNSTOCK_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scanner.py
+
+      - name: Lưu kết quả vào repo
+        run: |
+          git config user.name "scanner-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add reports
+          git diff --cached --quiet || (git commit -m "Cap nhat ket qua quet" && git push)
