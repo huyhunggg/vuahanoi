@@ -8,6 +8,7 @@ Trụ cột 5 (cơ bản) và Buy Active % được lấy cho nhóm top đầu �
 import os
 import time
 import json
+import importlib.util
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
@@ -15,7 +16,12 @@ import numpy as np
 import pandas as pd
 
 VN_TZ = timezone(timedelta(hours=7))
-SLEEP_BETWEEN = 3.5        # giây nghỉ giữa các lần gọi API (tránh bị giới hạn tốc độ)
+SLEEP_BETWEEN = 0.4        # giây nghỉ giữa các mã khi gọi API VNDirect
+STAGE2_SLEEP = 3.5         # giây nghỉ khi gọi vnstock (chỉ dùng nếu vnstock có cài)
+HAS_VNSTOCK = importlib.util.find_spec("vnstock") is not None
+DCHART_URL = "https://dchart-api.vndirect.com.vn/dchart/history"
+LISTING_URL = "https://finfo-api.vndirect.com.vn/v4/stocks"
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; vn-stock-scanner)", "Accept": "application/json"}
 MIN_AVG_VOLUME = 100_000   # KLTB 20 phiên < ngưỡng này = loại (tiêu chí YẾU)
 MIN_HISTORY = 130          # số phiên tối thiểu để tính đủ MA100/Ichimoku
 STRESS_DROP = -0.6         # % VN-Index giảm để coi là "phiên áp lực" (~10 điểm)
@@ -31,7 +37,11 @@ KHOE_SCORE = 70            # điểm tối thiểu để xếp KHỎE (kèm >= 5
 # Lấy dữ liệu
 # ----------------------------------------------------------------------------
 def login():
-    global SLEEP_BETWEEN
+    """Chỉ cần khi có cài vnstock (dùng cho Buy Active % và chỉ số cơ bản)."""
+    global STAGE2_SLEEP
+    if not HAS_VNSTOCK:
+        print("Không cài vnstock: bỏ qua Buy Active % và chỉ số cơ bản (Trụ cột 5).")
+        return
     key = os.environ.get("VNSTOCK_API_KEY", "").strip()
     if not key:
         print("Không có VNSTOCK_API_KEY, dùng chế độ khách (giới hạn chậm hơn).")
@@ -39,7 +49,7 @@ def login():
     try:
         from vnstock import register_user
         register_user(api_key=key)
-        SLEEP_BETWEEN = 1.5   # có API key thì hạn mức cao hơn, quét nhanh hơn
+        STAGE2_SLEEP = 1.5   # có API key thì hạn mức cao hơn
         print("Đã đăng nhập vnstock bằng API key.")
     except Exception as e:
         print(f"Không đăng nhập được API key: {e}")
@@ -66,21 +76,16 @@ def save_state(state):
 
 
 def discover_symbols():
-    """Lấy toàn bộ mã cổ phiếu sàn HOSE từ vnstock (nếu lỗi thì trả danh sách rỗng)."""
+    """Lấy toàn bộ mã cổ phiếu sàn HOSE từ VNDirect (nếu lỗi thì trả danh sách rỗng)."""
+    url = LISTING_URL + "?q=type:STOCK~status:LISTED~floor:HOSE&size=2000"
+    d = http_json(url)
     try:
-        from vnstock import Vnstock
-        df = flatten_cols(Vnstock().stock(symbol="ACB", source="VCI").listing.symbols_by_exchange())
-        sym = find_col(df, "symbol") or df.columns[0]
-        ex, ty = find_col(df, "exchange"), find_col(df, "type")
-        if ex is not None:
-            df = df[df[ex].astype(str).str.upper() == "HOSE"]
-        if ty is not None:
-            df = df[df[ty].astype(str).str.upper() == "STOCK"]
-        out = sorted({str(x).upper() for x in df[sym] if len(str(x)) == 3 and str(x).isalpha()})
-        print(f"Danh sách HOSE từ vnstock: {len(out)} mã.")
+        out = sorted({str(x["code"]).upper() for x in d["data"]
+                      if len(str(x["code"])) == 3 and str(x["code"]).isalpha()})
+        print(f"Danh sách HOSE từ VNDirect: {len(out)} mã.")
         return out
     except Exception as e:
-        print(f"Không lấy được danh sách mã từ vnstock: {str(e)[:100]}")
+        print(f"Không lấy được danh sách mã HOSE: {str(e)[:100]}")
         return []
 
 
@@ -106,24 +111,35 @@ def build_universe(state):
     return universe[:MAX_SYMBOLS]
 
 
-def fetch(symbol):
-    from vnstock import Vnstock
-    now = datetime.now(VN_TZ)
-    start = (now - timedelta(days=430)).strftime("%Y-%m-%d")
-    end = now.strftime("%Y-%m-%d")
-    for attempt in range(3):
+def http_json(url, retries=3):
+    for attempt in range(retries):
         try:
-            df = Vnstock().stock(symbol=symbol, source="VCI").quote.history(
-                start=start, end=end, interval="1D")
-            if df is not None and len(df) >= 30:
-                df = df.copy()
-                df["time"] = pd.to_datetime(df["time"])
-                return df.sort_values("time").reset_index(drop=True)
-            return None
+            req = urllib.request.Request(url, headers=HEADERS)
+            with urllib.request.urlopen(req, timeout=25) as r:
+                return json.loads(r.read().decode("utf-8"))
         except Exception as e:
-            print(f"  {symbol}: lỗi lần {attempt + 1}: {str(e)[:100]}")
-            time.sleep(10 * (attempt + 1))
+            print(f"  lỗi tải dữ liệu (lần {attempt + 1}): {str(e)[:100]}")
+            time.sleep(3 * (attempt + 1))
     return None
+
+
+def fetch(symbol):
+    """Giá ngày (OHLCV) từ API công khai VNDirect. Giá tính theo nghìn đồng."""
+    now = int(time.time())
+    url = f"{DCHART_URL}?resolution=D&symbol={symbol}&from={now - 430 * 86400}&to={now}"
+    d = http_json(url)
+    try:
+        if not d or d.get("s") != "ok" or not d.get("t"):
+            return None
+        df = pd.DataFrame({
+            "time": (pd.to_datetime(d["t"], unit="s") + pd.Timedelta(hours=7)).normalize(),
+            "open": d["o"], "high": d["h"], "low": d["l"], "close": d["c"], "volume": d["v"],
+        })
+        df = df.dropna().drop_duplicates("time", keep="last")
+        return df.sort_values("time").reset_index(drop=True) if len(df) >= 30 else None
+    except Exception as e:
+        print(f"  {symbol}: dữ liệu không đúng định dạng: {str(e)[:100]}")
+        return None
 
 
 # ----------------------------------------------------------------------------
@@ -462,9 +478,9 @@ def stage2(res):
     for s in top:
         print(f"  chi tiết {s}")
         ba = buy_active(s)
-        time.sleep(SLEEP_BETWEEN)
+        time.sleep(STAGE2_SLEEP)
         f = fundamentals(s)
-        time.sleep(SLEEP_BETWEEN)
+        time.sleep(STAGE2_SLEEP)
         flags = []
         if not np.isnan(ba):
             flags.append("Mua CĐ ✅" if ba > 52 else "Bán CĐ ⚠" if ba < 48 else "")
@@ -587,10 +603,14 @@ def main():
         t["RS"] = (t["rs_raw"].fillna(-999).rank(pct=True) * 98 + 1).round().astype(int)
         res = pd.DataFrame([score_row(r) for r in t.to_dict("records")])
         res = res.sort_values(["Điểm", "RS"], ascending=False).reset_index(drop=True)
-        res = stage2(res)
+        if HAS_VNSTOCK:
+            res = stage2(res)
         res = res.sort_values(["Điểm", "RS"], ascending=False).reset_index(drop=True)
         res.to_csv("reports/latest.csv", index=False, encoding="utf-8-sig")
         md, khoe = build_report(res, idx, now)
+        if not HAS_VNSTOCK:
+            md += ("\n_Lưu ý: chưa có vnstock nên bỏ qua Buy Active % và chỉ số cơ bản "
+                   "(P/E, P/B, EPS). Dữ liệu giá lấy từ API công khai của VNDirect._\n")
         md = md.replace(
             "\n\nĐã quét ",
             f"\n\n_Đã duyệt {scanned}/{len(symbols)} mã trong {(time.time() - t0) / 60:.0f} phút"
