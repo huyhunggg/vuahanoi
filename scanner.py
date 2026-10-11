@@ -21,7 +21,16 @@ STAGE2_SLEEP = 3.5         # giây nghỉ khi gọi vnstock (chỉ dùng nếu v
 HAS_VNSTOCK = importlib.util.find_spec("vnstock") is not None
 DCHART_URL = "https://dchart-api.vndirect.com.vn/dchart/history"
 LISTING_URL = "https://finfo-api.vndirect.com.vn/v4/stocks"
-HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; vn-stock-scanner)", "Accept": "application/json"}
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+      "Chrome/124.0.0.0 Safari/537.36")
+# Thử lần lượt các kiểu header (một số máy chủ trả 406/403 nếu header không giống trình duyệt)
+HEADER_VARIANTS = [
+    {"User-Agent": UA, "Accept": "application/json, text/plain, */*",
+     "Accept-Language": "vi-VN,vi;q=0.9,en;q=0.8",
+     "Origin": "https://dchart.vndirect.com.vn", "Referer": "https://dchart.vndirect.com.vn/"},
+    {"User-Agent": UA, "Accept": "*/*", "Referer": "https://trade.vndirect.com.vn/"},
+    {"User-Agent": UA},
+]
 MIN_AVG_VOLUME = 100_000   # KLTB 20 phiên < ngưỡng này = loại (tiêu chí YẾU)
 MIN_HISTORY = 130          # số phiên tối thiểu để tính đủ MA100/Ichimoku
 STRESS_DROP = -0.6         # % VN-Index giảm để coi là "phiên áp lực" (~10 điểm)
@@ -114,17 +123,17 @@ def build_universe(state):
 LAST_ERROR = ""
 
 
-def http_json(url, retries=3):
+def http_json(url, retries=3):  # mỗi lần thử dùng một kiểu header khác nhau
     global LAST_ERROR
     for attempt in range(retries):
         try:
-            req = urllib.request.Request(url, headers=HEADERS)
+            req = urllib.request.Request(url, headers=HEADER_VARIANTS[attempt % len(HEADER_VARIANTS)])
             with urllib.request.urlopen(req, timeout=25) as r:
                 return json.loads(r.read().decode("utf-8"))
         except Exception as e:
             LAST_ERROR = f"{type(e).__name__}: {str(e)[:150]} | {url[:90]}"
             print(f"  lỗi tải dữ liệu (lần {attempt + 1}): {LAST_ERROR}")
-            time.sleep(2 * (attempt + 1))
+            time.sleep(1 + attempt)
     return None
 
 
@@ -572,8 +581,8 @@ def main():
     today = datetime.now(VN_TZ).date().isoformat()
     metrics, scanned, cut, fails = [], 0, False, 0
     for i, s in enumerate(symbols, 1):
-        if fails >= 8 and not metrics:
-            print("Liên tiếp 8 mã không tải được dữ liệu: dừng sớm để tránh lãng phí thời gian.")
+        if fails >= 6 and not metrics:
+            print("Liên tiếp 6 mã không tải được dữ liệu: dừng sớm để tránh lãng phí thời gian.")
             break
         if time.time() - t0 > TIME_BUDGET_SEC:
             cut = True
