@@ -35,7 +35,12 @@ MIN_AVG_VOLUME = 100_000   # KLTB 20 phiên < ngưỡng này = loại (tiêu ch�
 MIN_HISTORY = 130          # số phiên tối thiểu để tính đủ MA100/Ichimoku
 STRESS_DROP = -0.6         # % VN-Index giảm để coi là "phiên áp lực" (~10 điểm)
 TOP_N_DETAIL = 15          # số mã top được lấy thêm Buy Active % + cơ bản
-MAX_SYMBOLS = 300          # số mã tối đa mỗi lần quét
+MAX_SYMBOLS = 1000         # số mã tối đa mỗi lần quét
+EXCHANGES = {"HOSE", "HNX", "UPCOM"}   # các sàn được quét (bỏ bớt nếu muốn thu hẹp)
+DISCOVER_NOTE = ""
+BUY_MAX_RISK = 8.0         # 'Đáng mua': rủi ro tới mức cắt lỗ tham khảo tối đa (%)
+BUY_MAX_EXT = 10.0         # 'Đáng mua': giá không cao hơn MA20 quá số % này (tránh mua đuổi)
+BUY_MIN_VALUE_BN = 5.0     # 'Đáng mua': giá trị giao dịch TB tối thiểu (tỷ đồng/phiên)
 TIME_BUDGET_SEC = 26 * 60  # dừng quét nếu quá thời gian này (tránh GitHub tự ngắt)
 REJECT_DAYS = 30           # mã bị loại (thanh khoản thấp...) được kiểm tra lại sau số ngày này
 STATE_FILE = "reports/universe.json"
@@ -85,17 +90,29 @@ def save_state(state):
 
 
 def discover_symbols():
-    """Lấy toàn bộ mã cổ phiếu sàn HOSE từ VNDirect (nếu lỗi thì trả danh sách rỗng)."""
-    url = LISTING_URL + "?q=type:STOCK~status:LISTED~floor:HOSE&size=2000"
-    d = http_json(url)
-    try:
-        out = sorted({str(x["code"]).upper() for x in d["data"]
-                      if len(str(x["code"])) == 3 and str(x["code"]).isalpha()})
-        print(f"Danh sách HOSE từ VNDirect: {len(out)} mã.")
-        return out
-    except Exception as e:
-        print(f"Không lấy được danh sách mã HOSE: {str(e)[:100]}")
-        return []
+    """Lấy danh sách mã niêm yết từ VNDirect (thử nhiều địa chỉ). Lỗi thì trả danh sách rỗng."""
+    global DISCOVER_NOTE
+    urls = [
+        "https://finfo-api.vndirect.com.vn/v4/stocks?q=type:STOCK~status:LISTED&fields=code,floor&size=3000",
+        "https://api-finfo.vndirect.com.vn/v4/stocks?q=type:STOCK~status:LISTED&fields=code,floor&size=3000",
+        "https://finfo-api.vndirect.com.vn/v4/stocks?q=type:STOCK&size=3000",
+    ]
+    for url in urls:
+        d = http_json(url, retries=3)
+        try:
+            rows = d["data"]
+            out = sorted({str(x["code"]).upper() for x in rows
+                          if len(str(x.get("code", ""))) == 3 and str(x["code"]).isalpha()
+                          and (not x.get("floor") or str(x["floor"]).upper() in EXCHANGES)})
+            if len(out) > 50:
+                DISCOVER_NOTE = f"Danh sách sàn: {len(out)} mã từ VNDirect"
+                print(DISCOVER_NOTE)
+                return out
+        except Exception as e:
+            print(f"Danh sách mã không đọc được từ {url[:60]}: {str(e)[:80]}")
+    DISCOVER_NOTE = "KHÔNG lấy được danh sách mã từ sàn (đang chỉ quét symbols.txt)"
+    print(DISCOVER_NOTE)
+    return []
 
 
 def build_universe(state):
@@ -265,6 +282,7 @@ def compute_metrics(symbol, df, idx):
         rsi=float(rsi(c).iloc[last]), vr=vr, up_day=up_day, red_day=red_day, acc=acc,
         macd=float(macd.iloc[last]), sig=float(sig.iloc[last]),
         hist=float(hist.iloc[last]), hist_prev=float(hist.iloc[last - 1]),
+        low10=float(l.iloc[-10:].min()),
         ma20=float(ma20.iloc[last]), ma50=float(ma50.iloc[last]), ma100=float(ma100.iloc[last]),
         ma20_up=bool(ma20.iloc[last] > ma20.iloc[last - 5]),
         ma50_up=bool(ma50.iloc[last] > ma50.iloc[last - 5]),
@@ -403,7 +421,11 @@ def score_row(m):
     else:
         label = "⚪ TRUNG LẬP"
 
+    stop = min(m["ma20"], m["low10"]) * 0.985
+    risk = (c - stop) / c * 100
     return {
+        "Cách MA20%": round((c / ma20 - 1) * 100, 1), "Cắt lỗ": round(stop, 2),
+        "Rủi ro%": round(risk, 1), "Mục tiêu": round(c + 2 * (c - stop), 2), "pen": penalty,
         "Mã": m["symbol"], "Điểm": total, "Phân loại": label, "Khỏe": f"{k}/6", "Yếu": f"{w}/6",
         "RS": rs, "Giá": round(c, 2), "%Phiên": round(m["chg1d"], 2), "%1T": round(r1m, 1),
         "%1Tuần": round(r1w, 1), "RSI": round(rv, 1), "Vol/TB20": round(m["vr"], 2),
@@ -537,20 +559,48 @@ def md_table(df, cols):
     return df[cols].fillna("–").to_markdown(index=False)
 
 
+def pick_buy(res):
+    """Lọc cổ phiếu 'đáng mua': KHỎE + chưa quá mua + chưa chạy xa MA20 + rủi ro cắt lỗ nhỏ."""
+    r = res
+    cond = ((r["Phân loại"] == "🟢 KHỎE") & r["RSI"].between(50, 70)
+            & (r["Cách MA20%"] <= BUY_MAX_EXT) & (r["Tích lũy%"] >= 55) & (r["pen"] == 0)
+            & (r["GTGD tỷ"] >= BUY_MIN_VALUE_BN) & (r["Rủi ro%"] > 0) & (r["Rủi ro%"] <= BUY_MAX_RISK)
+            & (r["%1Tuần"] >= -5))
+    return r[cond].sort_values(["Điểm", "Rủi ro%"], ascending=[False, True])
+
+
 def build_report(res, idx, now):
     show = ["Mã", "Điểm", "Khỏe", "RS", "Giá", "%Phiên", "%1T", "RSI", "Vol/TB20",
             "Tích lũy%", "Mua CĐ%", "P/E", "P/B", "EPS YoY%", "Tín hiệu", "Xác nhận"]
+    buy_cols = ["Mã", "Điểm", "RS", "Giá", "Cách MA20%", "RSI", "Vol/TB20", "Tích lũy%",
+                "GTGD tỷ", "Cắt lỗ", "Rủi ro%", "Mục tiêu", "Tín hiệu"]
     md = f"# Kết quả quét {now} (giờ VN)\n\n"
+    weak_market = False
     if idx is not None and len(idx) > 50:
         ic = idx["close"]
+        below = ic.iloc[-1] < ic.tail(20).mean()
+        m1 = pct(ic.iloc[-1], ic.iloc[-21])
+        weak_market = bool(below and m1 < 0)
         md += (f"**VN-Index:** {ic.iloc[-1]:,.2f} ({pct(ic.iloc[-1], ic.iloc[-2]):+.2f}% phiên, "
-               f"{pct(ic.iloc[-1], ic.iloc[-21]):+.1f}% 1 tháng), "
-               f"{'trên' if ic.iloc[-1] > ic.tail(20).mean() else 'dưới'} MA20.\n\n")
+               f"{m1:+.1f}% 1 tháng), {'dưới' if below else 'trên'} MA20.\n\n")
     n = res["Phân loại"].value_counts()
     md += (f"Đã quét {len(res)} mã: 🟢 {n.get('🟢 KHỎE', 0)} khỏe · 🟡 {n.get('🟡 THEO DÕI', 0)} theo dõi · "
            f"⚪ {n.get('⚪ TRUNG LẬP', 0)} trung lập · 🔴 {n.get('🔴 YẾU', 0)} yếu.\n\n")
+
+    buy = pick_buy(res)
+    md += "## ⭐ ĐÁNG MUA (KHỎE + RSI 50–70 + chưa chạy xa MA20 + rủi ro cắt lỗ ≤ 8%)\n\n"
+    if weak_market:
+        md += ("> ⚠ VN-Index đang dưới MA20 và giảm trong 1 tháng: thị trường chung yếu, "
+               "nên giảm tỷ trọng và ưu tiên quản trị rủi ro.\n\n")
+    if len(buy):
+        md += md_table(buy, buy_cols)
+        md += ("\n\n_Cắt lỗ tham khảo = dưới thấp hơn của (đáy 10 phiên, MA20) khoảng 1,5%. "
+               "Mục tiêu = tỷ lệ lời/lỗ 2:1. Đây là mức kỹ thuật để tính rủi ro, không phải lệnh khuyến nghị._")
+    else:
+        md += "_Hiện chưa có mã nào đạt đủ điều kiện (thị trường thiếu điểm vào an toàn)._"
+
     khoe = res[res["Phân loại"] == "🟢 KHỎE"]
-    md += "## 🟢 Cổ phiếu KHỎE (≥ 5/6 tiêu chí và ≥ 70 điểm)\n\n"
+    md += "\n\n## 🟢 Cổ phiếu KHỎE (≥ 5/6 tiêu chí và ≥ 70 điểm)\n\n"
     md += md_table(khoe, show) if len(khoe) else "_Chưa có mã nào đạt chuẩn._"
     watch = res[res["Phân loại"] == "🟡 THEO DÕI"].head(12)
     md += "\n\n## 🟡 Theo dõi (gần đạt chuẩn)\n\n"
@@ -562,9 +612,9 @@ def build_report(res, idx, now):
            "Trụ cột 3 (động lượng & dòng tiền, 30) + Trụ cột 4 (so với VN-Index, 20). "
            "RS xếp hạng trong danh sách đang quét (không phải toàn thị trường). "
            "'Tích lũy%' là chỉ báo xấp xỉ MCDX tự tính từ giá & khối lượng, không phải MCDX gốc. "
-           "Buy Active % lấy từ khớp lệnh phiên gần nhất. Dữ liệu trong phiên có thể chưa đủ khối lượng.\n"
+           "Dữ liệu trong phiên có thể chưa đủ khối lượng; giá tính theo nghìn đồng.\n"
            "_Chỉ mang tính tham khảo kỹ thuật, không phải khuyến nghị đầu tư._\n")
-    return md, khoe
+    return md, khoe, buy
 
 
 def main():
@@ -581,8 +631,8 @@ def main():
     today = datetime.now(VN_TZ).date().isoformat()
     metrics, scanned, cut, fails = [], 0, False, 0
     for i, s in enumerate(symbols, 1):
-        if fails >= 6 and not metrics:
-            print("Liên tiếp 6 mã không tải được dữ liệu: dừng sớm để tránh lãng phí thời gian.")
+        if fails >= 15 and not metrics:
+            print("Liên tiếp 15 mã không tải được dữ liệu: dừng sớm để tránh lãng phí thời gian.")
             break
         if time.time() - t0 > TIME_BUDGET_SEC:
             cut = True
@@ -616,7 +666,7 @@ def main():
     if not metrics:
         md = (f"# Kết quả quét {now}\n\n**Không lấy được dữ liệu giá.**\n\n"
               f"Lỗi gần nhất: `{LAST_ERROR or 'API trả về dữ liệu rỗng'}`\n")
-        khoe = pd.DataFrame()
+        khoe = buy = pd.DataFrame()
     else:
         t = pd.DataFrame(metrics)
         t["RS"] = (t["rs_raw"].fillna(-999).rank(pct=True) * 98 + 1).round().astype(int)
@@ -626,7 +676,7 @@ def main():
             res = stage2(res)
         res = res.sort_values(["Điểm", "RS"], ascending=False).reset_index(drop=True)
         res.to_csv("reports/latest.csv", index=False, encoding="utf-8-sig")
-        md, khoe = build_report(res, idx, now)
+        md, khoe, buy = build_report(res, idx, now)
         if not HAS_VNSTOCK:
             md += ("\n_Lưu ý: chưa có vnstock nên bỏ qua Buy Active % và chỉ số cơ bản "
                    "(P/E, P/B, EPS). Dữ liệu giá lấy từ API công khai của VNDirect._\n")
@@ -634,11 +684,13 @@ def main():
             "\n\nĐã quét ",
             f"\n\n_Đã duyệt {scanned}/{len(symbols)} mã trong {(time.time() - t0) / 60:.0f} phút"
             f"{' (bị cắt do hết thời gian)' if cut else ''}; "
-            f"{len(state['rejected'])} mã bị loại vì thanh khoản thấp/thiếu dữ liệu._\n\nĐã quét ", 1)
-        if len(khoe):
-            top = "\n".join(f"{r['Mã']} - {r['Điểm']}đ - RS {r['RS']} - RSI {r['RSI']}"
-                            for _, r in khoe.head(10).iterrows())
-            send_telegram(f"Quét CK {now}\n🟢 Cổ phiếu KHỎE:\n{top}")
+            f"{len(state['rejected'])} mã bị loại vì thanh khoản thấp/thiếu dữ liệu. "
+            f"{DISCOVER_NOTE}._\n\nĐã quét ", 1)
+        if len(buy) or len(khoe):
+            tb = "\n".join(f"{r['Mã']} - {r['Điểm']}đ - giá {r['Giá']} - cắt lỗ TK {r['Cắt lỗ']} ({r['Rủi ro%']}%)"
+                           for _, r in buy.head(10).iterrows()) or "(chưa có)"
+            tk = ", ".join(khoe.head(15)["Mã"])
+            send_telegram(f"Quét CK {now}\n⭐ Đáng mua:\n{tb}\n\n🟢 Khỏe: {tk}")
 
     with open("reports/latest.md", "w", encoding="utf-8") as f:
         f.write(md)
