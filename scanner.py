@@ -540,18 +540,46 @@ def stage2(res):
 # ----------------------------------------------------------------------------
 # Báo cáo
 # ----------------------------------------------------------------------------
+def telegram_api(token, method, payload=None):
+    data = json.dumps(payload).encode() if payload is not None else None
+    req = urllib.request.Request(
+        f"https://api.telegram.org/bot{token}/{method}", data=data,
+        headers={"Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        return json.loads(r.read().decode("utf-8"))
+
+
 def send_telegram(text):
-    token, chat = os.environ.get("TELEGRAM_BOT_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
-    if not token or not chat:
+    """Gửi tin nhắn Telegram. Chỉ cần TELEGRAM_BOT_TOKEN; chưa có chat id thì tự tìm."""
+    token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+    if not token:
+        print("Chưa cài TELEGRAM_BOT_TOKEN: bỏ qua gửi tin nhắn.")
         return
     try:
-        data = json.dumps({"chat_id": chat, "text": text}).encode()
-        req = urllib.request.Request(
-            f"https://api.telegram.org/bot{token}/sendMessage",
-            data=data, headers={"Content-Type": "application/json"})
-        urllib.request.urlopen(req, timeout=20)
+        if not chat:
+            ups = telegram_api(token, "getUpdates").get("result", [])
+            for u in ups:
+                m = u.get("message") or {}
+                if m.get("chat", {}).get("type") == "private":
+                    chat = str(m["chat"]["id"])
+                    break
+            if not chat:
+                print("Chưa tìm thấy chat: hãy mở bot trên Telegram, bấm Start rồi gửi 1 tin nhắn bất kỳ, "
+                      "sau đó chạy lại.")
+                return
+            print(f"Đã tự tìm thấy Chat ID: {chat} (có thể lưu vào secret TELEGRAM_CHAT_ID để cố định)")
+        res = telegram_api(token, "sendMessage", {"chat_id": chat, "text": text[:4000],
+                                                   "disable_web_page_preview": True})
+        print("Telegram:", "đã gửi" if res.get("ok") else res)
     except Exception as e:
-        print(f"Không gửi được Telegram: {e}")
+        print(f"Không gửi được Telegram: {str(e)[:150]}")
+
+
+def report_link():
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    server = os.environ.get("GITHUB_SERVER_URL", "https://github.com")
+    return f"{server}/{repo}/blob/main/reports/latest.md" if repo else ""
 
 
 def md_table(df, cols):
@@ -686,11 +714,17 @@ def main():
             f"{' (bị cắt do hết thời gian)' if cut else ''}; "
             f"{len(state['rejected'])} mã bị loại vì thanh khoản thấp/thiếu dữ liệu. "
             f"{DISCOVER_NOTE}._\n\nĐã quét ", 1)
-        if len(buy) or len(khoe):
-            tb = "\n".join(f"{r['Mã']} - {r['Điểm']}đ - giá {r['Giá']} - cắt lỗ TK {r['Cắt lỗ']} ({r['Rủi ro%']}%)"
-                           for _, r in buy.head(10).iterrows()) or "(chưa có)"
-            tk = ", ".join(khoe.head(15)["Mã"])
-            send_telegram(f"Quét CK {now}\n⭐ Đáng mua:\n{tb}\n\n🟢 Khỏe: {tk}")
+        tb = "\n".join(f"• {r['Mã']}: giá {r['Giá']}, cắt lỗ TK {r['Cắt lỗ']} (-{r['Rủi ro%']}%), "
+                       f"mục tiêu {r['Mục tiêu']}, {r['Điểm']}đ"
+                       for _, r in buy.head(10).iterrows()) or "Chưa có mã nào đạt điều kiện."
+        tk = ", ".join(khoe.head(20)["Mã"]) or "chưa có"
+        vn = ""
+        if idx is not None and len(idx) > 21:
+            vn = f"VN-Index {idx['close'].iloc[-1]:,.0f} ({pct(idx['close'].iloc[-1], idx['close'].iloc[-2]):+.2f}%)\n"
+        msg = (f"📊 Quét CK {now}\n{vn}\n⭐ ĐÁNG MUA ({len(buy)}):\n{tb}\n\n"
+               f"🟢 KHỎE ({len(khoe)}): {tk}\n\n{report_link()}\n"
+               f"Chỉ là tín hiệu kỹ thuật, không phải khuyến nghị đầu tư.")
+        send_telegram(msg)
 
     with open("reports/latest.md", "w", encoding="utf-8") as f:
         f.write(md)
