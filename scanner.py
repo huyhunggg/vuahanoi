@@ -549,31 +549,58 @@ def telegram_api(token, method, payload=None):
         return json.loads(r.read().decode("utf-8"))
 
 
+SUBS_FILE = "reports/subscribers.json"
+
+
+def load_subscribers():
+    try:
+        with open(SUBS_FILE, encoding="utf-8") as f:
+            return [str(x) for x in json.load(f)]
+    except Exception:
+        return []
+
+
 def send_telegram(text):
-    """Gửi tin nhắn Telegram. Chỉ cần TELEGRAM_BOT_TOKEN; chưa có chat id thì tự tìm."""
+    """Gửi tin nhắn Telegram cho TẤT CẢ tài khoản đã nhắn cho bot (và các Chat ID khai báo thêm)."""
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-    chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
     if not token:
         print("Chưa cài TELEGRAM_BOT_TOKEN: bỏ qua gửi tin nhắn.")
         return
+    # 1) Chat ID khai báo tay (có thể nhiều ID, ngăn cách bằng dấu phẩy) + danh sách đã lưu
+    fixed = [x.strip() for x in os.environ.get("TELEGRAM_CHAT_ID", "").replace(";", ",").split(",") if x.strip()]
+    saved = load_subscribers()
+    found = []
+    # 2) Tự nhận thêm người mới: ai nhắn cho bot trong 24h gần đây sẽ được thêm vào danh sách
+    if os.environ.get("TELEGRAM_AUTO_SUBSCRIBE", "1") != "0":
+        try:
+            for u in telegram_api(token, "getUpdates").get("result", []):
+                chat = (u.get("message") or {}).get("chat", {})
+                if chat.get("type") == "private":
+                    found.append(str(chat["id"]))
+        except Exception as e:
+            print(f"Không đọc được danh sách người nhắn bot: {str(e)[:100]}")
+    new = [x for x in dict.fromkeys(found) if x not in saved and x not in fixed]
+    if new:
+        print(f"Thêm {len(new)} người nhận mới.")
+    subs = list(dict.fromkeys(saved + new))
     try:
-        if not chat:
-            ups = telegram_api(token, "getUpdates").get("result", [])
-            for u in ups:
-                m = u.get("message") or {}
-                if m.get("chat", {}).get("type") == "private":
-                    chat = str(m["chat"]["id"])
-                    break
-            if not chat:
-                print("Chưa tìm thấy chat: hãy mở bot trên Telegram, bấm Start rồi gửi 1 tin nhắn bất kỳ, "
-                      "sau đó chạy lại.")
-                return
-            print(f"Đã tự tìm thấy Chat ID: {chat} (có thể lưu vào secret TELEGRAM_CHAT_ID để cố định)")
-        res = telegram_api(token, "sendMessage", {"chat_id": chat, "text": text[:4000],
-                                                   "disable_web_page_preview": True})
-        print("Telegram:", "đã gửi" if res.get("ok") else res)
+        os.makedirs("reports", exist_ok=True)
+        with open(SUBS_FILE, "w", encoding="utf-8") as f:
+            json.dump(subs, f)
     except Exception as e:
-        print(f"Không gửi được Telegram: {str(e)[:150]}")
+        print(f"Không lưu được danh sách người nhận: {e}")
+    targets = list(dict.fromkeys(fixed + subs))
+    if not targets:
+        print("Chưa có người nhận: hãy mở bot trên Telegram, bấm Start rồi gửi 1 tin nhắn bất kỳ, "
+              "sau đó chạy lại.")
+        return
+    for cid in targets:
+        try:
+            res = telegram_api(token, "sendMessage", {"chat_id": cid, "text": text[:4000],
+                                                       "disable_web_page_preview": True})
+            print(f"Telegram -> ...{cid[-3:]}:", "đã gửi" if res.get("ok") else res)
+        except Exception as e:
+            print(f"Telegram -> ...{cid[-3:]}: lỗi {str(e)[:100]}")
 
 
 def report_link():
