@@ -1,4 +1,4 @@
-# Kết quả quét 14/10/2026 19:24 (giờ VN)
+# Kết quả quét 14/10/2026 20:38 (giờ VN)
 
 **VN-Index:** 1,704.87 (-0.85% phiên, -5.8% 1 tháng), dưới MA20.
 
@@ -15,7 +15,7 @@ _Đã duyệt 312/312 mã trong 9 phút; 1138 mã bị loại vì thanh khoản 
 | DCL  |     88 |   91 | 46.5  |          1.3 |  56.7 |       0.28 |          86 |      70.7 |    43.34 |       6.8 |      52.82 | RS 91, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, Tích lũy 86%, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T |
 | AAS  |     81 |   84 | 10.1  |          4.7 |  63.5 |       0.82 |          67 |      12.9 |     9.46 |       6.4 |      11.39 | RS 84, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T               |
 | PET  |     80 |   98 | 49.85 |          3.5 |  59.7 |       0.24 |          69 |      43.7 |    47.44 |       4.8 |      54.67 | RS 98, 1T >15% (nóng), Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T          |
-| DRI  |     80 |   94 | 16    |          3.3 |  59.2 |       1.18 |          61 |      28   |    15.07 |       5.8 |      17.86 | RS 94, 1T >15% (nóng), Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T          |
+| DRI  |     80 |   94 | 16    |          3.3 |  59.2 |       1.19 |          61 |      28   |    15.07 |       5.8 |      17.86 | RS 94, 1T >15% (nóng), Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T          |
 
 _Cắt lỗ tham khảo = dưới thấp hơn của (đáy 10 phiên, MA20) khoảng 1,5%. Mục tiêu = tỷ lệ lời/lỗ 2:1. Đây là mức kỹ thuật để tính rủi ro, không phải lệnh khuyến nghị._
 
@@ -36,7 +36,7 @@ _Cắt lỗ tham khảo = dưới thấp hơn của (đáy 10 phiên, MA20) kho�
 | TLG  |     81 | 5/6    |   88 | 55.5  |     0.54 |   4.7 |  63.4 |       1.47 |          38 | RS 88, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                                                         |
 | AAS  |     81 | 5/6    |   84 | 10.1  |     2.02 |  11   |  63.5 |       0.82 |          67 | RS 84, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                                              |
 | PET  |     80 | 5/6    |   98 | 49.85 |     0    |  29.8 |  59.7 |       0.24 |          69 | RS 98, 1T >15% (nóng), Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                                         |
-| DRI  |     80 | 5/6    |   94 | 16    |    -0.62 |  15.2 |  59.2 |       1.18 |          61 | RS 94, 1T >15% (nóng), Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                                         |
+| DRI  |     80 | 5/6    |   94 | 16    |    -0.62 |  15.2 |  59.2 |       1.19 |          61 | RS 94, 1T >15% (nóng), Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                                         |
 | SBG  |     80 | 5/6    |   92 | 14.25 |    -0.7  |   2.2 |  56.5 |       0.52 |          69 | RS 92, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                                                         |
 | GSP  |     80 | 5/6    |   83 | 10.9  |     0.46 |  10.4 |  70.7 |       0.6  |          95 | RS 83, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50, Trên mây, Walking the Bands, Tích lũy 95%, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                             |
 | BFC  |     79 | 5/6    |   93 | 63    |     0.32 |  29.6 |  84.5 |       0.72 |          76 | RS 93, 1T >15% (nóng), Tuần xác nhận sóng, Giá>MA20>MA50, Trên mây, Walking the Bands, Tích lũy 76%, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ RSI>80 quá mua |
@@ -48,7 +48,7 @@ _Cắt lỗ tham khảo = dưới thấp hơn của (đáy 10 phiên, MA20) kho�
 
 | Mã   |   Điểm | Khỏe   |   RS |   Giá |   %Phiên |   %1T |   RSI |   Vol/TB20 |   Tích lũy% | Tín hiệu                                                                                                                                                                                  |
 |:-----|-------:|:-------|-----:|------:|---------:|------:|------:|-----------:|------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| VEA  |     87 | 4/6    |   88 | 39.5  |     2.6  |   9.7 |  86.4 |       3.17 |          64 | RS 88, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, Vol rất lớn nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ RSI>80 quá mua |
+| VEA  |     87 | 4/6    |   88 | 39.5  |     2.6  |   9.7 |  86.4 |       3.18 |          64 | RS 88, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, Vol rất lớn nến xanh, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ RSI>80 quá mua |
 | HDB  |     83 | 4/6    |   87 | 23.2  |     0.43 |  11.3 |  76   |       0.99 |          70 | RS 87, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                                         |
 | VPB  |     83 | 4/6    |   85 | 24.35 |    -0.2  |  11.2 |  72.2 |       0.58 |          65 | RS 85, 1T +5~15%, Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                                         |
 | VGT  |     78 | 4/6    |   75 | 11.6  |     0    |   9.4 |  54.3 |       1.04 |          79 | 1T +5~15%, Giá>MA20>MA50>MA100, Trên mây, Walking the Bands, Tích lũy 79%, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                                                      |
