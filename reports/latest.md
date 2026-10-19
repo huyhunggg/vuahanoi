@@ -1,8 +1,8 @@
-# Kết quả quét 19/10/2026 18:37 (giờ VN)
+# Kết quả quét 19/10/2026 22:34 (giờ VN)
 
 **VN-Index:** 1,689.84 (-0.94% phiên, -6.1% 1 tháng), dưới MA20.
 
-_Đã duyệt 307/307 mã trong 9 phút; 1142 mã bị loại vì thanh khoản thấp/thiếu dữ liệu. Danh sách sàn: 1397 mã từ VNDirect._
+_Đã duyệt 307/307 mã trong 10 phút; 1142 mã bị loại vì thanh khoản thấp/thiếu dữ liệu. Danh sách sàn: 1397 mã từ VNDirect._
 
 Đã quét 261 mã: 🟢 21 khỏe · 🟡 42 theo dõi · ⚪ 69 trung lập · 🔴 129 yếu.
 
@@ -43,7 +43,7 @@ _Cắt lỗ tham khảo = dưới thấp hơn của (đáy 10 phiên, MA20) kho�
 | VGC  |     78 | 5/6    |   81 |  44.25 |     2.08 |  11   |  59   |       0.46 |          57 | RS 81, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T                                                                                              |
 | BFC  |     76 | 5/6    |   88 |  56.5  |    -4.24 |  20   |  53.5 |       0.32 |          83 | RS 88, 1T >15% (nóng), Tuần < -5%, Giá>MA20>MA50, Trên mây, Tích lũy 83%, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                                                                 |
 | CVN  |     76 | 6/6    |   86 |   1.5  |    -6.25 |  15.4 |  56.6 |       1.96 |          76 | RS 86, 1T >15% (nóng), Tuần xác nhận sóng, Giá>MA20>MA50>MA100, Walking the Bands, Tích lũy 76%, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T, ⚠ Vol lớn nến đỏ (phân phối?) |
-| DXP  |     75 | 5/6    |   90 |  15    |     2.74 |  13.6 |  56.4 |       0.94 |          51 | RS 90, 1T +5~15%, Tuần < -5%, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                                                                    |
+| DXP  |     75 | 5/6    |   90 |  15    |     2.74 |  13.6 |  56.4 |       0.95 |          51 | RS 90, 1T +5~15%, Tuần < -5%, Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                                                                    |
 | PVP  |     70 | 5/6    |   97 |  22.7  |     1.34 |  24.4 |  58.7 |       0.49 |          42 | RS 97, 1T >15% (nóng), Giá>MA20>MA50>MA100, Trên mây, MACD>0, RSI khoẻ, Mạnh hơn VN-Index 1T                                                                                                        |
 
 ## 🟡 Theo dõi (gần đạt chuẩn)
@@ -55,7 +55,7 @@ _Cắt lỗ tham khảo = dưới thấp hơn của (đáy 10 phiên, MA20) kho�
 | NT2  |     80 | 4/6    |   75 | 23.35 |     0.21 |  13.3 |  69.8 |       1.06 |          76 | 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50, Trên mây, Walking the Bands, Tích lũy 76%, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                        |
 | MSR  |     75 | 4/6    |   99 | 65.5  |     0.92 |  26.2 |  68.7 |       0.32 |          69 | RS 99, 1T >15% (nóng), Giá>MA20>MA50>MA100, Trên mây, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                                                      |
 | MSB  |     75 | 4/6    |   91 | 14.8  |     0    |  13.4 |  69.5 |       0.81 |          53 | RS 91, 1T +5~15%, Tuần nén chặt, Giá>MA20>MA50>MA100, Trên mây, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                                            |
-| PSD  |     74 | 4/6    |   92 | 16.2  |    -1.82 |  40.9 |  75   |       0.39 |          56 | RS 92, 1T >15% (nóng), Tuần xác nhận sóng, Giá>MA20>MA50, Trên mây, Walking the Bands, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                     |
+| PSD  |     74 | 4/6    |   92 | 16.2  |    -1.82 |  40.9 |  75   |       0.4  |          56 | RS 92, 1T >15% (nóng), Tuần xác nhận sóng, Giá>MA20>MA50, Trên mây, Walking the Bands, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                     |
 | MBG  |     73 | 4/6    |   60 |  2.7  |    -3.57 |  22.7 |  61.5 |       0.81 |          57 | 1T >15% (nóng), Tuần xác nhận sóng, Giá>MA20>MA50, Trên mây, Walking the Bands, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                  |
 | PHP  |     72 | 4/6    |   95 | 47.5  |     0    |   7.5 |  52.3 |       0.64 |          49 | RS 95, 1T +5~15%, Tuần < -5%, Giá>MA20>MA50>MA100, Trên mây, MACD>0, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                                               |
 | DHC  |     72 | 4/6    |   91 | 37.8  |     2.16 |   6.6 |  55.5 |       0.75 |          61 | RS 91, 1T +5~15%, Tuần xác nhận sóng, Trên mây, MACD>0, RSI khoẻ, Chống chịu tốt khi VNI giảm, Mạnh hơn VN-Index 1T                                                  |
