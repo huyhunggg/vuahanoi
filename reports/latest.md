@@ -1,8 +1,8 @@
-# Kết quả quét 26/10/2026 18:15 (giờ VN)
+# Kết quả quét 26/10/2026 22:08 (giờ VN)
 
 **VN-Index:** 1,763.55 (-0.60% phiên, -1.0% 1 tháng), trên MA20.
 
-_Đã duyệt 297/297 mã trong 9 phút; 1148 mã bị loại vì thanh khoản thấp/thiếu dữ liệu. Danh sách sàn: 1398 mã từ VNDirect._
+_Đã duyệt 297/297 mã trong 8 phút; 1148 mã bị loại vì thanh khoản thấp/thiếu dữ liệu. Danh sách sàn: 1398 mã từ VNDirect._
 
 Đã quét 257 mã: 🟢 26 khỏe · 🟡 53 theo dõi · ⚪ 86 trung lập · 🔴 92 yếu.
 
